@@ -6,9 +6,13 @@ import authRouter from './routes/auth.js'
 import authorizeRoles from './middleware/authorize.js'
 import authMiddleware from './middleware/auth.js'
 import gemRoute from './routes/gemRoute.js'
+import env from 'dotenv'
+
+env.config();
 
 const port = 3000
-const app = express()
+const app = express();
+
 
 
 mongoose.connect('mongodb://db/mspark')

@@ -7,7 +7,7 @@ export default function authMiddleware(req, res, next) {
   }
 
   try {
-    const decoder = jsonwebtoken.verify(token, "secretkey");
+    const decoder = jsonwebtoken.verify(token, process.env.JWT_SECRET_KEY);
     req.user = decoder;
     next();
   } catch (e) {
