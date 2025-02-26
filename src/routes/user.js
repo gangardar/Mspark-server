@@ -6,9 +6,12 @@ import {
   createUser,
   deleteUser,
   getMe,
+  getNotDeletedUserWithPagination,
+  getNotDeletedUserWithPaginationWithRole,
   getUser,
   getUserById,
   getUserWithPagination,
+  softDeleteUser,
   updateUser,
 } from "../controller/userController.js";
 import authMiddleware from "../middleware/auth.js";
@@ -37,7 +40,7 @@ userRouter.get("/", async (req, res) => {
   try {
     const page = parseInt(req.query.page) || 1;
     const limit = parseInt(req.query.limit) || 10;
-    const user = await getUserWithPagination(page, limit); // Fetch the user by ID
+    const user = await getNotDeletedUserWithPagination(page, limit); // Fetch the user by ID
     if (!user || (typeof user === "object" && Object.keys(user).length === 0)) {
       return res.status(404).send("No User Found!"); // Send 404 if user not found
     }
@@ -52,6 +55,26 @@ userRouter.get("/", async (req, res) => {
 userRouter.get("/:id", async (req, res) => {
   try {
     const user = await getUserById(req.params.id); // Fetch the user by ID
+    if (!user || (typeof user === "object" && Object.keys(user).length === 0)) {
+      return res.status(404).send("No User Found!"); // Send 404 if user not found
+    }
+    res.send(user); // Send the user data as a response
+  } catch (err) {
+    console.error(err); // Log the error properly
+    res.status(500).send(err.message); // Send a 500 status with the error message
+  }
+});
+
+// GET users with pagination
+userRouter.get("/role/:role", async (req, res) => {
+  try {
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 10;
+    const role = req.params.role
+    if (role !== "admin" && role !== "merchant" && role !== "bidder") {
+      return res.status(404).send("User with that role doesn't exist.");
+    }
+    const user = await getNotDeletedUserWithPaginationWithRole(page, limit,role); // Fetch the user by ID
     if (!user || (typeof user === "object" && Object.keys(user).length === 0)) {
       return res.status(404).send("No User Found!"); // Send 404 if user not found
     }
@@ -119,7 +142,7 @@ userRouter.delete("/:id", async (req, res) => {
   try {
     const id = req.params.id; // Get the user ID from the request parameters
     console.log(id); // Log the ID (for debugging purposes)
-    const userObj = await deleteUser(id); // Delete the user
+    const userObj = await softDeleteUser(id); // Delete the user
     if (
       !userObj ||
       (typeof userObj === "object" && Object.keys(userObj).length === 0)

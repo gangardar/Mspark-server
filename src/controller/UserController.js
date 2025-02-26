@@ -38,6 +38,40 @@ export const getUserWithPagination = async(page, limit) => {
     }
 }
 
+export const getNotDeletedUserWithPagination = async(page, limit) => {
+    try{
+        const skip = (page - 1) * limit
+        const users = await User.find({ isDeleted: false }).sort('name').skip(skip).limit(limit)
+        const total = await User.countDocuments({ isDeleted: false }); //Get total count of users
+        return {
+            users,
+            total,
+            totalPages: Math.ceil(total/limit),
+            currentPage: page 
+        }
+    }catch(err){
+        return new Error(err.message)
+    }
+}
+
+export const getNotDeletedUserWithPaginationWithRole = async(page, limit,role) => {
+    try{
+        const skip = (page - 1) * limit
+        const users = await User.find({ isDeleted: false, role }).sort('name').skip(skip).limit(limit);
+        const total = await User.countDocuments({ isDeleted: false, role });
+        console.log(users)
+        
+        return {
+            users,
+            total,
+            totalPages: Math.ceil(total/limit),
+            currentPage: page 
+        }
+    }catch(err){
+        return new Error(err.message)
+    }
+}
+
 export const getUserById = async(id) => {
     try{
         return await User.find({_id : id})
@@ -77,3 +111,14 @@ export const deleteUser = async(id) => {
         return new Error(e.message)
     }
 }
+
+//softdelete a gem
+  export const softDeleteUser = async (id) => {
+    try {
+      const gem = await User.findByIdAndUpdate(req.params.id, { isDeleted: true }, { new: true });
+      if (!gem) return res.status(404).json({ success: false, message: "User not found" });
+      res.status(200).json({ success: true, message: "User soft deleted", data: gem });
+    } catch (error) {
+      res.status(500).json({ success: false, message: error.message });
+    }
+  };
