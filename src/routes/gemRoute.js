@@ -7,7 +7,7 @@ import multer from 'multer';
 const parseBody = multer();
 const gemRoute = express.Router();
 
-gemRoute.post("/",upload.array('images',10) ,validateGem, createGem);
+gemRoute.post("/",upload.array("images",10) ,validateGem, createGem);
 gemRoute.get("/", getNotDeletedGems); // Get only non-deleted gems
 gemRoute.get("/deleted", getDeletedGems); // Get only deleted gems
 gemRoute.get("/:id", getGemById);

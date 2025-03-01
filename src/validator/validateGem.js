@@ -29,6 +29,7 @@ const gemSchema = Joi.object({
 export const validateGem = (req, res, next) => {
   const { error } = gemSchema.validate(req.body, { abortEarly: false });
   if (error) {
+    console.error(error);
     if(req.files){
       req.files.map((file) => {
         if (fs.existsSync(file.path)) {

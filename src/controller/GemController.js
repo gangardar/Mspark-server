@@ -7,7 +7,8 @@ export const createGem = async (req, res) => {
       return res.status(400).json({status: false, message :'No files uploaded.'});
     }
     const urls = req.files.map((file) => file.path)
-    const gem = new Gem({ ...req.body, merchantId: req.user._id, images : `/${urls}` });
+    console.log(urls)
+    const gem = new Gem({ ...req.body, merchantId: req.user._id, images : urls });
     await gem.save();
     res.status(201).json({ status: true, message: "Gem Added Successfully", data: gem });
   } catch (error) {
