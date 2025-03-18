@@ -2,15 +2,11 @@ import Joi from "joi";
 import express from "express";
 import bcrypt from "bcrypt";
 import {
-  authUser,
   createUser,
-  deleteUser,
   getMe,
   getNotDeletedUserWithPagination,
   getNotDeletedUserWithPaginationWithRole,
-  getUser,
   getUserById,
-  getUserWithPagination,
   softDeleteUser,
   updateUser,
 } from "../controller/userController.js";

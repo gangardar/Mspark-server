@@ -1,7 +1,8 @@
 import Joi from "joi";
 import express from "express";
 import bcrypt from "bcrypt";
-import { authUser, createUser } from "../controller/userController.js";
+import { authUser, createUser, getMe } from "../controller/userController.js";
+import authMiddleware from "../middleware/auth.js";
 
 const authRouter = express.Router(); // Initialize the Express router
 
@@ -62,6 +63,23 @@ authRouter.post("/login", async (req, res) => {
       .json({ message: "Login Successfully!" }); // Send the user object with the token in the header
   } catch (e) {
     return res.status(400).json({message : e.message}); // Send error message if something goes wrong
+  }
+});
+
+// Get the authenticated user's profile
+authRouter.get("/me", authMiddleware, async (req, res) => {
+  try {
+    const id = req.user._id; // Get the authenticated user's ID from the middleware
+    const userObj = await getMe(id); // Fetch the user's profile
+    if (
+      !userObj ||
+      (typeof userObj === "object" && Object.keys(userObj).length === 0)
+    ) {
+      return res.status(404).send("Not Found"); // Send 404 if user not found
+    }
+    return res.send(userObj); // Send the user's profile data as a response
+  } catch (e) {
+    return res.status(400).send(e.message); // Send error message if something goes wrong
   }
 });
 

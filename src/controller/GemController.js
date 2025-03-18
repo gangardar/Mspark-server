@@ -77,6 +77,18 @@ export const getGemById = async (req, res) => {
   }
 };
 
+// Get a single gem by ID
+export const getGemByMerchnatId = async (req, res) => {
+  try {
+    const gem = await Gem.find({merchantId : req.params.id, isDeleted : 'false'});
+    if (!gem)
+      return res.status(404).json({ status: false, message: "Gem not found" });
+    res.status(200).json({ status: true, message: "Retrived Successfully!", data: gem });
+  } catch (error) {
+    res.status(500).json({ status: false, message: error.message });
+  }
+};
+
 // Update a gem
 export const updateGem = async (req, res) => {
   try {
