@@ -3,10 +3,11 @@ import { validateGem } from '../validator/validateGem.js';
 import { assignToMe, createGem, deleteGem, deleteGemImage, getAllGems, getDeletedGems, getGemById, getGemByMerchnatId, getGemByVerifierId, getNotDeletedGems, restoreGem, softDeleteGem, updateGem, verifyGem } from '../controller/GemController.js';
 import { upload } from '../middleware/uploadImages.js';
 import multer from 'multer';
+import authMiddleware from '../middleware/auth.js';
 
 const parseBody = multer();
 const gemRoute = express.Router();
-
+gemRoute.use(authMiddleware)
 gemRoute.post("/",upload.array("images",10) ,validateGem, createGem);
 gemRoute.get("/", getNotDeletedGems); // Get only non-deleted gems
 gemRoute.get("/deleted", getDeletedGems); // Get only deleted gems

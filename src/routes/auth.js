@@ -26,16 +26,22 @@ authRouter.post("/register", async (req, res) => {
   try {
     const { error } = registerSchema.validate(req.body); // Validate the request body
     if (error) {
-      return res.status(400).json({ message: error.details[0].message }); // Send validation error
+      return res
+        .status(400)
+        .json({ success: false, message: error.details[0].message }); // Send validation error
     }
     const userObj = await createUser(req.body); // Create a new user
     const token = userObj.generateAuthToken(); // Generate authentication token
     res.header("Access-Control-Expose-Headers", "x-auth-token");
     return res
       .header("x-auth-token", token)
-      .json({ message: "Registerated Successfullly", data: userObj }); // Send the user object with the token in the header
+      .json({
+        success: true,
+        message: "Registerated Successfullly",
+        data: userObj,
+      }); // Send the user object with the token in the header
   } catch (e) {
-    return res.status(400).json({ message: e.message }); // Send error message if something goes wrong
+    return res.status(400).json({ success: false, message: e.message }); // Send error message if something goes wrong
   }
 });
 
@@ -43,26 +49,32 @@ authRouter.post("/login", async (req, res) => {
   try {
     const { error } = loginSchema.validate(req.body); // Validate the request body
     if (error) {
-      return res.status(400).json({ message: error.details[0].message }); // Send validation error
+      return res
+        .status(400)
+        .json({ success: false, message: error.details[0].message }); // Send validation error
     }
     const userObj = await authUser(req.body.email);
     if (
       !userObj ||
       (typeof userObj === "object" && Object.keys(userObj).length === 0)
     ) {
-      return res.status(404).json({ message: "User Not Found!" }); // Send 404 if user not found
+      return res
+        .status(404)
+        .json({ success: false, message: "User Not Found!" }); // Send 404 if user not found
     }
     const isMatch = await bcrypt.compare(req.body.password, userObj.password); // Create a new user
     if (!isMatch) {
-      return res.status(401).json({ message: "Invalid Credentail!" });
+      return res
+        .status(401)
+        .json({ success: false, message: "Invalid Credentail!" });
     }
     const token = userObj.generateAuthToken(); // Generate authentication token
     res.header("Access-Control-Expose-Headers", "x-auth-token");
     return res
       .header("x-auth-token", token)
-      .json({ message: "Login Successfully!" }); // Send the user object with the token in the header
+      .json({ success: true, message: "Login Successfully!" }); // Send the user object with the token in the header
   } catch (e) {
-    return res.status(400).json({message : e.message}); // Send error message if something goes wrong
+    return res.status(400).json({ success: false, message: e.message }); // Send error message if something goes wrong
   }
 });
 
@@ -75,11 +87,15 @@ authRouter.get("/me", authMiddleware, async (req, res) => {
       !userObj ||
       (typeof userObj === "object" && Object.keys(userObj).length === 0)
     ) {
-      return res.status(404).send("Not Found"); // Send 404 if user not found
+      return res.status(404).json({ success: false, message: "Not Found" }); // Send 404 if user not found
     }
-    return res.send(userObj); // Send the user's profile data as a response
+    return res.json({
+      success: true,
+      message: "User retrived Successfully",
+      data: userObj,
+    }); // Send the user's profile data as a response
   } catch (e) {
-    return res.status(400).send(e.message); // Send error message if something goes wrong
+    return res.status(400).json({ success: false, message: e.message }); // Send error message if something goes wrong
   }
 });
 

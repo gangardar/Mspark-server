@@ -8,7 +8,7 @@ export const createGem = async (req, res) => {
     if (!req.files || req.files.length === 0) {
       return res
         .status(400)
-        .json({ status: false, message: "No files uploaded." });
+        .json({ success: false, message: "No files uploaded." });
     }
     const urls = req.files.map((file) => file.path);
     console.log(urls);
@@ -20,9 +20,9 @@ export const createGem = async (req, res) => {
     await gem.save();
     res
       .status(201)
-      .json({ status: true, message: "Gem Added Successfully", data: gem });
+      .json({ success: true, message: "Gem Added Successfully", data: gem });
   } catch (error) {
-    res.status(400).json({ status: false, message: error.message });
+    res.status(400).json({ success: false, message: error.message });
   }
 };
 
@@ -39,13 +39,13 @@ export const getAllGems = async (req, res) => {
     if (!gems || (typeof gems === "object" && Object.keys(gems).length === 0)) {
       return res
         .status(404)
-        .send({ status: false, message: "Empty. Not Found!", data: gems }); // Send 404 if gem not found
+        .send({ success: false, message: "Empty. Not Found!", data: gems }); // Send 404 if gem not found
     }
     res
       .status(200)
-      .json({ status: true, message: "Retrived Successfully!", data: gems });
+      .json({ success: true, message: "Retrived Successfully!", data: gems });
   } catch (error) {
-    res.status(500).json({ status: false, message: error.message });
+    res.status(500).json({ success: false, message: error.message });
   }
 };
 
@@ -62,11 +62,11 @@ export const getNotDeletedGems = async (req, res) => {
     if (!gems || (typeof gems === "object" && Object.keys(gems).length === 0)) {
       return res
         .status(404)
-        .json({ status: false, message: "Empty. Not Found!", data: gems }); // Send 404 if gem not found
+        .json({ success: false, message: "Empty. Not Found!", data: gems }); // Send 404 if gem not found
     }
-    res.status(200).json({ status: true, message: "statusful", data: gems });
+    res.status(200).json({ success: true, message: "statusful", data: gems });
   } catch (error) {
-    res.status(500).json({ status: false, message: error.message });
+    res.status(500).json({ success: false, message: error.message });
   }
 };
 
@@ -77,9 +77,9 @@ export const getDeletedGems = async (req, res) => {
     const gems = await Gem.find({ isDeleted: true });
     res
       .status(200)
-      .json({ status: true, message: "Retrived Successfully!", data: gems });
+      .json({ success: true, message: "Retrived Successfully!", data: gems });
   } catch (error) {
-    res.status(500).json({ status: false, message: error.message });
+    res.status(500).json({ success: false, message: error.message });
   }
 };
 
@@ -88,12 +88,12 @@ export const getGemById = async (req, res) => {
   try {
     const gem = await Gem.findById(req.params.id).populate("merchantId");
     if (!gem)
-      return res.status(404).json({ status: false, message: "Gem not found" });
+      return res.status(404).json({ success: false, message: "Gem not found" });
     res
       .status(200)
-      .json({ status: true, message: "Retrived Successfully!", data: gem });
+      .json({ success: true, message: "Retrived Successfully!", data: gem });
   } catch (error) {
-    res.status(500).json({ status: false, message: error.message });
+    res.status(500).json({ success: false, message: error.message });
   }
 };
 
@@ -105,12 +105,12 @@ export const getGemByMerchnatId = async (req, res) => {
       isDeleted: "false",
     });
     if (!gem)
-      return res.status(404).json({ status: false, message: "Gem not found" });
+      return res.status(404).json({ success: false, message: "Gem not found" });
     res
       .status(200)
-      .json({ status: true, message: "Retrived Successfully!", data: gem });
+      .json({ success: true, message: "Retrived Successfully!", data: gem });
   } catch (error) {
-    res.status(500).json({ status: false, message: error.message });
+    res.status(500).json({ success: false, message: error.message });
   }
 };
 
@@ -122,12 +122,12 @@ export const getGemByVerifierId = async (req, res) => {
       isDeleted: "false",
     }).populate("verifierId merchantId");
     if (!gem)
-      return res.status(404).json({ status: false, message: "Gem not found" });
+      return res.status(404).json({ success: false, message: "Gem not found" });
     res
       .status(200)
-      .json({ status: true, message: "Retrived Successfully!", data: gem });
+      .json({ success: true, message: "Retrived Successfully!", data: gem });
   } catch (error) {
-    res.status(500).json({ status: false, message: error.message });
+    res.status(500).json({ success: false, message: error.message });
   }
 };
 
@@ -139,7 +139,7 @@ export const updateGem = async (req, res) => {
     // Fetch the existing gem from the database
     const existingGem = await Gem.findById(id);
     if (!existingGem) {
-      return res.status(404).json({ status: false, message: "Gem not found" });
+      return res.status(404).json({ success: false, message: "Gem not found" });
     }
 
     // Get the existing images from the database
@@ -162,12 +162,12 @@ export const updateGem = async (req, res) => {
       runValidators: true, // Run Mongoose validators
     });
     if (!gem)
-      return res.status(404).json({ status: false, message: "Gem not found" });
+      return res.status(404).json({ success: false, message: "Gem not found" });
     res
       .status(200)
-      .json({ status: true, message: "Updated Successfully!", data: gem });
+      .json({ success: true, message: "Updated Successfully!", data: gem });
   } catch (error) {
-    res.status(400).json({ status: false, message: error.message });
+    res.status(400).json({ success: false, message: error.message });
   }
 };
 
@@ -175,32 +175,32 @@ export const updateGem = async (req, res) => {
 export const verifyGem = async (req, res) => {
   try {
     const { id } = req.params;
-    const {_id} = req.user
+    const { _id } = req.user;
 
     // Fetch the existing gem from the database
     const existingGem = await Gem.findById(id);
     if (!existingGem) {
-      return res.status(404).json({ status: false, message: "Gem not found" });
+      return res.status(404).json({ success: false, message: "Gem not found" });
     }
 
     // Update the status of the gem to "Verified"
     const updatedGem = await Gem.findByIdAndUpdate(
       id,
-      { status: "Verified", verifierId : _id },
+      { status: "Verified", verifierId: _id },
       { new: true } // Return the updated document
     );
 
     if (!updatedGem) {
-      return res.status(404).json({ status: false, message: "Gem not found" });
+      return res.status(404).json({ success: false, message: "Gem not found" });
     }
 
     res.status(200).json({
-      status: true,
+      success: true,
       message: "Updated Successfully!",
       data: updatedGem,
     });
   } catch (error) {
-    res.status(400).json({ status: false, message: error.message });
+    res.status(400).json({ success: false, message: error.message });
   }
 };
 
@@ -213,14 +213,14 @@ export const assignToMe = async (req, res) => {
       runValidators: true,
     });
     if (!gem)
-      return res.status(404).json({ status: false, message: "Gem not found" });
+      return res.status(404).json({ success: false, message: "Gem not found" });
     res.status(200).json({
-      status: true,
+      success: true,
       message: `Assigned to ${req.user.username} Successfully!`,
       data: gem,
     });
   } catch (error) {
-    res.status(400).json({ status: false, message: error.message });
+    res.status(400).json({ success: false, message: error.message });
   }
 };
 
@@ -229,12 +229,12 @@ export const deleteGem = async (req, res) => {
   try {
     const gem = await Gem.findByIdAndDelete(req.params.id);
     if (!gem)
-      return res.status(404).json({ status: false, message: "Gem not found" });
+      return res.status(404).json({ success: false, message: "Gem not found" });
     res
       .status(200)
-      .json({ status: true, message: "Gem deleted statusfully", data: gem });
+      .json({ success: true, message: "Gem deleted statusfully", data: gem });
   } catch (error) {
-    res.status(500).json({ status: false, message: error.message });
+    res.status(500).json({ success: false, message: error.message });
   }
 };
 //softdelete a gem
@@ -246,12 +246,12 @@ export const softDeleteGem = async (req, res) => {
       { new: true }
     );
     if (!gem)
-      return res.status(404).json({ status: false, message: "Gem not found" });
+      return res.status(404).json({ success: false, message: "Gem not found" });
     res
       .status(200)
-      .json({ status: true, message: "Gem soft deleted", data: gem });
+      .json({ success: true, message: "Gem soft deleted", data: gem });
   } catch (error) {
-    res.status(500).json({ status: false, message: error.message });
+    res.status(500).json({ success: false, message: error.message });
   }
 };
 
@@ -263,7 +263,7 @@ export const deleteGemImage = async (req, res) => {
     // Find the gem by ID
     const gem = await Gem.findById(id);
     if (!gem) {
-      return res.status(404).json({ status: false, message: "Gem not found" });
+      return res.status(404).json({ success: false, message: "Gem not found" });
     }
     const filename = path.basename(url);
 
@@ -275,7 +275,7 @@ export const deleteGemImage = async (req, res) => {
     if (!gem.images.includes(filePath)) {
       return res
         .status(404)
-        .json({ status: false, message: "Image not found" });
+        .json({ success: false, message: "Image not found" });
     }
 
     // Extract the filename from the URL
@@ -287,7 +287,7 @@ export const deleteGemImage = async (req, res) => {
     } else {
       return res
         .status(404)
-        .json({ status: false, message: "File not found on server" });
+        .json({ success: false, message: "File not found on server" });
     }
 
     // Filter out the image with the specified URL
@@ -300,13 +300,13 @@ export const deleteGemImage = async (req, res) => {
 
     // Respond with success message and updated gem
     res.status(200).json({
-      status: true,
+      success: true,
       message: "Image removed successfully",
       data: gem,
     });
   } catch (error) {
     // Handle errors
-    res.status(500).json({ status: false, message: error.message });
+    res.status(500).json({ success: false, message: error.message });
   }
 };
 
@@ -319,10 +319,10 @@ export const restoreGem = async (req, res) => {
       { new: true }
     );
     if (!gem) {
-      return res.status(404).json({ status: false, message: "Gem not found" });
+      return res.status(404).json({ success: false, message: "Gem not found" });
     }
-    res.status(200).json({ status: true, message: "Gem restored", data: gem });
+    res.status(200).json({ success: true, message: "Gem restored", data: gem });
   } catch (error) {
-    res.status(500).json({ status: false, message: error.message });
+    res.status(500).json({ success: false, message: error.message });
   }
 };

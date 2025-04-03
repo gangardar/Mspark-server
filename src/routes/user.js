@@ -13,10 +13,10 @@ import {
 import authMiddleware from "../middleware/auth.js";
 import { registerSchema } from "./auth.js";
 
-const userRouter = express.Router(); // Initialize the Express router
+const userRouter = express.Router();
 
-// Define the Joi schema for user validation
-const userScheme = Joi.object({
+// Joi schemas
+const userSchema = Joi.object({
   fullName: Joi.string().required().min(3).max(255),
   username: Joi.string().required().min(3).max(255),
   role: Joi.string().required().valid("admin", "merchant", "bidder"),
@@ -26,129 +26,249 @@ const userScheme = Joi.object({
   idProof: Joi.array(),
 });
 
-const loginSchema = Joi.object({
-  email: Joi.string().email().trim().lowercase().required(),
-  password: Joi.string().required().min(3).max(255),
-});
-
 // GET users with pagination
 userRouter.get("/", async (req, res) => {
   try {
     const page = parseInt(req.query.page) || 1;
     const limit = parseInt(req.query.limit) || 10;
-    const user = await getNotDeletedUserWithPagination(page, limit); // Fetch the user by ID
-    if (!user || (typeof user === "object" && Object.keys(user).length === 0)) {
-      return res.status(404).send("No User Found!"); // Send 404 if user not found
+
+    const { users, total } = await getNotDeletedUserWithPagination(page, limit);
+
+    if (!users || users.length === 0) {
+      return res.status(200).json({
+        success: true,
+        message: "No users found",
+        data: [],
+        meta: { pagination: { total: 0, page, limit } },
+      });
     }
-    res.send(user); // Send the user data as a response
+
+    res.status(200).json({
+      success: true,
+      message: "Users retrieved successfully",
+      data: users,
+      meta: {
+        pagination: {
+          total,
+          page,
+          limit,
+          totalPages: Math.ceil(total / limit),
+          hasNextPage: page < Math.ceil(total / limit),
+          hasPrevPage: page > 1,
+        },
+      },
+    });
   } catch (err) {
-    console.error(err); // Log the error properly
-    res.status(500).send(err.message); // Send a 500 status with the error message
+    console.error(err);
+    res.status(500).json({
+      success: false,
+      message: "Server error while fetching users",
+      error: err.message,
+    });
   }
 });
 
 // GET a user by ID
 userRouter.get("/:id", async (req, res) => {
   try {
-    const user = await getUserById(req.params.id); // Fetch the user by ID
-    if (!user || (typeof user === "object" && Object.keys(user).length === 0)) {
-      return res.status(404).send("No User Found!"); // Send 404 if user not found
+    const user = await getUserById(req.params.id);
+
+    if (!user) {
+      return res.status(404).json({
+        success: false,
+        message: "User not found",
+        data: null,
+      });
     }
-    res.send(user); // Send the user data as a response
+
+    res.status(200).json({
+      success: true,
+      message: "User retrieved successfully",
+      data: user,
+    });
   } catch (err) {
-    console.error(err); // Log the error properly
-    res.status(500).send(err.message); // Send a 500 status with the error message
+    console.error(err);
+    res.status(500).json({
+      success: false,
+      message: "Server error while fetching user",
+      error: err.message,
+    });
   }
 });
 
-// GET users with pagination
+// GET users by role with pagination
 userRouter.get("/role/:role", async (req, res) => {
   try {
     const page = parseInt(req.query.page) || 1;
     const limit = parseInt(req.query.limit) || 10;
-    const role = req.params.role
-    if (role !== "admin" && role !== "merchant" && role !== "bidder") {
-      return res.status(404).send("User with that role doesn't exist.");
+    const { role } = req.params;
+
+    if (!["admin", "merchant", "bidder"].includes(role)) {
+      return res.status(400).json({
+        success: false,
+        message: "Invalid role specified",
+        data: null,
+      });
     }
-    const user = await getNotDeletedUserWithPaginationWithRole(page, limit,role); // Fetch the user by ID
-    if (!user || (typeof user === "object" && Object.keys(user).length === 0)) {
-      return res.status(404).send("No User Found!"); // Send 404 if user not found
+
+    const { users, total } = await getNotDeletedUserWithPaginationWithRole(
+      page,
+      limit,
+      role
+    );
+
+    if (!users || users.length === 0) {
+      return res.status(200).json({
+        success: true,
+        message: `No ${role}s found`,
+        data: [],
+        meta: { pagination: { total: 0, page, limit } },
+      });
     }
-    res.send(user); // Send the user data as a response
+
+    res.status(200).json({
+      success: true,
+      message: `${role}s retrieved successfully`,
+      data: users,
+      meta: {
+        pagination: {
+          total,
+          page,
+          limit,
+          totalPages: Math.ceil(total / limit),
+          hasNextPage: page < Math.ceil(total / limit),
+          hasPrevPage: page > 1,
+        },
+      },
+    });
   } catch (err) {
-    console.error(err); // Log the error properly
-    res.status(500).send(err.message); // Send a 500 status with the error message
+    console.error(err);
+    res.status(500).json({
+      success: false,
+      message: "Server error while fetching users by role",
+      error: err.message,
+    });
   }
 });
 
 // Register a new user
 userRouter.post("/register", async (req, res) => {
   try {
-    const { error } = registerSchema.validate(req.body); // Validate the request body
+    const { error } = registerSchema.validate(req.body);
     if (error) {
-      return res.status(400).send(error.details[0].message); // Send validation error
+      return res.status(400).json({
+        success: false,
+        message: "Validation error",
+        error: error.details[0].message,
+      });
     }
-    const userObj = await createUser(req.body); // Create a new user
-    const token = userObj.generateAuthToken(); // Generate authentication token
-    return res.header("x-auth-token", token).send(userObj); // Send the user object with the token in the header
+
+    const userObj = await createUser(req.body);
+    const token = userObj.generateAuthToken();
+
+    res.status(201).header("x-auth-token", token).json({
+      success: true,
+      message: "User registered successfully",
+      data: userObj,
+      token,
+    });
   } catch (e) {
-    return res.status(400).send(e.message); // Send error message if something goes wrong
+    res.status(400).json({
+      success: false,
+      message: "Registration failed",
+      error: e.message,
+    });
   }
 });
 
 // Update a user by ID
 userRouter.put("/:id", async (req, res) => {
   try {
-    const { error } = userScheme.validate(req.body); // Validate the request body
+    const { error } = userSchema.validate(req.body);
     if (error) {
-      return res.status(400).send(error.details[0].message); // Send validation error
+      return res.status(400).json({
+        success: false,
+        message: "Validation error",
+        error: error.details[0].message,
+      });
     }
-    const userObj = await updateUser(req.params.id, req.body); // Update the user
-    if (
-      !userObj ||
-      (typeof userObj === "object" && Object.keys(userObj).length === 0)
-    ) {
-      return res.status(404).send("Not Found!"); // Send 404 if user not found
+
+    const userObj = await updateUser(req.params.id, req.body);
+
+    if (!userObj) {
+      return res.status(404).json({
+        success: false,
+        message: "User not found",
+        data: null,
+      });
     }
-    return res.send(userObj); // Send the updated user data as a response
+
+    res.status(200).json({
+      success: true,
+      message: "User updated successfully",
+      data: userObj,
+    });
   } catch (err) {
-    return res.status(400).send(err.message); // Send error message if something goes wrong
+    res.status(400).json({
+      success: false,
+      message: "Update failed",
+      error: err.message,
+    });
   }
 });
 
-// Get the authenticated user's profile
+// Get authenticated user's profile
 userRouter.get("/me", authMiddleware, async (req, res) => {
   try {
-    const id = req.user._id; // Get the authenticated user's ID from the middleware
-    const userObj = await getMe(id); // Fetch the user's profile
-    if (
-      !userObj ||
-      (typeof userObj === "object" && Object.keys(userObj).length === 0)
-    ) {
-      return res.status(404).send("Not Found"); // Send 404 if user not found
+    const userObj = await getMe(req.user._id);
+
+    if (!userObj) {
+      return res.status(404).json({
+        success: false,
+        message: "User not found",
+        data: null,
+      });
     }
-    return res.send(userObj); // Send the user's profile data as a response
+
+    res.status(200).json({
+      success: true,
+      message: "Profile retrieved successfully",
+      data: userObj,
+    });
   } catch (e) {
-    return res.status(400).send(e.message); // Send error message if something goes wrong
+    res.status(400).json({
+      success: false,
+      message: "Failed to fetch profile",
+      error: e.message,
+    });
   }
 });
 
-// DELETE a user by ID
+// Soft delete a user
 userRouter.delete("/:id", async (req, res) => {
   try {
-    const id = req.params.id; // Get the user ID from the request parameters
-    console.log(id); // Log the ID (for debugging purposes)
-    const userObj = await softDeleteUser(id); // Delete the user
-    if (
-      !userObj ||
-      (typeof userObj === "object" && Object.keys(userObj).length === 0)
-    ) {
-      return res.status(404).send("Not Found!"); // Send 404 if user not found
+    const userObj = await softDeleteUser(req.params.id);
+
+    if (!userObj) {
+      return res.status(404).json({
+        success: false,
+        message: "User not found",
+        data: null,
+      });
     }
-    return res.send(userObj); // Send the deleted user data as a response
+
+    res.status(200).json({
+      success: true,
+      message: "User deleted successfully",
+      data: userObj,
+    });
   } catch (err) {
-    return res.status(400).send(err.message); // Send error message if something goes wrong
+    res.status(400).json({
+      success: false,
+      message: "Deletion failed",
+      error: err.message,
+    });
   }
 });
 
-export default userRouter; // Export the router
+export default userRouter;
