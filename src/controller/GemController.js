@@ -97,18 +97,53 @@ export const getGemById = async (req, res) => {
   }
 };
 
-// Get a single gems by Merchant ID
+// Get gems by Merchant ID
 export const getGemByMerchnatId = async (req, res) => {
+  try {
+    const filter = {
+      merchantId: req.params.id,
+      isDeleted: false,
+    };
+    if (req.query.status) {
+      filter.status = req.query.status;
+    }
+    const gems = await Gem.find(filter)
+      .sort({ createdAt: -1 })
+      .populate("merchantId", "username email");
+      
+    if (!gems.length) { 
+        return res.status(200).json({ 
+          success: true, 
+          message: "No gems found",
+          data: [] 
+        });
+      }
+  
+    res
+      .status(200)
+      .json({ success: true, message: "Retrived Successfully!", data: gems });
+  } catch (error) {
+    res.status(500).json({ success: false, message: error.message });
+  }
+};
+
+// Get sold gems by Merchant ID
+export const getSoldGemByMerchnatId = async (req, res) => {
   try {
     const gem = await Gem.find({
       merchantId: req.params.id,
+      status: "sold",
       isDeleted: "false",
     });
     if (!gem)
       return res.status(404).json({ success: false, message: "Gem not found" });
     res
       .status(200)
-      .json({ success: true, message: "Retrived Successfully!", data: gem });
+      .json({
+        success: true,
+        message: "Sold Gem Retrived Successfully!",
+        data: gem,
+      });
   } catch (error) {
     res.status(500).json({ success: false, message: error.message });
   }
@@ -186,7 +221,7 @@ export const verifyGem = async (req, res) => {
     // Update the status of the gem to "Verified"
     const updatedGem = await Gem.findByIdAndUpdate(
       id,
-      { status: "Verified", verifierId: _id },
+      { status: "verified", verifierId: _id },
       { new: true } // Return the updated document
     );
 

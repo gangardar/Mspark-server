@@ -10,14 +10,20 @@ import {
   getActiveAuctions,
   getAuctionByFilters,
   getAuctionDetails,
-  getMerchantAuctions
+  getMerchantAuctions,
 } from "../controller/AuctionController.js";
-import { placeBid } from "../controller/BidController.js";
+import { getAuctionsByBidder, placeBid } from "../controller/BidController.js";
 const auctionRoute = express.Router();
 
 // Public routes
 auctionRoute.get("/", getAuctionByFilters);
 auctionRoute.get("/:id", getAuctionDetails);
+auctionRoute.get(
+  "/bidder/:bidderId",
+  authMiddleware,
+  authorizeRoles("bidder", "admin"),
+  getAuctionsByBidder
+);
 
 // Protected routes
 auctionRoute.use(authMiddleware);

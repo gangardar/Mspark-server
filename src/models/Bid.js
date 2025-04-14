@@ -50,7 +50,7 @@ bidSchema.pre('save', async function(next) {
   
   // Update auction's current price
   auction.currentPrice = this.bidAmount;
-  auction.highestBidderId = this.userId;
+  auction.highestBidderId = this.user;
   
   // Add bid reference to auction
   if (!auction.bids.includes(this._id)) {

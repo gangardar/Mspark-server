@@ -12,7 +12,7 @@ services:
     build:
       context: .
     environment:
-      NODE_ENV: production
+      NODE_ENV: development
     ports:
       - 3000:3000
     volumes:
@@ -24,7 +24,26 @@ services:
       - 27000:27017
     volumes:
       - mongo-data:/data/db
+    command: mongod --replSet rs0 --bind_ip_all
     restart: always
+    healthcheck:
+      test: echo 'try { rs.status().ok } catch(e) { 0 }' | mongosh --quiet
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  mongo-init:
+    image: mongo:latest
+    depends_on:
+      db:
+        condition: service_healthy
+    command: >
+      mongosh --host db --eval "
+        rs.initiate({
+          _id: 'rs0',
+          members: [{ _id: 0, host: 'db:27017' }]
+        })
+      "
 
 volumes:
   mongo-data:

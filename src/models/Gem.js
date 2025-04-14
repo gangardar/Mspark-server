@@ -10,6 +10,10 @@ const gemSchema = new mongoose.Schema(
       max: 255,
       default: "unknown",
     },
+    deliveries: [{ 
+      type: mongoose.Schema.Types.ObjectId, 
+      ref: "Deliveries" 
+    }], 
     weight: { type: Number },
     shape: { type: String, enum: ["Round", "Oval", "Square", "Pear","Rough", "Other"] },
     rarity: { type: String, enum: ["Common", "Uncommon", "Rare", "Very Rare"] },
@@ -33,8 +37,8 @@ const gemSchema = new mongoose.Schema(
     evidentFeatures: { type: String },
     status: {
       type: String,
-      enum: ["Pending", "Verified", "Available", "Sold"],
-      default: "Pending",
+      enum: ["pending", "verified", "rejected", "sold"],
+      default: "pending",
     },
     price: { type: Number },
     merchantId: {
@@ -50,4 +54,7 @@ const gemSchema = new mongoose.Schema(
   },
   { timestamps: true }
 );
+
+gemSchema.index({ deliveries: 1 });
+
 export default mongoose.model('Gems',gemSchema);

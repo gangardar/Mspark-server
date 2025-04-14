@@ -10,7 +10,7 @@ class CustomError extends Error {
   // 400 Bad Request
   export class BadRequestError extends CustomError {
     constructor(message = 'Invalid request parameters') {
-      super(Object.values(message).join(', '), 400);
+      super(message, 400);
     }
   }
 

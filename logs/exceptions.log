@@ -1,0 +1,49 @@
+2025-04-10T15:49:04.411Z [ERROR]: uncaughtException: Attempted illegal state transition from [TRANSACTION_ABORTED] to [TRANSACTION_ABORTED]
+MongoRuntimeError: Attempted illegal state transition from [TRANSACTION_ABORTED] to [TRANSACTION_ABORTED]
+    at Transaction.transition (/usr/src/app/node_modules/mongodb/lib/transactions.js:121:15)
+    at ClientSession.abortTransaction (/usr/src/app/node_modules/mongodb/lib/sessions.js:442:30)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-04-10T16:10:08.570Z [ERROR]: uncaughtException: Server selection timed out after 30000 ms
+MongooseServerSelectionError: Server selection timed out after 30000 ms
+    at _handleConnectionErrors (/usr/src/app/node_modules/mongoose/lib/connection.js:1165:11)
+    at NativeConnection.openUri (/usr/src/app/node_modules/mongoose/lib/connection.js:1096:11)
+2025-04-10T17:41:40.252Z [ERROR]: uncaughtException: Attempted illegal state transition from [TRANSACTION_ABORTED] to [TRANSACTION_ABORTED]
+MongoRuntimeError: Attempted illegal state transition from [TRANSACTION_ABORTED] to [TRANSACTION_ABORTED]
+    at Transaction.transition (/usr/src/app/node_modules/mongodb/lib/transactions.js:121:15)
+    at ClientSession.abortTransaction (/usr/src/app/node_modules/mongodb/lib/sessions.js:442:30)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-04-10T17:50:21.704Z [ERROR]: uncaughtException: Attempted illegal state transition from [TRANSACTION_ABORTED] to [TRANSACTION_ABORTED]
+MongoRuntimeError: Attempted illegal state transition from [TRANSACTION_ABORTED] to [TRANSACTION_ABORTED]
+    at Transaction.transition (/usr/src/app/node_modules/mongodb/lib/transactions.js:121:15)
+    at ClientSession.abortTransaction (/usr/src/app/node_modules/mongodb/lib/sessions.js:442:30)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-04-10T17:54:21.695Z [ERROR]: uncaughtException: Attempted illegal state transition from [TRANSACTION_ABORTED] to [TRANSACTION_ABORTED]
+MongoRuntimeError: Attempted illegal state transition from [TRANSACTION_ABORTED] to [TRANSACTION_ABORTED]
+    at Transaction.transition (/usr/src/app/node_modules/mongodb/lib/transactions.js:121:15)
+    at ClientSession.abortTransaction (/usr/src/app/node_modules/mongodb/lib/sessions.js:442:30)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-04-10T18:34:08.709Z [ERROR]: uncaughtException: Attempted illegal state transition from [TRANSACTION_ABORTED] to [TRANSACTION_ABORTED]
+MongoRuntimeError: Attempted illegal state transition from [TRANSACTION_ABORTED] to [TRANSACTION_ABORTED]
+    at Transaction.transition (/usr/src/app/node_modules/mongodb/lib/transactions.js:121:15)
+    at ClientSession.abortTransaction (/usr/src/app/node_modules/mongodb/lib/sessions.js:442:30)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-04-10T18:45:43.924Z [ERROR]: uncaughtException: Attempted illegal state transition from [TRANSACTION_ABORTED] to [TRANSACTION_ABORTED]
+MongoRuntimeError: Attempted illegal state transition from [TRANSACTION_ABORTED] to [TRANSACTION_ABORTED]
+    at Transaction.transition (/usr/src/app/node_modules/mongodb/lib/transactions.js:121:15)
+    at ClientSession.abortTransaction (/usr/src/app/node_modules/mongodb/lib/sessions.js:442:30)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-04-11T04:14:08.143Z [ERROR]: uncaughtException: Attempted illegal state transition from [TRANSACTION_ABORTED] to [TRANSACTION_ABORTED]
+MongoRuntimeError: Attempted illegal state transition from [TRANSACTION_ABORTED] to [TRANSACTION_ABORTED]
+    at Transaction.transition (/usr/src/app/node_modules/mongodb/lib/transactions.js:121:15)
+    at ClientSession.abortTransaction (/usr/src/app/node_modules/mongodb/lib/sessions.js:442:30)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-04-11T04:18:32.321Z [ERROR]: uncaughtException: Attempted illegal state transition from [TRANSACTION_ABORTED] to [TRANSACTION_ABORTED]
+MongoRuntimeError: Attempted illegal state transition from [TRANSACTION_ABORTED] to [TRANSACTION_ABORTED]
+    at Transaction.transition (/usr/src/app/node_modules/mongodb/lib/transactions.js:121:15)
+    at ClientSession.abortTransaction (/usr/src/app/node_modules/mongodb/lib/sessions.js:442:30)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-04-11T04:22:33.535Z [ERROR]: uncaughtException: Attempted illegal state transition from [TRANSACTION_ABORTED] to [TRANSACTION_ABORTED]
+MongoRuntimeError: Attempted illegal state transition from [TRANSACTION_ABORTED] to [TRANSACTION_ABORTED]
+    at Transaction.transition (/usr/src/app/node_modules/mongodb/lib/transactions.js:121:15)
+    at ClientSession.abortTransaction (/usr/src/app/node_modules/mongodb/lib/sessions.js:442:30)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)

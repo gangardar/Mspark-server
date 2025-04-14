@@ -2,6 +2,7 @@ import Joi from "joi";
 import express from "express";
 import bcrypt from "bcrypt";
 import {
+  addAddress,
   createUser,
   getMe,
   getNotDeletedUserWithPagination,
@@ -12,6 +13,7 @@ import {
 } from "../controller/userController.js";
 import authMiddleware from "../middleware/auth.js";
 import { registerSchema } from "./auth.js";
+import authorizeRoles from "../middleware/authorize.js";
 
 const userRouter = express.Router();
 
@@ -180,6 +182,9 @@ userRouter.post("/register", async (req, res) => {
     });
   }
 });
+
+//Add User Address
+userRouter.post('/address',authMiddleware, authorizeRoles("merchant","bidder"), addAddress)
 
 // Update a user by ID
 userRouter.put("/:id", async (req, res) => {

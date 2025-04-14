@@ -1,3 +1,4 @@
+import mongoose from "mongoose";
 import Auction from "../models/Auction.js";
 import Bid from "../models/Bid.js";
 import { NotFoundError } from "../utils/errors.js";
@@ -72,38 +73,79 @@ export const placeBid = async (req, res, next) => {
 };
 
 export const getBidHistory = async (req, res, next) => {
-    try {
-        const userId = req.user._id;
-        
-        const bids = await Bid.find({ 
-            user: userId,
-            isDeleted: false 
-        })
-        .sort({ createdAt: -1 }) // Newest bids first
-        .populate({
-            path: 'auctionId',
-            select: 'title currentPrice endTime status gemId',
-            populate: {
-                path: 'gemId',
-                select: 'name images'
-            }
-        })
-        .populate('user', 'username'); // User details (redundant but ensures consistency)
+  try {
+      const userId = req.user._id;
+      // Changed from params to query for better RESTful practices
+      const { status, page = 1, limit = 10 } = req.query; 
 
-        if (!bids || bids.length === 0) {
-            throw new NotFoundError("No bids found for this user");
-        }
+      // Convert to numbers and validate
+      const pageNumber = Math.max(1, parseInt(page));
+      const limitNumber = Math.min(100, Math.max(1, parseInt(limit))); // Limit max to 100 per page
 
-        res.json({
-            success: true,
-            message: "Bids retived successfully",
-            count: bids.length,
-            data : bids
-        });
+      const filter = {
+          user: userId,  // Changed from userId to user to match your schema
+          isDeleted: false,
+      };
 
-    } catch (err) {
-        next(err);
-    }
+      // Optional status filter
+      if (status && ['active', 'completed', 'cancelled'].includes(status)) {
+          filter['auctionId.status'] = status;
+      }
+
+      // Get total count of matching documents
+      const totalBids = await Bid.countDocuments(filter);
+
+      // Calculate skip value
+      const skip = (pageNumber - 1) * limitNumber;
+
+      const bids = await Bid.find(filter)
+          .sort({ createdAt: -1 }) // Newest bids first
+          .skip(skip)
+          .limit(limitNumber)
+          .populate({
+              path: 'auctionId',
+              select: 'title currentPrice endTime status gemId merchantId priceStart startTime',
+              populate: [{
+                  path: 'gemId',
+                  select: 'name images'
+              }, {
+                  path: 'merchantId',
+                  select: 'username'
+              }]
+          })
+          .populate('user', 'username avatar'); // Include avatar for consistency
+
+      if (!bids || bids.length === 0) {
+          return res.status(200).json({
+              success: true,
+              message: "No bids found for this user",
+              count: 0,
+              data: [],
+              pagination: {
+                  total: 0,
+                  totalPages: 0,
+                  currentPage: pageNumber,
+                  limit: limitNumber
+              }
+          });
+      }
+
+      res.json({
+          success: true,
+          message: "Bids retrieved successfully",
+          count: bids.length,
+          data: bids,
+          pagination: {
+              total: totalBids,
+              totalPages: Math.ceil(totalBids / limitNumber),
+              currentPage: pageNumber,
+              limit: limitNumber
+          }
+      });
+
+  } catch (err) {
+      next(err);
+  }
 };
 
 export const getBids = async (req, res, next) => {
@@ -172,4 +214,81 @@ export const getBids = async (req, res, next) => {
         next(err);
     }
 };
+
+export async function getAuctionsByBidder(req, res) {
+  try {
+    const { bidderId } = req.params;
+    const { page = 1, limit = 10, status } = req.query;
+
+    // Validate bidderId
+    if (!mongoose.Types.ObjectId.isValid(bidderId)) {
+      return res.status(400).json({ message: 'Invalid bidder ID' });
+    }
+
+    // 1. Find all bids by this user
+    const userBids = await Bid.find({ 
+      user: bidderId,
+      isDeleted: false 
+    }).select('auctionId');
+
+    if (!userBids.length) {
+      return res.json({
+        success: true,
+        message: "No Auction Found for user.",
+        data: [],
+        pagination: {
+          total: 0,
+          totalPages: 0,
+          currentPage: parseInt(page),
+          limit: parseInt(limit)
+        }
+      });
+    }
+
+    // 2. Get unique auction IDs
+    const auctionIds = [...new Set(userBids.map(bid => bid.auctionId))];
+
+    // 3. Build the base query
+    const query = {
+      _id: { $in: auctionIds },
+      isDeleted: false
+    };
+
+    // Add status filter if provided
+    if (status && ['active', 'completed', 'cancelled'].includes(status)) {
+      query.status = status;
+    }
+
+    // Get total count for pagination
+    const total = await Auction.countDocuments(query);
+
+    // 4. Find paginated auctions where this user has bid
+    const auctions = await Auction.find(query)
+      .populate('gemId', 'name images')
+      .populate("merchantId", "username")
+      .populate('highestBidderId', 'username')
+      .sort({ endTime: -1 })
+      .skip((page - 1) * limit)
+      .limit(parseInt(limit));
+
+    res.json({
+      success: true,
+      data: auctions,
+      pagination: {
+        total,
+        totalPages: Math.ceil(total / limit),
+        currentPage: parseInt(page),
+        limit: parseInt(limit)
+      }
+    });
+
+  } catch (error) {
+    console.error('Error fetching auctions by bidder:', error);
+    res.status(500).json({ 
+      success: false,
+      message: 'Failed to fetch auctions',
+      error: error.message 
+    });
+  }
+}
 

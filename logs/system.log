@@ -1,0 +1,1241 @@
+2025-04-10T11:33:15.699Z [WARN]: Retrying auction 67eced27842ba1eb4560c1b1 (attempt 1)
+2025-04-10T11:33:15.708Z [WARN]: Retrying auction 67eced36842ba1eb4560c1b7 (attempt 1)
+2025-04-10T11:33:15.712Z [WARN]: Retrying auction 67eced84842ba1eb4560c1be (attempt 1)
+2025-04-10T11:33:15.722Z [WARN]: Retrying auction 67ece909842ba1eb4560c1a3 (attempt 1)
+2025-04-10T11:33:15.726Z [WARN]: Retrying auction 67ecedc2842ba1eb4560c1ca (attempt 1)
+2025-04-10T11:33:15.738Z [WARN]: Retrying auction 67ecec64842ba1eb4560c1ab (attempt 1)
+2025-04-10T11:33:15.748Z [WARN]: Retrying auction 67eced93842ba1eb4560c1c1 (attempt 1)
+2025-04-10T11:33:15.845Z [INFO]: Auction scheduler initialized
+2025-04-10T11:33:20.811Z [WARN]: Retrying auction 67eced27842ba1eb4560c1b1 (attempt 2)
+2025-04-10T11:33:20.815Z [WARN]: Retrying auction 67eced36842ba1eb4560c1b7 (attempt 2)
+2025-04-10T11:33:20.837Z [WARN]: Retrying auction 67eced84842ba1eb4560c1be (attempt 2)
+2025-04-10T11:33:20.841Z [WARN]: Retrying auction 67ece909842ba1eb4560c1a3 (attempt 2)
+2025-04-10T11:33:20.846Z [WARN]: Retrying auction 67ecedc2842ba1eb4560c1ca (attempt 2)
+2025-04-10T11:33:20.848Z [WARN]: Retrying auction 67ecec64842ba1eb4560c1ab (attempt 2)
+2025-04-10T11:33:20.863Z [WARN]: Retrying auction 67eced93842ba1eb4560c1c1 (attempt 2)
+2025-04-10T11:33:30.829Z [WARN]: Retrying auction 67eced27842ba1eb4560c1b1 (attempt 3)
+2025-04-10T11:33:30.838Z [WARN]: Retrying auction 67eced36842ba1eb4560c1b7 (attempt 3)
+2025-04-10T11:33:30.858Z [WARN]: Retrying auction 67eced84842ba1eb4560c1be (attempt 3)
+2025-04-10T11:33:30.862Z [WARN]: Retrying auction 67ece909842ba1eb4560c1a3 (attempt 3)
+2025-04-10T11:33:30.877Z [WARN]: Retrying auction 67ecedc2842ba1eb4560c1ca (attempt 3)
+2025-04-10T11:33:30.885Z [WARN]: Retrying auction 67ecec64842ba1eb4560c1ab (attempt 3)
+2025-04-10T11:33:30.895Z [WARN]: Retrying auction 67eced93842ba1eb4560c1c1 (attempt 3)
+2025-04-10T11:33:45.839Z [ERROR]: Failed to complete auction 67eced27842ba1eb4560c1b1: sendAuctionCompletionEmails is not defined
+2025-04-10T11:33:45.845Z [ERROR]: Failed to complete auction 67eced36842ba1eb4560c1b7: sendAuctionCompletionEmails is not defined
+2025-04-10T11:33:45.876Z [ERROR]: Failed to complete auction 67eced84842ba1eb4560c1be: sendAuctionCompletionEmails is not defined
+2025-04-10T11:33:45.881Z [ERROR]: Failed to complete auction 67ece909842ba1eb4560c1a3: sendAuctionCompletionEmails is not defined
+2025-04-10T11:33:45.894Z [ERROR]: Failed to complete auction 67ecedc2842ba1eb4560c1ca: sendAuctionCompletionEmails is not defined
+2025-04-10T11:33:45.911Z [ERROR]: Failed to complete auction 67eced93842ba1eb4560c1c1: sendAuctionCompletionEmails is not defined
+2025-04-10T11:33:45.914Z [ERROR]: Failed to complete auction 67ecec64842ba1eb4560c1ab: sendAuctionCompletionEmails is not defined
+2025-04-10T11:36:17.301Z [WARN]: Retrying auction 67ecec64842ba1eb4560c1ab (attempt 1)
+2025-04-10T11:36:17.323Z [WARN]: Retrying auction 67eced27842ba1eb4560c1b1 (attempt 1)
+2025-04-10T11:36:17.328Z [WARN]: Retrying auction 67eced36842ba1eb4560c1b7 (attempt 1)
+2025-04-10T11:36:17.344Z [WARN]: Retrying auction 67ecedc2842ba1eb4560c1ca (attempt 1)
+2025-04-10T11:36:17.362Z [WARN]: Retrying auction 67eced84842ba1eb4560c1be (attempt 1)
+2025-04-10T11:36:17.374Z [WARN]: Retrying auction 67eced93842ba1eb4560c1c1 (attempt 1)
+2025-04-10T11:36:17.380Z [WARN]: Retrying auction 67ece909842ba1eb4560c1a3 (attempt 1)
+2025-04-10T11:36:17.459Z [INFO]: Auction scheduler initialized
+2025-04-10T11:36:22.395Z [WARN]: Retrying auction 67ecec64842ba1eb4560c1ab (attempt 2)
+2025-04-10T11:36:22.409Z [WARN]: Retrying auction 67eced27842ba1eb4560c1b1 (attempt 2)
+2025-04-10T11:36:22.427Z [WARN]: Retrying auction 67eced36842ba1eb4560c1b7 (attempt 2)
+2025-04-10T11:36:22.434Z [WARN]: Retrying auction 67eced84842ba1eb4560c1be (attempt 2)
+2025-04-10T11:36:22.445Z [WARN]: Retrying auction 67ecedc2842ba1eb4560c1ca (attempt 2)
+2025-04-10T11:36:22.449Z [WARN]: Retrying auction 67ece909842ba1eb4560c1a3 (attempt 2)
+2025-04-10T11:36:22.457Z [WARN]: Retrying auction 67eced93842ba1eb4560c1c1 (attempt 2)
+2025-04-10T11:36:32.406Z [WARN]: Retrying auction 67ecec64842ba1eb4560c1ab (attempt 3)
+2025-04-10T11:36:32.411Z [WARN]: Retrying auction 67eced27842ba1eb4560c1b1 (attempt 3)
+2025-04-10T11:36:32.438Z [WARN]: Retrying auction 67eced36842ba1eb4560c1b7 (attempt 3)
+2025-04-10T11:36:32.444Z [WARN]: Retrying auction 67eced84842ba1eb4560c1be (attempt 3)
+2025-04-10T11:36:32.450Z [WARN]: Retrying auction 67ecedc2842ba1eb4560c1ca (attempt 3)
+2025-04-10T11:36:32.456Z [WARN]: Retrying auction 67ece909842ba1eb4560c1a3 (attempt 3)
+2025-04-10T11:36:32.464Z [WARN]: Retrying auction 67eced93842ba1eb4560c1c1 (attempt 3)
+2025-04-10T11:36:47.416Z [ERROR]: Failed to complete auction 67ecec64842ba1eb4560c1ab: sendAuctionCompletionEmails is not defined
+2025-04-10T11:36:47.421Z [ERROR]: Failed to complete auction 67eced27842ba1eb4560c1b1: sendAuctionCompletionEmails is not defined
+2025-04-10T11:36:47.447Z [ERROR]: Failed to complete auction 67eced36842ba1eb4560c1b7: sendAuctionCompletionEmails is not defined
+2025-04-10T11:36:47.454Z [ERROR]: Failed to complete auction 67eced84842ba1eb4560c1be: sendAuctionCompletionEmails is not defined
+2025-04-10T11:36:47.461Z [ERROR]: Failed to complete auction 67ecedc2842ba1eb4560c1ca: sendAuctionCompletionEmails is not defined
+2025-04-10T11:36:47.466Z [ERROR]: Failed to complete auction 67ece909842ba1eb4560c1a3: sendAuctionCompletionEmails is not defined
+2025-04-10T11:36:47.474Z [ERROR]: Failed to complete auction 67eced93842ba1eb4560c1c1: sendAuctionCompletionEmails is not defined
+2025-04-10T11:39:43.907Z [WARN]: Retrying auction 67ecec64842ba1eb4560c1ab (attempt 1)
+2025-04-10T11:39:43.916Z [WARN]: Retrying auction 67eced27842ba1eb4560c1b1 (attempt 1)
+2025-04-10T11:39:43.921Z [WARN]: Retrying auction 67eced36842ba1eb4560c1b7 (attempt 1)
+2025-04-10T11:39:43.944Z [WARN]: Retrying auction 67ecedc2842ba1eb4560c1ca (attempt 1)
+2025-04-10T11:39:43.959Z [WARN]: Retrying auction 67eced84842ba1eb4560c1be (attempt 1)
+2025-04-10T11:39:43.971Z [WARN]: Retrying auction 67eced93842ba1eb4560c1c1 (attempt 1)
+2025-04-10T11:39:43.974Z [WARN]: Retrying auction 67ece909842ba1eb4560c1a3 (attempt 1)
+2025-04-10T11:39:44.014Z [INFO]: Auction scheduler initialized
+2025-04-10T11:39:48.920Z [WARN]: Retrying auction 67ecec64842ba1eb4560c1ab (attempt 2)
+2025-04-10T11:39:48.928Z [WARN]: Retrying auction 67eced27842ba1eb4560c1b1 (attempt 2)
+2025-04-10T11:39:48.933Z [WARN]: Retrying auction 67eced36842ba1eb4560c1b7 (attempt 2)
+2025-04-10T11:39:48.951Z [WARN]: Retrying auction 67ecedc2842ba1eb4560c1ca (attempt 2)
+2025-04-10T11:39:48.968Z [WARN]: Retrying auction 67eced84842ba1eb4560c1be (attempt 2)
+2025-04-10T11:39:48.984Z [WARN]: Retrying auction 67eced93842ba1eb4560c1c1 (attempt 2)
+2025-04-10T11:39:49.001Z [WARN]: Retrying auction 67ece909842ba1eb4560c1a3 (attempt 2)
+2025-04-10T11:39:58.935Z [WARN]: Retrying auction 67ecec64842ba1eb4560c1ab (attempt 3)
+2025-04-10T11:39:58.940Z [WARN]: Retrying auction 67eced27842ba1eb4560c1b1 (attempt 3)
+2025-04-10T11:39:58.946Z [WARN]: Retrying auction 67eced36842ba1eb4560c1b7 (attempt 3)
+2025-04-10T11:39:58.958Z [WARN]: Retrying auction 67ecedc2842ba1eb4560c1ca (attempt 3)
+2025-04-10T11:39:58.974Z [WARN]: Retrying auction 67eced84842ba1eb4560c1be (attempt 3)
+2025-04-10T11:39:58.990Z [WARN]: Retrying auction 67eced93842ba1eb4560c1c1 (attempt 3)
+2025-04-10T11:39:59.008Z [WARN]: Retrying auction 67ece909842ba1eb4560c1a3 (attempt 3)
+2025-04-10T11:40:13.947Z [ERROR]: Failed to complete auction 67ecec64842ba1eb4560c1ab: Cannot read properties of undefined (reading 'merchantId')
+2025-04-10T11:40:13.960Z [ERROR]: Failed to complete auction 67eced27842ba1eb4560c1b1: Cannot read properties of undefined (reading 'merchantId')
+2025-04-10T11:40:13.969Z [ERROR]: Failed to complete auction 67eced36842ba1eb4560c1b7: Cannot read properties of undefined (reading 'merchantId')
+2025-04-10T11:40:13.983Z [ERROR]: Failed to complete auction 67ecedc2842ba1eb4560c1ca: Cannot read properties of undefined (reading 'merchantId')
+2025-04-10T11:40:13.991Z [ERROR]: Failed to complete auction 67eced84842ba1eb4560c1be: Cannot read properties of undefined (reading 'merchantId')
+2025-04-10T11:40:13.998Z [ERROR]: Failed to complete auction 67eced93842ba1eb4560c1c1: Cannot read properties of undefined (reading 'merchantId')
+2025-04-10T11:40:14.018Z [ERROR]: Failed to complete auction 67ece909842ba1eb4560c1a3: Cannot read properties of undefined (reading 'merchantId')
+2025-04-10T11:42:56.529Z [WARN]: Retrying auction 67ece909842ba1eb4560c1a3 (attempt 1)
+2025-04-10T11:42:56.546Z [WARN]: Retrying auction 67ecec64842ba1eb4560c1ab (attempt 1)
+2025-04-10T11:42:56.558Z [WARN]: Retrying auction 67eced36842ba1eb4560c1b7 (attempt 1)
+2025-04-10T11:42:56.564Z [WARN]: Retrying auction 67eced84842ba1eb4560c1be (attempt 1)
+2025-04-10T11:42:56.574Z [WARN]: Retrying auction 67ecedc2842ba1eb4560c1ca (attempt 1)
+2025-04-10T11:42:56.587Z [WARN]: Retrying auction 67eced93842ba1eb4560c1c1 (attempt 1)
+2025-04-10T11:42:56.595Z [WARN]: Retrying auction 67eced27842ba1eb4560c1b1 (attempt 1)
+2025-04-10T11:42:56.671Z [INFO]: Auction scheduler initialized
+2025-04-10T11:43:01.627Z [WARN]: Retrying auction 67ece909842ba1eb4560c1a3 (attempt 2)
+2025-04-10T11:43:01.643Z [WARN]: Retrying auction 67ecec64842ba1eb4560c1ab (attempt 2)
+2025-04-10T11:43:01.646Z [WARN]: Retrying auction 67eced36842ba1eb4560c1b7 (attempt 2)
+2025-04-10T11:43:01.658Z [WARN]: Retrying auction 67ecedc2842ba1eb4560c1ca (attempt 2)
+2025-04-10T11:43:01.664Z [WARN]: Retrying auction 67eced93842ba1eb4560c1c1 (attempt 2)
+2025-04-10T11:43:01.675Z [WARN]: Retrying auction 67eced84842ba1eb4560c1be (attempt 2)
+2025-04-10T11:43:01.679Z [WARN]: Retrying auction 67eced27842ba1eb4560c1b1 (attempt 2)
+2025-04-10T11:43:11.635Z [WARN]: Retrying auction 67ece909842ba1eb4560c1a3 (attempt 3)
+2025-04-10T11:43:11.666Z [WARN]: Retrying auction 67ecec64842ba1eb4560c1ab (attempt 3)
+2025-04-10T11:43:11.676Z [WARN]: Retrying auction 67eced36842ba1eb4560c1b7 (attempt 3)
+2025-04-10T11:43:11.683Z [WARN]: Retrying auction 67ecedc2842ba1eb4560c1ca (attempt 3)
+2025-04-10T11:43:11.688Z [WARN]: Retrying auction 67eced93842ba1eb4560c1c1 (attempt 3)
+2025-04-10T11:43:11.698Z [WARN]: Retrying auction 67eced84842ba1eb4560c1be (attempt 3)
+2025-04-10T11:43:11.702Z [WARN]: Retrying auction 67eced27842ba1eb4560c1b1 (attempt 3)
+2025-04-10T11:43:26.642Z [ERROR]: Failed to complete auction 67ece909842ba1eb4560c1a3: Cannot read properties of undefined (reading 'merchantId')
+2025-04-10T11:43:26.676Z [ERROR]: Failed to complete auction 67ecec64842ba1eb4560c1ab: Cannot read properties of undefined (reading 'merchantId')
+2025-04-10T11:43:26.690Z [ERROR]: Failed to complete auction 67eced36842ba1eb4560c1b7: Cannot read properties of undefined (reading 'merchantId')
+2025-04-10T11:43:26.709Z [ERROR]: Failed to complete auction 67ecedc2842ba1eb4560c1ca: Cannot read properties of undefined (reading 'merchantId')
+2025-04-10T11:43:26.711Z [ERROR]: Failed to complete auction 67eced93842ba1eb4560c1c1: Cannot read properties of undefined (reading 'merchantId')
+2025-04-10T11:43:26.721Z [ERROR]: Failed to complete auction 67eced84842ba1eb4560c1be: Cannot read properties of undefined (reading 'merchantId')
+2025-04-10T11:43:26.726Z [ERROR]: Failed to complete auction 67eced27842ba1eb4560c1b1: Cannot read properties of undefined (reading 'merchantId')
+2025-04-10T11:51:11.576Z [WARN]: Retrying auction {
+  _id: new ObjectId('67ece909842ba1eb4560c1a3'),
+  priceStart: 20,
+  endTime: 2025-04-04T06:15:00.000Z,
+  status: 'active',
+  currentPrice: 0,
+  bids: [],
+  gemId: {
+    _id: new ObjectId('67c1a989f231d8f3fce1a006'),
+    name: 'Ruby',
+    type: 'unknown',
+    images: [ 'storage/public/IMG@1742792696725-Ruby.jpeg' ]
+  },
+  merchantId: {
+    _id: new ObjectId('6784d1a12a3df864f9dcd777'),
+    email: 'johndoe@example.com'
+  },
+  isDeleted: false,
+  startTime: 2025-04-02T07:36:41.196Z,
+  createdAt: 2025-04-02T07:36:41.197Z,
+  updatedAt: 2025-04-02T07:36:41.197Z,
+  __v: 0
+} (attempt 1)
+2025-04-10T11:51:11.587Z [WARN]: Retrying auction {
+  _id: new ObjectId('67ecec64842ba1eb4560c1ab'),
+  priceStart: 20,
+  endTime: 2025-04-09T22:15:00.000Z,
+  status: 'active',
+  currentPrice: 0,
+  bids: [],
+  gemId: {
+    _id: new ObjectId('67eb9c11a63f41b1d2b5e2b8'),
+    name: 'Mspark',
+    type: 'unknown',
+    images: [ 'storage/public/IMG@1743494161865-jade1.jpeg' ],
+    price: 70
+  },
+  merchantId: {
+    _id: new ObjectId('6784d1a12a3df864f9dcd777'),
+    email: 'johndoe@example.com'
+  },
+  isDeleted: false,
+  startTime: 2025-04-02T07:51:00.217Z,
+  createdAt: 2025-04-02T07:51:00.220Z,
+  updatedAt: 2025-04-02T07:51:00.220Z,
+  __v: 0
+} (attempt 1)
+2025-04-10T11:51:11.598Z [WARN]: Retrying auction {
+  _id: new ObjectId('67eced36842ba1eb4560c1b7'),
+  priceStart: 20,
+  endTime: 2025-04-04T18:15:00.000Z,
+  status: 'active',
+  currentPrice: 0,
+  bids: [],
+  gemId: {
+    _id: new ObjectId('67eb9c11a63f41b1d2b5e2b8'),
+    name: 'Mspark',
+    type: 'unknown',
+    images: [ 'storage/public/IMG@1743494161865-jade1.jpeg' ],
+    price: 70
+  },
+  merchantId: {
+    _id: new ObjectId('6784d1a12a3df864f9dcd777'),
+    email: 'johndoe@example.com'
+  },
+  isDeleted: false,
+  startTime: 2025-04-02T07:54:30.838Z,
+  createdAt: 2025-04-02T07:54:30.839Z,
+  updatedAt: 2025-04-02T07:54:30.839Z,
+  __v: 0
+} (attempt 1)
+2025-04-10T11:51:11.616Z [WARN]: Retrying auction {
+  _id: new ObjectId('67eced93842ba1eb4560c1c1'),
+  priceStart: 20,
+  endTime: 2025-04-04T18:15:00.000Z,
+  status: 'active',
+  currentPrice: 0,
+  bids: [],
+  gemId: {
+    _id: new ObjectId('67eb9c11a63f41b1d2b5e2b8'),
+    name: 'Mspark',
+    type: 'unknown',
+    images: [ 'storage/public/IMG@1743494161865-jade1.jpeg' ],
+    price: 70
+  },
+  merchantId: {
+    _id: new ObjectId('6784d1a12a3df864f9dcd777'),
+    email: 'johndoe@example.com'
+  },
+  isDeleted: false,
+  startTime: 2025-04-02T07:56:03.520Z,
+  createdAt: 2025-04-02T07:56:03.521Z,
+  updatedAt: 2025-04-03T08:01:13.752Z,
+  __v: 0
+} (attempt 1)
+2025-04-10T11:51:11.621Z [WARN]: Retrying auction {
+  _id: new ObjectId('67ecedc2842ba1eb4560c1ca'),
+  priceStart: 20,
+  endTime: 2025-04-04T18:15:00.000Z,
+  status: 'active',
+  currentPrice: 0,
+  bids: [],
+  gemId: {
+    _id: new ObjectId('67eb9c11a63f41b1d2b5e2b8'),
+    name: 'Mspark',
+    type: 'unknown',
+    images: [ 'storage/public/IMG@1743494161865-jade1.jpeg' ],
+    price: 70
+  },
+  merchantId: {
+    _id: new ObjectId('6784d1a12a3df864f9dcd777'),
+    email: 'johndoe@example.com'
+  },
+  isDeleted: false,
+  startTime: 2025-04-02T07:56:50.714Z,
+  createdAt: 2025-04-02T07:56:50.715Z,
+  updatedAt: 2025-04-03T08:01:09.406Z,
+  __v: 0
+} (attempt 1)
+2025-04-10T11:51:11.639Z [WARN]: Retrying auction {
+  _id: new ObjectId('67eced27842ba1eb4560c1b1'),
+  priceStart: 20,
+  endTime: 2025-04-09T22:15:00.000Z,
+  status: 'active',
+  currentPrice: 0,
+  bids: [],
+  gemId: {
+    _id: new ObjectId('67eb9c11a63f41b1d2b5e2b8'),
+    name: 'Mspark',
+    type: 'unknown',
+    images: [ 'storage/public/IMG@1743494161865-jade1.jpeg' ],
+    price: 70
+  },
+  merchantId: {
+    _id: new ObjectId('6784d1a12a3df864f9dcd777'),
+    email: 'johndoe@example.com'
+  },
+  isDeleted: false,
+  startTime: 2025-04-02T07:54:15.171Z,
+  createdAt: 2025-04-02T07:54:15.172Z,
+  updatedAt: 2025-04-02T07:54:15.172Z,
+  __v: 0
+} (attempt 1)
+2025-04-10T11:51:11.647Z [WARN]: Retrying auction {
+  _id: new ObjectId('67eced84842ba1eb4560c1be'),
+  priceStart: 20,
+  endTime: 2025-04-04T18:15:00.000Z,
+  status: 'active',
+  currentPrice: 0,
+  bids: [],
+  gemId: {
+    _id: new ObjectId('67eb9c11a63f41b1d2b5e2b8'),
+    name: 'Mspark',
+    type: 'unknown',
+    images: [ 'storage/public/IMG@1743494161865-jade1.jpeg' ],
+    price: 70
+  },
+  merchantId: {
+    _id: new ObjectId('6784d1a12a3df864f9dcd777'),
+    email: 'johndoe@example.com'
+  },
+  isDeleted: false,
+  startTime: 2025-04-02T07:55:48.807Z,
+  createdAt: 2025-04-02T07:55:48.808Z,
+  updatedAt: 2025-04-02T07:55:48.808Z,
+  __v: 0
+} (attempt 1)
+2025-04-10T11:51:11.687Z [INFO]: Auction scheduler initialized
+2025-04-10T11:51:16.595Z [WARN]: Retrying auction {
+  _id: new ObjectId('67ece909842ba1eb4560c1a3'),
+  priceStart: 20,
+  endTime: 2025-04-04T06:15:00.000Z,
+  status: 'active',
+  currentPrice: 0,
+  bids: [],
+  gemId: {
+    _id: new ObjectId('67c1a989f231d8f3fce1a006'),
+    name: 'Ruby',
+    type: 'unknown',
+    images: [ 'storage/public/IMG@1742792696725-Ruby.jpeg' ]
+  },
+  merchantId: {
+    _id: new ObjectId('6784d1a12a3df864f9dcd777'),
+    email: 'johndoe@example.com'
+  },
+  isDeleted: false,
+  startTime: 2025-04-02T07:36:41.196Z,
+  createdAt: 2025-04-02T07:36:41.197Z,
+  updatedAt: 2025-04-02T07:36:41.197Z,
+  __v: 0
+} (attempt 2)
+2025-04-10T11:51:16.605Z [WARN]: Retrying auction {
+  _id: new ObjectId('67ecec64842ba1eb4560c1ab'),
+  priceStart: 20,
+  endTime: 2025-04-09T22:15:00.000Z,
+  status: 'active',
+  currentPrice: 0,
+  bids: [],
+  gemId: {
+    _id: new ObjectId('67eb9c11a63f41b1d2b5e2b8'),
+    name: 'Mspark',
+    type: 'unknown',
+    images: [ 'storage/public/IMG@1743494161865-jade1.jpeg' ],
+    price: 70
+  },
+  merchantId: {
+    _id: new ObjectId('6784d1a12a3df864f9dcd777'),
+    email: 'johndoe@example.com'
+  },
+  isDeleted: false,
+  startTime: 2025-04-02T07:51:00.217Z,
+  createdAt: 2025-04-02T07:51:00.220Z,
+  updatedAt: 2025-04-02T07:51:00.220Z,
+  __v: 0
+} (attempt 2)
+2025-04-10T11:51:16.616Z [WARN]: Retrying auction {
+  _id: new ObjectId('67eced36842ba1eb4560c1b7'),
+  priceStart: 20,
+  endTime: 2025-04-04T18:15:00.000Z,
+  status: 'active',
+  currentPrice: 0,
+  bids: [],
+  gemId: {
+    _id: new ObjectId('67eb9c11a63f41b1d2b5e2b8'),
+    name: 'Mspark',
+    type: 'unknown',
+    images: [ 'storage/public/IMG@1743494161865-jade1.jpeg' ],
+    price: 70
+  },
+  merchantId: {
+    _id: new ObjectId('6784d1a12a3df864f9dcd777'),
+    email: 'johndoe@example.com'
+  },
+  isDeleted: false,
+  startTime: 2025-04-02T07:54:30.838Z,
+  createdAt: 2025-04-02T07:54:30.839Z,
+  updatedAt: 2025-04-02T07:54:30.839Z,
+  __v: 0
+} (attempt 2)
+2025-04-10T11:51:16.648Z [WARN]: Retrying auction {
+  _id: new ObjectId('67ecedc2842ba1eb4560c1ca'),
+  priceStart: 20,
+  endTime: 2025-04-04T18:15:00.000Z,
+  status: 'active',
+  currentPrice: 0,
+  bids: [],
+  gemId: {
+    _id: new ObjectId('67eb9c11a63f41b1d2b5e2b8'),
+    name: 'Mspark',
+    type: 'unknown',
+    images: [ 'storage/public/IMG@1743494161865-jade1.jpeg' ],
+    price: 70
+  },
+  merchantId: {
+    _id: new ObjectId('6784d1a12a3df864f9dcd777'),
+    email: 'johndoe@example.com'
+  },
+  isDeleted: false,
+  startTime: 2025-04-02T07:56:50.714Z,
+  createdAt: 2025-04-02T07:56:50.715Z,
+  updatedAt: 2025-04-03T08:01:09.406Z,
+  __v: 0
+} (attempt 2)
+2025-04-10T11:51:16.658Z [WARN]: Retrying auction {
+  _id: new ObjectId('67eced93842ba1eb4560c1c1'),
+  priceStart: 20,
+  endTime: 2025-04-04T18:15:00.000Z,
+  status: 'active',
+  currentPrice: 0,
+  bids: [],
+  gemId: {
+    _id: new ObjectId('67eb9c11a63f41b1d2b5e2b8'),
+    name: 'Mspark',
+    type: 'unknown',
+    images: [ 'storage/public/IMG@1743494161865-jade1.jpeg' ],
+    price: 70
+  },
+  merchantId: {
+    _id: new ObjectId('6784d1a12a3df864f9dcd777'),
+    email: 'johndoe@example.com'
+  },
+  isDeleted: false,
+  startTime: 2025-04-02T07:56:03.520Z,
+  createdAt: 2025-04-02T07:56:03.521Z,
+  updatedAt: 2025-04-03T08:01:13.752Z,
+  __v: 0
+} (attempt 2)
+2025-04-10T11:51:16.678Z [WARN]: Retrying auction {
+  _id: new ObjectId('67eced27842ba1eb4560c1b1'),
+  priceStart: 20,
+  endTime: 2025-04-09T22:15:00.000Z,
+  status: 'active',
+  currentPrice: 0,
+  bids: [],
+  gemId: {
+    _id: new ObjectId('67eb9c11a63f41b1d2b5e2b8'),
+    name: 'Mspark',
+    type: 'unknown',
+    images: [ 'storage/public/IMG@1743494161865-jade1.jpeg' ],
+    price: 70
+  },
+  merchantId: {
+    _id: new ObjectId('6784d1a12a3df864f9dcd777'),
+    email: 'johndoe@example.com'
+  },
+  isDeleted: false,
+  startTime: 2025-04-02T07:54:15.171Z,
+  createdAt: 2025-04-02T07:54:15.172Z,
+  updatedAt: 2025-04-02T07:54:15.172Z,
+  __v: 0
+} (attempt 2)
+2025-04-10T11:51:16.681Z [WARN]: Retrying auction {
+  _id: new ObjectId('67eced84842ba1eb4560c1be'),
+  priceStart: 20,
+  endTime: 2025-04-04T18:15:00.000Z,
+  status: 'active',
+  currentPrice: 0,
+  bids: [],
+  gemId: {
+    _id: new ObjectId('67eb9c11a63f41b1d2b5e2b8'),
+    name: 'Mspark',
+    type: 'unknown',
+    images: [ 'storage/public/IMG@1743494161865-jade1.jpeg' ],
+    price: 70
+  },
+  merchantId: {
+    _id: new ObjectId('6784d1a12a3df864f9dcd777'),
+    email: 'johndoe@example.com'
+  },
+  isDeleted: false,
+  startTime: 2025-04-02T07:55:48.807Z,
+  createdAt: 2025-04-02T07:55:48.808Z,
+  updatedAt: 2025-04-02T07:55:48.808Z,
+  __v: 0
+} (attempt 2)
+2025-04-10T11:52:06.002Z [WARN]: Retrying auction {
+  _id: new ObjectId('67ece909842ba1eb4560c1a3'),
+  priceStart: 20,
+  endTime: 2025-04-04T06:15:00.000Z,
+  status: 'active',
+  currentPrice: 0,
+  bids: [],
+  gemId: {
+    _id: new ObjectId('67c1a989f231d8f3fce1a006'),
+    name: 'Ruby',
+    type: 'unknown',
+    images: [ 'storage/public/IMG@1742792696725-Ruby.jpeg' ]
+  },
+  merchantId: {
+    _id: new ObjectId('6784d1a12a3df864f9dcd777'),
+    email: 'johndoe@example.com'
+  },
+  isDeleted: false,
+  startTime: 2025-04-02T07:36:41.196Z,
+  createdAt: 2025-04-02T07:36:41.197Z,
+  updatedAt: 2025-04-02T07:36:41.197Z,
+  __v: 0
+} (attempt 1)
+2025-04-10T11:52:06.012Z [WARN]: Retrying auction {
+  _id: new ObjectId('67eced27842ba1eb4560c1b1'),
+  priceStart: 20,
+  endTime: 2025-04-09T22:15:00.000Z,
+  status: 'active',
+  currentPrice: 0,
+  bids: [],
+  gemId: {
+    _id: new ObjectId('67eb9c11a63f41b1d2b5e2b8'),
+    name: 'Mspark',
+    type: 'unknown',
+    images: [ 'storage/public/IMG@1743494161865-jade1.jpeg' ],
+    price: 70
+  },
+  merchantId: {
+    _id: new ObjectId('6784d1a12a3df864f9dcd777'),
+    email: 'johndoe@example.com'
+  },
+  isDeleted: false,
+  startTime: 2025-04-02T07:54:15.171Z,
+  createdAt: 2025-04-02T07:54:15.172Z,
+  updatedAt: 2025-04-02T07:54:15.172Z,
+  __v: 0
+} (attempt 1)
+2025-04-10T11:52:06.016Z [WARN]: Retrying auction {
+  _id: new ObjectId('67ecedc2842ba1eb4560c1ca'),
+  priceStart: 20,
+  endTime: 2025-04-04T18:15:00.000Z,
+  status: 'active',
+  currentPrice: 0,
+  bids: [],
+  gemId: {
+    _id: new ObjectId('67eb9c11a63f41b1d2b5e2b8'),
+    name: 'Mspark',
+    type: 'unknown',
+    images: [ 'storage/public/IMG@1743494161865-jade1.jpeg' ],
+    price: 70
+  },
+  merchantId: {
+    _id: new ObjectId('6784d1a12a3df864f9dcd777'),
+    email: 'johndoe@example.com'
+  },
+  isDeleted: false,
+  startTime: 2025-04-02T07:56:50.714Z,
+  createdAt: 2025-04-02T07:56:50.715Z,
+  updatedAt: 2025-04-03T08:01:09.406Z,
+  __v: 0
+} (attempt 1)
+2025-04-10T11:52:06.021Z [WARN]: Retrying auction {
+  _id: new ObjectId('67ecec64842ba1eb4560c1ab'),
+  priceStart: 20,
+  endTime: 2025-04-09T22:15:00.000Z,
+  status: 'active',
+  currentPrice: 0,
+  bids: [],
+  gemId: {
+    _id: new ObjectId('67eb9c11a63f41b1d2b5e2b8'),
+    name: 'Mspark',
+    type: 'unknown',
+    images: [ 'storage/public/IMG@1743494161865-jade1.jpeg' ],
+    price: 70
+  },
+  merchantId: {
+    _id: new ObjectId('6784d1a12a3df864f9dcd777'),
+    email: 'johndoe@example.com'
+  },
+  isDeleted: false,
+  startTime: 2025-04-02T07:51:00.217Z,
+  createdAt: 2025-04-02T07:51:00.220Z,
+  updatedAt: 2025-04-02T07:51:00.220Z,
+  __v: 0
+} (attempt 1)
+2025-04-10T11:52:06.026Z [WARN]: Retrying auction {
+  _id: new ObjectId('67eced36842ba1eb4560c1b7'),
+  priceStart: 20,
+  endTime: 2025-04-04T18:15:00.000Z,
+  status: 'active',
+  currentPrice: 0,
+  bids: [],
+  gemId: {
+    _id: new ObjectId('67eb9c11a63f41b1d2b5e2b8'),
+    name: 'Mspark',
+    type: 'unknown',
+    images: [ 'storage/public/IMG@1743494161865-jade1.jpeg' ],
+    price: 70
+  },
+  merchantId: {
+    _id: new ObjectId('6784d1a12a3df864f9dcd777'),
+    email: 'johndoe@example.com'
+  },
+  isDeleted: false,
+  startTime: 2025-04-02T07:54:30.838Z,
+  createdAt: 2025-04-02T07:54:30.839Z,
+  updatedAt: 2025-04-02T07:54:30.839Z,
+  __v: 0
+} (attempt 1)
+2025-04-10T11:52:06.040Z [WARN]: Retrying auction {
+  _id: new ObjectId('67eced84842ba1eb4560c1be'),
+  priceStart: 20,
+  endTime: 2025-04-04T18:15:00.000Z,
+  status: 'active',
+  currentPrice: 0,
+  bids: [],
+  gemId: {
+    _id: new ObjectId('67eb9c11a63f41b1d2b5e2b8'),
+    name: 'Mspark',
+    type: 'unknown',
+    images: [ 'storage/public/IMG@1743494161865-jade1.jpeg' ],
+    price: 70
+  },
+  merchantId: {
+    _id: new ObjectId('6784d1a12a3df864f9dcd777'),
+    email: 'johndoe@example.com'
+  },
+  isDeleted: false,
+  startTime: 2025-04-02T07:55:48.807Z,
+  createdAt: 2025-04-02T07:55:48.808Z,
+  updatedAt: 2025-04-02T07:55:48.808Z,
+  __v: 0
+} (attempt 1)
+2025-04-10T11:52:06.059Z [WARN]: Retrying auction {
+  _id: new ObjectId('67eced93842ba1eb4560c1c1'),
+  priceStart: 20,
+  endTime: 2025-04-04T18:15:00.000Z,
+  status: 'active',
+  currentPrice: 0,
+  bids: [],
+  gemId: {
+    _id: new ObjectId('67eb9c11a63f41b1d2b5e2b8'),
+    name: 'Mspark',
+    type: 'unknown',
+    images: [ 'storage/public/IMG@1743494161865-jade1.jpeg' ],
+    price: 70
+  },
+  merchantId: {
+    _id: new ObjectId('6784d1a12a3df864f9dcd777'),
+    email: 'johndoe@example.com'
+  },
+  isDeleted: false,
+  startTime: 2025-04-02T07:56:03.520Z,
+  createdAt: 2025-04-02T07:56:03.521Z,
+  updatedAt: 2025-04-03T08:01:13.752Z,
+  __v: 0
+} (attempt 1)
+2025-04-10T11:52:06.095Z [INFO]: Auction scheduler initialized
+2025-04-10T11:52:11.088Z [WARN]: Retrying auction {
+  _id: new ObjectId('67ece909842ba1eb4560c1a3'),
+  priceStart: 20,
+  endTime: 2025-04-04T06:15:00.000Z,
+  status: 'active',
+  currentPrice: 0,
+  bids: [],
+  gemId: {
+    _id: new ObjectId('67c1a989f231d8f3fce1a006'),
+    name: 'Ruby',
+    type: 'unknown',
+    images: [ 'storage/public/IMG@1742792696725-Ruby.jpeg' ]
+  },
+  merchantId: {
+    _id: new ObjectId('6784d1a12a3df864f9dcd777'),
+    email: 'johndoe@example.com'
+  },
+  isDeleted: false,
+  startTime: 2025-04-02T07:36:41.196Z,
+  createdAt: 2025-04-02T07:36:41.197Z,
+  updatedAt: 2025-04-02T07:36:41.197Z,
+  __v: 0
+} (attempt 2)
+2025-04-10T11:52:11.105Z [WARN]: Retrying auction {
+  _id: new ObjectId('67eced27842ba1eb4560c1b1'),
+  priceStart: 20,
+  endTime: 2025-04-09T22:15:00.000Z,
+  status: 'active',
+  currentPrice: 0,
+  bids: [],
+  gemId: {
+    _id: new ObjectId('67eb9c11a63f41b1d2b5e2b8'),
+    name: 'Mspark',
+    type: 'unknown',
+    images: [ 'storage/public/IMG@1743494161865-jade1.jpeg' ],
+    price: 70
+  },
+  merchantId: {
+    _id: new ObjectId('6784d1a12a3df864f9dcd777'),
+    email: 'johndoe@example.com'
+  },
+  isDeleted: false,
+  startTime: 2025-04-02T07:54:15.171Z,
+  createdAt: 2025-04-02T07:54:15.172Z,
+  updatedAt: 2025-04-02T07:54:15.172Z,
+  __v: 0
+} (attempt 2)
+2025-04-10T11:52:11.122Z [WARN]: Retrying auction {
+  _id: new ObjectId('67ecedc2842ba1eb4560c1ca'),
+  priceStart: 20,
+  endTime: 2025-04-04T18:15:00.000Z,
+  status: 'active',
+  currentPrice: 0,
+  bids: [],
+  gemId: {
+    _id: new ObjectId('67eb9c11a63f41b1d2b5e2b8'),
+    name: 'Mspark',
+    type: 'unknown',
+    images: [ 'storage/public/IMG@1743494161865-jade1.jpeg' ],
+    price: 70
+  },
+  merchantId: {
+    _id: new ObjectId('6784d1a12a3df864f9dcd777'),
+    email: 'johndoe@example.com'
+  },
+  isDeleted: false,
+  startTime: 2025-04-02T07:56:50.714Z,
+  createdAt: 2025-04-02T07:56:50.715Z,
+  updatedAt: 2025-04-03T08:01:09.406Z,
+  __v: 0
+} (attempt 2)
+2025-04-10T11:52:11.126Z [WARN]: Retrying auction {
+  _id: new ObjectId('67eced36842ba1eb4560c1b7'),
+  priceStart: 20,
+  endTime: 2025-04-04T18:15:00.000Z,
+  status: 'active',
+  currentPrice: 0,
+  bids: [],
+  gemId: {
+    _id: new ObjectId('67eb9c11a63f41b1d2b5e2b8'),
+    name: 'Mspark',
+    type: 'unknown',
+    images: [ 'storage/public/IMG@1743494161865-jade1.jpeg' ],
+    price: 70
+  },
+  merchantId: {
+    _id: new ObjectId('6784d1a12a3df864f9dcd777'),
+    email: 'johndoe@example.com'
+  },
+  isDeleted: false,
+  startTime: 2025-04-02T07:54:30.838Z,
+  createdAt: 2025-04-02T07:54:30.839Z,
+  updatedAt: 2025-04-02T07:54:30.839Z,
+  __v: 0
+} (attempt 2)
+2025-04-10T11:52:11.134Z [WARN]: Retrying auction {
+  _id: new ObjectId('67ecec64842ba1eb4560c1ab'),
+  priceStart: 20,
+  endTime: 2025-04-09T22:15:00.000Z,
+  status: 'active',
+  currentPrice: 0,
+  bids: [],
+  gemId: {
+    _id: new ObjectId('67eb9c11a63f41b1d2b5e2b8'),
+    name: 'Mspark',
+    type: 'unknown',
+    images: [ 'storage/public/IMG@1743494161865-jade1.jpeg' ],
+    price: 70
+  },
+  merchantId: {
+    _id: new ObjectId('6784d1a12a3df864f9dcd777'),
+    email: 'johndoe@example.com'
+  },
+  isDeleted: false,
+  startTime: 2025-04-02T07:51:00.217Z,
+  createdAt: 2025-04-02T07:51:00.220Z,
+  updatedAt: 2025-04-02T07:51:00.220Z,
+  __v: 0
+} (attempt 2)
+2025-04-10T11:52:11.145Z [WARN]: Retrying auction {
+  _id: new ObjectId('67eced93842ba1eb4560c1c1'),
+  priceStart: 20,
+  endTime: 2025-04-04T18:15:00.000Z,
+  status: 'active',
+  currentPrice: 0,
+  bids: [],
+  gemId: {
+    _id: new ObjectId('67eb9c11a63f41b1d2b5e2b8'),
+    name: 'Mspark',
+    type: 'unknown',
+    images: [ 'storage/public/IMG@1743494161865-jade1.jpeg' ],
+    price: 70
+  },
+  merchantId: {
+    _id: new ObjectId('6784d1a12a3df864f9dcd777'),
+    email: 'johndoe@example.com'
+  },
+  isDeleted: false,
+  startTime: 2025-04-02T07:56:03.520Z,
+  createdAt: 2025-04-02T07:56:03.521Z,
+  updatedAt: 2025-04-03T08:01:13.752Z,
+  __v: 0
+} (attempt 2)
+2025-04-10T11:52:11.154Z [WARN]: Retrying auction {
+  _id: new ObjectId('67eced84842ba1eb4560c1be'),
+  priceStart: 20,
+  endTime: 2025-04-04T18:15:00.000Z,
+  status: 'active',
+  currentPrice: 0,
+  bids: [],
+  gemId: {
+    _id: new ObjectId('67eb9c11a63f41b1d2b5e2b8'),
+    name: 'Mspark',
+    type: 'unknown',
+    images: [ 'storage/public/IMG@1743494161865-jade1.jpeg' ],
+    price: 70
+  },
+  merchantId: {
+    _id: new ObjectId('6784d1a12a3df864f9dcd777'),
+    email: 'johndoe@example.com'
+  },
+  isDeleted: false,
+  startTime: 2025-04-02T07:55:48.807Z,
+  createdAt: 2025-04-02T07:55:48.808Z,
+  updatedAt: 2025-04-02T07:55:48.808Z,
+  __v: 0
+} (attempt 2)
+2025-04-10T11:52:21.103Z [WARN]: Retrying auction {
+  _id: new ObjectId('67ece909842ba1eb4560c1a3'),
+  priceStart: 20,
+  endTime: 2025-04-04T06:15:00.000Z,
+  status: 'active',
+  currentPrice: 0,
+  bids: [],
+  gemId: {
+    _id: new ObjectId('67c1a989f231d8f3fce1a006'),
+    name: 'Ruby',
+    type: 'unknown',
+    images: [ 'storage/public/IMG@1742792696725-Ruby.jpeg' ]
+  },
+  merchantId: {
+    _id: new ObjectId('6784d1a12a3df864f9dcd777'),
+    email: 'johndoe@example.com'
+  },
+  isDeleted: false,
+  startTime: 2025-04-02T07:36:41.196Z,
+  createdAt: 2025-04-02T07:36:41.197Z,
+  updatedAt: 2025-04-02T07:36:41.197Z,
+  __v: 0
+} (attempt 3)
+2025-04-10T11:52:21.117Z [WARN]: Retrying auction {
+  _id: new ObjectId('67eced27842ba1eb4560c1b1'),
+  priceStart: 20,
+  endTime: 2025-04-09T22:15:00.000Z,
+  status: 'active',
+  currentPrice: 0,
+  bids: [],
+  gemId: {
+    _id: new ObjectId('67eb9c11a63f41b1d2b5e2b8'),
+    name: 'Mspark',
+    type: 'unknown',
+    images: [ 'storage/public/IMG@1743494161865-jade1.jpeg' ],
+    price: 70
+  },
+  merchantId: {
+    _id: new ObjectId('6784d1a12a3df864f9dcd777'),
+    email: 'johndoe@example.com'
+  },
+  isDeleted: false,
+  startTime: 2025-04-02T07:54:15.171Z,
+  createdAt: 2025-04-02T07:54:15.172Z,
+  updatedAt: 2025-04-02T07:54:15.172Z,
+  __v: 0
+} (attempt 3)
+2025-04-10T11:52:21.134Z [WARN]: Retrying auction {
+  _id: new ObjectId('67ecedc2842ba1eb4560c1ca'),
+  priceStart: 20,
+  endTime: 2025-04-04T18:15:00.000Z,
+  status: 'active',
+  currentPrice: 0,
+  bids: [],
+  gemId: {
+    _id: new ObjectId('67eb9c11a63f41b1d2b5e2b8'),
+    name: 'Mspark',
+    type: 'unknown',
+    images: [ 'storage/public/IMG@1743494161865-jade1.jpeg' ],
+    price: 70
+  },
+  merchantId: {
+    _id: new ObjectId('6784d1a12a3df864f9dcd777'),
+    email: 'johndoe@example.com'
+  },
+  isDeleted: false,
+  startTime: 2025-04-02T07:56:50.714Z,
+  createdAt: 2025-04-02T07:56:50.715Z,
+  updatedAt: 2025-04-03T08:01:09.406Z,
+  __v: 0
+} (attempt 3)
+2025-04-10T11:52:21.150Z [WARN]: Retrying auction {
+  _id: new ObjectId('67eced36842ba1eb4560c1b7'),
+  priceStart: 20,
+  endTime: 2025-04-04T18:15:00.000Z,
+  status: 'active',
+  currentPrice: 0,
+  bids: [],
+  gemId: {
+    _id: new ObjectId('67eb9c11a63f41b1d2b5e2b8'),
+    name: 'Mspark',
+    type: 'unknown',
+    images: [ 'storage/public/IMG@1743494161865-jade1.jpeg' ],
+    price: 70
+  },
+  merchantId: {
+    _id: new ObjectId('6784d1a12a3df864f9dcd777'),
+    email: 'johndoe@example.com'
+  },
+  isDeleted: false,
+  startTime: 2025-04-02T07:54:30.838Z,
+  createdAt: 2025-04-02T07:54:30.839Z,
+  updatedAt: 2025-04-02T07:54:30.839Z,
+  __v: 0
+} (attempt 3)
+2025-04-10T11:52:21.153Z [WARN]: Retrying auction {
+  _id: new ObjectId('67ecec64842ba1eb4560c1ab'),
+  priceStart: 20,
+  endTime: 2025-04-09T22:15:00.000Z,
+  status: 'active',
+  currentPrice: 0,
+  bids: [],
+  gemId: {
+    _id: new ObjectId('67eb9c11a63f41b1d2b5e2b8'),
+    name: 'Mspark',
+    type: 'unknown',
+    images: [ 'storage/public/IMG@1743494161865-jade1.jpeg' ],
+    price: 70
+  },
+  merchantId: {
+    _id: new ObjectId('6784d1a12a3df864f9dcd777'),
+    email: 'johndoe@example.com'
+  },
+  isDeleted: false,
+  startTime: 2025-04-02T07:51:00.217Z,
+  createdAt: 2025-04-02T07:51:00.220Z,
+  updatedAt: 2025-04-02T07:51:00.220Z,
+  __v: 0
+} (attempt 3)
+2025-04-10T11:52:21.168Z [WARN]: Retrying auction {
+  _id: new ObjectId('67eced93842ba1eb4560c1c1'),
+  priceStart: 20,
+  endTime: 2025-04-04T18:15:00.000Z,
+  status: 'active',
+  currentPrice: 0,
+  bids: [],
+  gemId: {
+    _id: new ObjectId('67eb9c11a63f41b1d2b5e2b8'),
+    name: 'Mspark',
+    type: 'unknown',
+    images: [ 'storage/public/IMG@1743494161865-jade1.jpeg' ],
+    price: 70
+  },
+  merchantId: {
+    _id: new ObjectId('6784d1a12a3df864f9dcd777'),
+    email: 'johndoe@example.com'
+  },
+  isDeleted: false,
+  startTime: 2025-04-02T07:56:03.520Z,
+  createdAt: 2025-04-02T07:56:03.521Z,
+  updatedAt: 2025-04-03T08:01:13.752Z,
+  __v: 0
+} (attempt 3)
+2025-04-10T11:52:21.180Z [WARN]: Retrying auction {
+  _id: new ObjectId('67eced84842ba1eb4560c1be'),
+  priceStart: 20,
+  endTime: 2025-04-04T18:15:00.000Z,
+  status: 'active',
+  currentPrice: 0,
+  bids: [],
+  gemId: {
+    _id: new ObjectId('67eb9c11a63f41b1d2b5e2b8'),
+    name: 'Mspark',
+    type: 'unknown',
+    images: [ 'storage/public/IMG@1743494161865-jade1.jpeg' ],
+    price: 70
+  },
+  merchantId: {
+    _id: new ObjectId('6784d1a12a3df864f9dcd777'),
+    email: 'johndoe@example.com'
+  },
+  isDeleted: false,
+  startTime: 2025-04-02T07:55:48.807Z,
+  createdAt: 2025-04-02T07:55:48.808Z,
+  updatedAt: 2025-04-02T07:55:48.808Z,
+  __v: 0
+} (attempt 3)
+2025-04-10T11:52:36.110Z [ERROR]: Failed to complete auction {
+  _id: new ObjectId('67ece909842ba1eb4560c1a3'),
+  priceStart: 20,
+  endTime: 2025-04-04T06:15:00.000Z,
+  status: 'active',
+  currentPrice: 0,
+  bids: [],
+  gemId: {
+    _id: new ObjectId('67c1a989f231d8f3fce1a006'),
+    name: 'Ruby',
+    type: 'unknown',
+    images: [ 'storage/public/IMG@1742792696725-Ruby.jpeg' ]
+  },
+  merchantId: {
+    _id: new ObjectId('6784d1a12a3df864f9dcd777'),
+    email: 'johndoe@example.com'
+  },
+  isDeleted: false,
+  startTime: 2025-04-02T07:36:41.196Z,
+  createdAt: 2025-04-02T07:36:41.197Z,
+  updatedAt: 2025-04-02T07:36:41.197Z,
+  __v: 0
+}: Cannot read properties of undefined (reading 'email')
+2025-04-10T11:52:36.123Z [ERROR]: Failed to complete auction {
+  _id: new ObjectId('67eced27842ba1eb4560c1b1'),
+  priceStart: 20,
+  endTime: 2025-04-09T22:15:00.000Z,
+  status: 'active',
+  currentPrice: 0,
+  bids: [],
+  gemId: {
+    _id: new ObjectId('67eb9c11a63f41b1d2b5e2b8'),
+    name: 'Mspark',
+    type: 'unknown',
+    images: [ 'storage/public/IMG@1743494161865-jade1.jpeg' ],
+    price: 70
+  },
+  merchantId: {
+    _id: new ObjectId('6784d1a12a3df864f9dcd777'),
+    email: 'johndoe@example.com'
+  },
+  isDeleted: false,
+  startTime: 2025-04-02T07:54:15.171Z,
+  createdAt: 2025-04-02T07:54:15.172Z,
+  updatedAt: 2025-04-02T07:54:15.172Z,
+  __v: 0
+}: Cannot read properties of undefined (reading 'email')
+2025-04-10T11:52:36.146Z [ERROR]: Failed to complete auction {
+  _id: new ObjectId('67ecedc2842ba1eb4560c1ca'),
+  priceStart: 20,
+  endTime: 2025-04-04T18:15:00.000Z,
+  status: 'active',
+  currentPrice: 0,
+  bids: [],
+  gemId: {
+    _id: new ObjectId('67eb9c11a63f41b1d2b5e2b8'),
+    name: 'Mspark',
+    type: 'unknown',
+    images: [ 'storage/public/IMG@1743494161865-jade1.jpeg' ],
+    price: 70
+  },
+  merchantId: {
+    _id: new ObjectId('6784d1a12a3df864f9dcd777'),
+    email: 'johndoe@example.com'
+  },
+  isDeleted: false,
+  startTime: 2025-04-02T07:56:50.714Z,
+  createdAt: 2025-04-02T07:56:50.715Z,
+  updatedAt: 2025-04-03T08:01:09.406Z,
+  __v: 0
+}: Cannot read properties of undefined (reading 'email')
+2025-04-10T11:52:36.156Z [ERROR]: Failed to complete auction {
+  _id: new ObjectId('67eced36842ba1eb4560c1b7'),
+  priceStart: 20,
+  endTime: 2025-04-04T18:15:00.000Z,
+  status: 'active',
+  currentPrice: 0,
+  bids: [],
+  gemId: {
+    _id: new ObjectId('67eb9c11a63f41b1d2b5e2b8'),
+    name: 'Mspark',
+    type: 'unknown',
+    images: [ 'storage/public/IMG@1743494161865-jade1.jpeg' ],
+    price: 70
+  },
+  merchantId: {
+    _id: new ObjectId('6784d1a12a3df864f9dcd777'),
+    email: 'johndoe@example.com'
+  },
+  isDeleted: false,
+  startTime: 2025-04-02T07:54:30.838Z,
+  createdAt: 2025-04-02T07:54:30.839Z,
+  updatedAt: 2025-04-02T07:54:30.839Z,
+  __v: 0
+}: Cannot read properties of undefined (reading 'email')
+2025-04-10T11:52:36.162Z [ERROR]: Failed to complete auction {
+  _id: new ObjectId('67ecec64842ba1eb4560c1ab'),
+  priceStart: 20,
+  endTime: 2025-04-09T22:15:00.000Z,
+  status: 'active',
+  currentPrice: 0,
+  bids: [],
+  gemId: {
+    _id: new ObjectId('67eb9c11a63f41b1d2b5e2b8'),
+    name: 'Mspark',
+    type: 'unknown',
+    images: [ 'storage/public/IMG@1743494161865-jade1.jpeg' ],
+    price: 70
+  },
+  merchantId: {
+    _id: new ObjectId('6784d1a12a3df864f9dcd777'),
+    email: 'johndoe@example.com'
+  },
+  isDeleted: false,
+  startTime: 2025-04-02T07:51:00.217Z,
+  createdAt: 2025-04-02T07:51:00.220Z,
+  updatedAt: 2025-04-02T07:51:00.220Z,
+  __v: 0
+}: Cannot read properties of undefined (reading 'email')
+2025-04-10T11:52:36.173Z [ERROR]: Failed to complete auction {
+  _id: new ObjectId('67eced93842ba1eb4560c1c1'),
+  priceStart: 20,
+  endTime: 2025-04-04T18:15:00.000Z,
+  status: 'active',
+  currentPrice: 0,
+  bids: [],
+  gemId: {
+    _id: new ObjectId('67eb9c11a63f41b1d2b5e2b8'),
+    name: 'Mspark',
+    type: 'unknown',
+    images: [ 'storage/public/IMG@1743494161865-jade1.jpeg' ],
+    price: 70
+  },
+  merchantId: {
+    _id: new ObjectId('6784d1a12a3df864f9dcd777'),
+    email: 'johndoe@example.com'
+  },
+  isDeleted: false,
+  startTime: 2025-04-02T07:56:03.520Z,
+  createdAt: 2025-04-02T07:56:03.521Z,
+  updatedAt: 2025-04-03T08:01:13.752Z,
+  __v: 0
+}: Cannot read properties of undefined (reading 'email')
+2025-04-10T11:52:36.192Z [ERROR]: Failed to complete auction {
+  _id: new ObjectId('67eced84842ba1eb4560c1be'),
+  priceStart: 20,
+  endTime: 2025-04-04T18:15:00.000Z,
+  status: 'active',
+  currentPrice: 0,
+  bids: [],
+  gemId: {
+    _id: new ObjectId('67eb9c11a63f41b1d2b5e2b8'),
+    name: 'Mspark',
+    type: 'unknown',
+    images: [ 'storage/public/IMG@1743494161865-jade1.jpeg' ],
+    price: 70
+  },
+  merchantId: {
+    _id: new ObjectId('6784d1a12a3df864f9dcd777'),
+    email: 'johndoe@example.com'
+  },
+  isDeleted: false,
+  startTime: 2025-04-02T07:55:48.807Z,
+  createdAt: 2025-04-02T07:55:48.808Z,
+  updatedAt: 2025-04-02T07:55:48.808Z,
+  __v: 0
+}: Cannot read properties of undefined (reading 'email')
+2025-04-10T11:55:08.225Z [WARN]: Retrying auction 67ecec64842ba1eb4560c1ab (attempt 1)
+2025-04-10T11:55:08.238Z [WARN]: Retrying auction 67eced27842ba1eb4560c1b1 (attempt 1)
+2025-04-10T11:55:08.243Z [WARN]: Retrying auction 67eced36842ba1eb4560c1b7 (attempt 1)
+2025-04-10T11:55:08.256Z [WARN]: Retrying auction 67eced93842ba1eb4560c1c1 (attempt 1)
+2025-04-10T11:55:08.261Z [WARN]: Retrying auction 67ecedc2842ba1eb4560c1ca (attempt 1)
+2025-04-10T11:55:08.271Z [WARN]: Retrying auction 67ece909842ba1eb4560c1a3 (attempt 1)
+2025-04-10T11:55:08.282Z [WARN]: Retrying auction 67eced84842ba1eb4560c1be (attempt 1)
+2025-04-10T11:55:08.323Z [INFO]: Auction scheduler initialized
+2025-04-10T11:55:13.241Z [WARN]: Retrying auction 67ecec64842ba1eb4560c1ab (attempt 2)
+2025-04-10T11:55:13.249Z [WARN]: Retrying auction 67eced27842ba1eb4560c1b1 (attempt 2)
+2025-04-10T11:55:13.254Z [WARN]: Retrying auction 67eced36842ba1eb4560c1b7 (attempt 2)
+2025-04-10T11:55:13.268Z [WARN]: Retrying auction 67eced93842ba1eb4560c1c1 (attempt 2)
+2025-04-10T11:55:13.275Z [WARN]: Retrying auction 67ecedc2842ba1eb4560c1ca (attempt 2)
+2025-04-10T11:55:13.281Z [WARN]: Retrying auction 67ece909842ba1eb4560c1a3 (attempt 2)
+2025-04-10T11:55:13.290Z [WARN]: Retrying auction 67eced84842ba1eb4560c1be (attempt 2)
+2025-04-10T11:55:23.262Z [WARN]: Retrying auction 67ecec64842ba1eb4560c1ab (attempt 3)
+2025-04-10T11:55:23.265Z [WARN]: Retrying auction 67eced27842ba1eb4560c1b1 (attempt 3)
+2025-04-10T11:55:23.275Z [WARN]: Retrying auction 67eced36842ba1eb4560c1b7 (attempt 3)
+2025-04-10T11:55:23.289Z [WARN]: Retrying auction 67eced93842ba1eb4560c1c1 (attempt 3)
+2025-04-10T11:55:23.293Z [WARN]: Retrying auction 67ecedc2842ba1eb4560c1ca (attempt 3)
+2025-04-10T11:55:23.305Z [WARN]: Retrying auction 67ece909842ba1eb4560c1a3 (attempt 3)
+2025-04-10T11:55:23.310Z [WARN]: Retrying auction 67eced84842ba1eb4560c1be (attempt 3)
+2025-04-10T11:55:38.271Z [ERROR]: Failed to complete auction 67ecec64842ba1eb4560c1ab: Cannot read properties of undefined (reading 'email')
+2025-04-10T11:55:38.285Z [ERROR]: Failed to complete auction 67eced27842ba1eb4560c1b1: Cannot read properties of undefined (reading 'email')
+2025-04-10T11:55:38.290Z [ERROR]: Failed to complete auction 67eced36842ba1eb4560c1b7: Cannot read properties of undefined (reading 'email')
+2025-04-10T11:55:38.357Z [ERROR]: Failed to complete auction 67eced93842ba1eb4560c1c1: Cannot read properties of undefined (reading 'email')
+2025-04-10T11:55:38.366Z [ERROR]: Failed to complete auction 67ecedc2842ba1eb4560c1ca: Cannot read properties of undefined (reading 'email')
+2025-04-10T11:55:38.375Z [ERROR]: Failed to complete auction 67ece909842ba1eb4560c1a3: Cannot read properties of undefined (reading 'email')
+2025-04-10T11:55:38.379Z [ERROR]: Failed to complete auction 67eced84842ba1eb4560c1be: Cannot read properties of undefined (reading 'email')
+2025-04-10T15:15:00.076Z [WARN]: Retrying auction 67ecedc1842ba1eb4560c1c7 (attempt 1)
+2025-04-10T15:15:05.095Z [WARN]: Retrying auction 67ecedc1842ba1eb4560c1c7 (attempt 2)
+2025-04-10T15:15:15.109Z [WARN]: Retrying auction 67ecedc1842ba1eb4560c1c7 (attempt 3)
+2025-04-10T15:15:30.115Z [ERROR]: Failed to complete auction 67ecedc1842ba1eb4560c1c7: auctionCompleteTemplateForMerchant is not defined
+2025-04-10T15:29:00.016Z [WARN]: Retrying auction 67ecedc1842ba1eb4560c1c7 (attempt 1)
+2025-04-10T15:29:05.029Z [WARN]: Retrying auction 67ecedc1842ba1eb4560c1c7 (attempt 2)
+2025-04-10T15:29:15.038Z [WARN]: Retrying auction 67ecedc1842ba1eb4560c1c7 (attempt 3)
+2025-04-10T15:29:30.051Z [ERROR]: Failed to complete auction 67ecedc1842ba1eb4560c1c7: Cannot read properties of undefined (reading 'name')
+2025-04-10T15:35:00.027Z [WARN]: Retrying auction 67ecedc1842ba1eb4560c1c7 (attempt 1)
+2025-04-10T15:35:05.042Z [WARN]: Retrying auction 67ecedc1842ba1eb4560c1c7 (attempt 2)
+2025-04-10T15:35:15.059Z [WARN]: Retrying auction 67ecedc1842ba1eb4560c1c7 (attempt 3)
+2025-04-10T15:35:30.065Z [ERROR]: Failed to complete auction 67ecedc1842ba1eb4560c1c7: Cannot read properties of undefined (reading 'name')
+2025-04-10T15:39:00.014Z [WARN]: Retrying auction 67ecedc1842ba1eb4560c1c7 (attempt 1)
+2025-04-10T15:39:05.026Z [WARN]: Retrying auction 67ecedc1842ba1eb4560c1c7 (attempt 2)
+2025-04-10T15:39:15.034Z [WARN]: Retrying auction 67ecedc1842ba1eb4560c1c7 (attempt 3)
+2025-04-10T15:42:00.017Z [WARN]: Retrying auction 67ecedc1842ba1eb4560c1c7 (attempt 1)
+2025-04-10T15:42:05.036Z [WARN]: Retrying auction 67ecedc1842ba1eb4560c1c7 (attempt 2)
+2025-04-10T15:42:15.050Z [WARN]: Retrying auction 67ecedc1842ba1eb4560c1c7 (attempt 3)
+2025-04-10T15:45:00.021Z [WARN]: Retrying auction 67ecedc1842ba1eb4560c1c7 (attempt 1)
+2025-04-10T15:45:05.039Z [WARN]: Retrying auction 67ecedc1842ba1eb4560c1c7 (attempt 2)
+2025-04-10T15:45:15.054Z [WARN]: Retrying auction 67ecedc1842ba1eb4560c1c7 (attempt 3)
+2025-04-10T15:45:30.061Z [ERROR]: Failed to complete auction 67ecedc1842ba1eb4560c1c7: Cannot read properties of undefined (reading 'name')
+2025-04-10T15:49:04.398Z [WARN]: Retrying auction 67ecedc1842ba1eb4560c1c7 (attempt 1)
+2025-04-10T15:49:04.411Z [ERROR]: uncaughtException: Attempted illegal state transition from [TRANSACTION_ABORTED] to [TRANSACTION_ABORTED]
+MongoRuntimeError: Attempted illegal state transition from [TRANSACTION_ABORTED] to [TRANSACTION_ABORTED]
+    at Transaction.transition (/usr/src/app/node_modules/mongodb/lib/transactions.js:121:15)
+    at ClientSession.abortTransaction (/usr/src/app/node_modules/mongodb/lib/sessions.js:442:30)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-04-10T16:10:08.570Z [ERROR]: uncaughtException: Server selection timed out after 30000 ms
+MongooseServerSelectionError: Server selection timed out after 30000 ms
+    at _handleConnectionErrors (/usr/src/app/node_modules/mongoose/lib/connection.js:1165:11)
+    at NativeConnection.openUri (/usr/src/app/node_modules/mongoose/lib/connection.js:1096:11)
+2025-04-10T17:41:08.303Z [WARN]: Retrying auction 67ecedc2842ba1eb4560c1ca (attempt 1)
+2025-04-10T17:41:21.404Z [WARN]: Retrying auction 67ecedc2842ba1eb4560c1ca (attempt 2)
+2025-04-10T17:41:40.240Z [WARN]: Retrying auction 67ecedc2842ba1eb4560c1ca (attempt 3)
+2025-04-10T17:41:40.252Z [ERROR]: uncaughtException: Attempted illegal state transition from [TRANSACTION_ABORTED] to [TRANSACTION_ABORTED]
+MongoRuntimeError: Attempted illegal state transition from [TRANSACTION_ABORTED] to [TRANSACTION_ABORTED]
+    at Transaction.transition (/usr/src/app/node_modules/mongodb/lib/transactions.js:121:15)
+    at ClientSession.abortTransaction (/usr/src/app/node_modules/mongodb/lib/sessions.js:442:30)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-04-10T17:50:07.886Z [WARN]: Retrying auction 67ecedc2842ba1eb4560c1ca (attempt 1)
+2025-04-10T17:50:21.693Z [WARN]: Retrying auction 67ecedc2842ba1eb4560c1ca (attempt 2)
+2025-04-10T17:50:21.704Z [ERROR]: uncaughtException: Attempted illegal state transition from [TRANSACTION_ABORTED] to [TRANSACTION_ABORTED]
+MongoRuntimeError: Attempted illegal state transition from [TRANSACTION_ABORTED] to [TRANSACTION_ABORTED]
+    at Transaction.transition (/usr/src/app/node_modules/mongodb/lib/transactions.js:121:15)
+    at ClientSession.abortTransaction (/usr/src/app/node_modules/mongodb/lib/sessions.js:442:30)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-04-10T17:54:08.285Z [WARN]: Retrying auction 67ecedc2842ba1eb4560c1ca (attempt 1)
+2025-04-10T17:54:21.684Z [WARN]: Retrying auction 67ecedc2842ba1eb4560c1ca (attempt 2)
+2025-04-10T17:54:21.695Z [ERROR]: uncaughtException: Attempted illegal state transition from [TRANSACTION_ABORTED] to [TRANSACTION_ABORTED]
+MongoRuntimeError: Attempted illegal state transition from [TRANSACTION_ABORTED] to [TRANSACTION_ABORTED]
+    at Transaction.transition (/usr/src/app/node_modules/mongodb/lib/transactions.js:121:15)
+    at ClientSession.abortTransaction (/usr/src/app/node_modules/mongodb/lib/sessions.js:442:30)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-04-10T18:34:08.693Z [WARN]: Retrying auction 67ecedc2842ba1eb4560c1ca (attempt 1)
+2025-04-10T18:34:08.709Z [ERROR]: uncaughtException: Attempted illegal state transition from [TRANSACTION_ABORTED] to [TRANSACTION_ABORTED]
+MongoRuntimeError: Attempted illegal state transition from [TRANSACTION_ABORTED] to [TRANSACTION_ABORTED]
+    at Transaction.transition (/usr/src/app/node_modules/mongodb/lib/transactions.js:121:15)
+    at ClientSession.abortTransaction (/usr/src/app/node_modules/mongodb/lib/sessions.js:442:30)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-04-10T18:45:08.729Z [WARN]: Retrying auction 67ecedc2842ba1eb4560c1ca (attempt 1)
+2025-04-10T18:45:23.154Z [WARN]: Retrying auction 67ecedc2842ba1eb4560c1ca (attempt 2)
+2025-04-10T18:45:43.868Z [WARN]: Retrying auction 67ecedc2842ba1eb4560c1ca (attempt 3)
+2025-04-10T18:45:43.924Z [ERROR]: uncaughtException: Attempted illegal state transition from [TRANSACTION_ABORTED] to [TRANSACTION_ABORTED]
+MongoRuntimeError: Attempted illegal state transition from [TRANSACTION_ABORTED] to [TRANSACTION_ABORTED]
+    at Transaction.transition (/usr/src/app/node_modules/mongodb/lib/transactions.js:121:15)
+    at ClientSession.abortTransaction (/usr/src/app/node_modules/mongodb/lib/sessions.js:442:30)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-04-11T02:42:09.232Z [WARN]: Retrying auction 67ecedc2842ba1eb4560c1ca (attempt 3)
+2025-04-11T02:42:33.908Z [ERROR]: Failed to complete auction 67ecedc2842ba1eb4560c1ca: Payment record storing failed
+2025-04-11T04:14:08.124Z [WARN]: Retrying auction 67ecedc2842ba1eb4560c1ca (attempt 3)
+2025-04-11T04:14:08.143Z [ERROR]: uncaughtException: Attempted illegal state transition from [TRANSACTION_ABORTED] to [TRANSACTION_ABORTED]
+MongoRuntimeError: Attempted illegal state transition from [TRANSACTION_ABORTED] to [TRANSACTION_ABORTED]
+    at Transaction.transition (/usr/src/app/node_modules/mongodb/lib/transactions.js:121:15)
+    at ClientSession.abortTransaction (/usr/src/app/node_modules/mongodb/lib/sessions.js:442:30)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-04-11T04:18:09.293Z [WARN]: Retrying auction 67ecedc2842ba1eb4560c1ca (attempt 3)
+2025-04-11T04:18:32.306Z [ERROR]: Failed to complete auction 67ecedc2842ba1eb4560c1ca: Auction Or Response Param not received!
+2025-04-11T04:18:32.321Z [ERROR]: uncaughtException: Attempted illegal state transition from [TRANSACTION_ABORTED] to [TRANSACTION_ABORTED]
+MongoRuntimeError: Attempted illegal state transition from [TRANSACTION_ABORTED] to [TRANSACTION_ABORTED]
+    at Transaction.transition (/usr/src/app/node_modules/mongodb/lib/transactions.js:121:15)
+    at ClientSession.abortTransaction (/usr/src/app/node_modules/mongodb/lib/sessions.js:442:30)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-04-11T04:22:09.378Z [WARN]: Retrying auction 67ecedc2842ba1eb4560c1ca (attempt 3)
+2025-04-11T04:22:33.519Z [ERROR]: Failed to complete auction 67ecedc2842ba1eb4560c1ca: Payment record storing failed
+2025-04-11T04:22:33.535Z [ERROR]: uncaughtException: Attempted illegal state transition from [TRANSACTION_ABORTED] to [TRANSACTION_ABORTED]
+MongoRuntimeError: Attempted illegal state transition from [TRANSACTION_ABORTED] to [TRANSACTION_ABORTED]
+    at Transaction.transition (/usr/src/app/node_modules/mongodb/lib/transactions.js:121:15)
+    at ClientSession.abortTransaction (/usr/src/app/node_modules/mongodb/lib/sessions.js:442:30)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-04-11T04:27:08.690Z [WARN]: Retrying auction 67ecedc2842ba1eb4560c1ca (attempt 3)
+2025-04-11T04:27:32.089Z [ERROR]: Failed to complete auction 67ecedc2842ba1eb4560c1ca: Payment record storing failed

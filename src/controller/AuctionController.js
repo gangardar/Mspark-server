@@ -13,6 +13,8 @@ import {
   ForbiddenError,
   ConflictError
 } from "../utils/errors.js";
+import { activeJobs, rescheduleAuctionJob } from "../services/ScheduleCompleteAuction.js";
+import mongoose from "mongoose";
 
 // @desc    Create a new auction
 // @route   POST /api/auctions
@@ -318,28 +320,67 @@ export const placeBid = async (req, res, next) => {
 export const getMerchantAuctions = async (req, res, next) => {
   try {
     const merchantId = req.params.merchantId;
+    const { page = 1, limit = 10, status } = req.query;
+    
+    // Validate merchantId
+    if (!mongoose.Types.ObjectId.isValid(merchantId)) {
+      return res.status(400).json({ 
+        success: false,
+        message: 'Invalid merchant ID' 
+      });
+    }
 
-    const auctions = await Auction.find({ isDeleted: false, merchantId })
-    .populate("gemId", "name images price type")
-    .populate("merchantId", "username")
-    .populate({
-      path: 'bids',
-      match: { isDeleted: false }, // Only include non-deleted bids
-      populate: {
-        path: 'user',
-        select: 'username' // Select specific user fields
-      },
-      options: {
-        sort: { bidAmount: -1 } // Sort bids by highest amount first
-      }
-    })
-    .sort({ createdAt: -1 })
+    // Build the filter object
+    const filter = {
+      merchantId,
+      isDeleted: false
+    };
+
+    // Add status filter if provided and valid
+    if (status && ['active', 'completed', 'cancelled'].includes(status)) {
+      filter.status = status;
+    }
+
+    // Count total matching documents for pagination
+    const total = await Auction.countDocuments(filter);
+
+    // Get paginated results
+    const auctions = await Auction.find(filter)
+      .populate("gemId", "name images price type")
+      .populate("merchantId", "username")
+      .populate('highestBidderId', 'username')
+      .populate({
+        path: 'bids',
+        match: { isDeleted: false },
+        populate: {
+          path: 'user',
+          select: 'username'
+        },
+        options: {
+          sort: { bidAmount: -1 }
+        }
+      })
+      .sort({ createdAt: -1 })
+      .skip((page - 1) * limit)
+      .limit(parseInt(limit));
+
+    // Determine merchant name for message
+    const merchantName = auctions[0]?.merchantId?.username || 'Merchant';
 
     res.json({
       success: true,
-      message: `Auction By ${auctions[0]?.merchantId?.username} retrived successfully`,
+      message: `Auctions by ${merchantName} retrieved successfully`,
       data: auctions,
+      pagination: {
+        total,
+        totalPages: Math.ceil(total / limit),
+        currentPage: parseInt(page),
+        limit: parseInt(limit),
+        hasNextPage: (page * limit) < total,
+        hasPrevPage: page > 1
+      }
     });
+
   } catch (err) {
     next(err);
   }
@@ -502,7 +543,7 @@ export const extendAuciton = async (req, res, next) => {
 
     auction.endTime = new Date(endTime)
     await auction.save();
-
+    await rescheduleAuctionJob(auction)
     res.json({
       success: true,
       message: "Auction extended successfully!",

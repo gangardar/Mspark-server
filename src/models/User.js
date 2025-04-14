@@ -46,6 +46,14 @@ const userSchema = new mongoose.Schema({
     type: [String],
     required: false,
   },
+  address : {
+    type : mongoose.Schema.Types.ObjectId,
+    ref : 'Address'
+  },
+  wallet : {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Wallets'
+  },
   isDeleted: { type: Boolean, default: false },
 });
 

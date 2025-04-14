@@ -1,6 +1,6 @@
 import express from 'express'
 import { validateGem } from '../validator/validateGem.js';
-import { assignToMe, createGem, deleteGem, deleteGemImage, getAllGems, getDeletedGems, getGemById, getGemByMerchnatId, getGemByVerifierId, getNotDeletedGems, restoreGem, softDeleteGem, updateGem, verifyGem } from '../controller/GemController.js';
+import { assignToMe, createGem, deleteGem, deleteGemImage, getAllGems, getDeletedGems, getGemById, getGemByMerchnatId, getGemByVerifierId, getNotDeletedGems, getSoldGemByMerchnatId, restoreGem, softDeleteGem, updateGem, verifyGem } from '../controller/GemController.js';
 import { upload } from '../middleware/uploadImages.js';
 import multer from 'multer';
 import authMiddleware from '../middleware/auth.js';
@@ -13,6 +13,7 @@ gemRoute.get("/", getNotDeletedGems); // Get only non-deleted gems
 gemRoute.get("/deleted", getDeletedGems); // Get only deleted gems
 gemRoute.get("/:id", getGemById);
 gemRoute.get("/merchant/:id", getGemByMerchnatId);
+gemRoute.get("/merchant/:id/sold", getSoldGemByMerchnatId);
 gemRoute.get("/assigned/:id", getGemByVerifierId);
 gemRoute.put("/:id",upload.array("images",10), validateGem, updateGem);
 gemRoute.put("/verify/:id", verifyGem);
