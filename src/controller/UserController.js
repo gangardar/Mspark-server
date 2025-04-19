@@ -11,7 +11,7 @@ export const createUser = async (user) => {
     const userObj = new User(user);
     return await userObj.save();
   } catch (e) {
-    return new Error(e.message);
+    throw new Error(e.message);
   }
 };
 

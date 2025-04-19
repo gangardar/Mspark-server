@@ -41,7 +41,7 @@ authRouter.post("/register", async (req, res) => {
         data: userObj,
       }); // Send the user object with the token in the header
   } catch (e) {
-    return res.status(400).json({ success: false, message: e.message }); // Send error message if something goes wrong
+    return res.status(500).json({ success: false, message: e.message }); // Send error message if something goes wrong
   }
 });
 
