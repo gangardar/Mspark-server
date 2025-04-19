@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+import { syncLedger } from '../services/CoinGateService.js';
 
 const paymentTransactionSchema = new mongoose.Schema({
   amount: {
@@ -76,7 +77,7 @@ const paymentTransactionSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Auctions',
     required: function() {
-      return this.paymentType === 'order'; // Only required for orders
+      return this.paymentType === 'order' || "send"; // Only required for orders
     }
   },
   coinGateId: {
@@ -102,10 +103,22 @@ const paymentTransactionSchema = new mongoose.Schema({
   timestamps: true, // Adds createdAt and updatedAt
 });
 
+
+
 // Indexes for better query performance
 paymentTransactionSchema.index({ bidder: 1, paymentStatus: 1 });
 paymentTransactionSchema.index({ auction: 1, paymentType: 1 });
 paymentTransactionSchema.index({ transactionDate: -1 });
+
+paymentTransactionSchema.post('save', async function(doc) {
+  try {
+    await syncLedger(doc); // properly invoked sync
+  } catch (err) {
+    console.error('Failed to sync ledger:', err);
+    next(err)
+    // Consider adding error handling/retry logic here
+  }
+});
 
 // Virtual for formatted amount
 paymentTransactionSchema.virtual('amountNumber').get(function() {

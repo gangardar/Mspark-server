@@ -47,3 +47,112 @@ MongoRuntimeError: Attempted illegal state transition from [TRANSACTION_ABORTED]
     at Transaction.transition (/usr/src/app/node_modules/mongodb/lib/transactions.js:121:15)
     at ClientSession.abortTransaction (/usr/src/app/node_modules/mongodb/lib/sessions.js:442:30)
     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-04-15T05:53:19.223Z [ERROR]: uncaughtException: app.use() requires a middleware function
+TypeError: app.use() requires a middleware function
+    at Function.use (/usr/src/app/node_modules/express/lib/application.js:217:11)
+    at file:///usr/src/app/src/index.js:52:5
+    at ModuleJob.run (node:internal/modules/esm/module_job:271:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:578:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:116:5)
+2025-04-15T07:04:59.001Z [ERROR]: uncaughtException: express is not defined
+ReferenceError: express is not defined
+    at file:///usr/src/app/src/routes/delivery.js:5:26
+    at ModuleJob.run (node:internal/modules/esm/module_job:271:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:578:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:116:5)
+2025-04-15T07:06:30.538Z [ERROR]: uncaughtException: express is not defined
+ReferenceError: express is not defined
+    at file:///usr/src/app/src/routes/delivery.js:5:26
+    at ModuleJob.run (node:internal/modules/esm/module_job:271:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:578:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:116:5)
+2025-04-15T07:09:11.969Z [ERROR]: uncaughtException: express is not defined
+ReferenceError: express is not defined
+    at file:///usr/src/app/src/routes/delivery.js:5:26
+    at ModuleJob.run (node:internal/modules/esm/module_job:271:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:578:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:116:5)
+2025-04-15T07:11:18.397Z [ERROR]: uncaughtException: express is not defined
+ReferenceError: express is not defined
+    at file:///usr/src/app/src/routes/delivery.js:5:26
+    at ModuleJob.run (node:internal/modules/esm/module_job:271:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:578:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:116:5)
+2025-04-15T07:19:10.880Z [ERROR]: uncaughtException: express is not defined
+ReferenceError: express is not defined
+    at file:///usr/src/app/src/routes/delivery.js:5:26
+    at ModuleJob.run (node:internal/modules/esm/module_job:271:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:578:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:116:5)
+2025-04-15T07:23:27.703Z [ERROR]: uncaughtException: express is not defined
+ReferenceError: express is not defined
+    at file:///usr/src/app/src/routes/delivery.js:5:26
+    at ModuleJob.run (node:internal/modules/esm/module_job:271:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:578:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:116:5)
+2025-04-15T07:27:28.170Z [ERROR]: uncaughtException: express is not defined
+ReferenceError: express is not defined
+    at file:///usr/src/app/src/routes/delivery.js:5:26
+    at ModuleJob.run (node:internal/modules/esm/module_job:271:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:578:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:116:5)
+2025-04-15T07:30:07.033Z [ERROR]: uncaughtException: express is not defined
+ReferenceError: express is not defined
+    at file:///usr/src/app/src/routes/delivery.js:5:26
+    at ModuleJob.run (node:internal/modules/esm/module_job:271:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:578:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:116:5)
+2025-04-15T11:46:42.157Z [ERROR]: uncaughtException: accountSchema is not defined
+ReferenceError: accountSchema is not defined
+    at file:///usr/src/app/src/services/CoinGateService.js:201:43
+    at ModuleJob.run (node:internal/modules/esm/module_job:271:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:578:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:116:5)
+2025-04-15T12:24:24.011Z [ERROR]: uncaughtException: Cannot call abortTransaction after calling commitTransaction
+MongoTransactionError: Cannot call abortTransaction after calling commitTransaction
+    at ClientSession.abortTransaction (/usr/src/app/node_modules/mongodb/lib/sessions.js:384:19)
+    at seedPrimaryMspark (file:///usr/src/app/src/services/seedData.js:42:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-04-15T14:11:20.644Z [ERROR]: uncaughtException: app.use() requires a middleware function
+TypeError: app.use() requires a middleware function
+    at Function.use (/usr/src/app/node_modules/express/lib/application.js:217:11)
+    at file:///usr/src/app/src/index.js:58:5
+    at ModuleJob.run (node:internal/modules/esm/module_job:271:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:578:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:116:5)
+2025-04-16T05:56:13.941Z [ERROR]: uncaughtException: post() requires a function, got "undefined"
+Error: post() requires a function, got "undefined"
+    at Kareem.post (/usr/src/app/node_modules/kareem/index.js:564:11)
+    at Schema.post (/usr/src/app/node_modules/mongoose/lib/schema.js:1978:21)
+    at file:///usr/src/app/src/models/Payment.js:113:26
+    at ModuleJob.run (node:internal/modules/esm/module_job:271:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:578:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:116:5)
+2025-04-16T10:50:10.972Z [ERROR]: uncaughtException: putValidAddress is not defined
+ReferenceError: putValidAddress is not defined
+    at file:///usr/src/app/src/routes/mspark.js:11:23
+    at ModuleJob.run (node:internal/modules/esm/module_job:271:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:578:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:116:5)
+2025-04-16T10:58:00.567Z [ERROR]: uncaughtException: putValidAddress is not defined
+ReferenceError: putValidAddress is not defined
+    at file:///usr/src/app/src/routes/mspark.js:11:34
+    at ModuleJob.run (node:internal/modules/esm/module_job:271:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:578:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:116:5)
+2025-04-17T05:53:44.362Z [ERROR]: uncaughtException: Cannot set headers after they are sent to the client
+Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    at ServerResponse.setHeader (node:_http_outgoing:699:11)
+    at ServerResponse.header (/usr/src/app/node_modules/express/lib/response.js:794:10)
+    at ServerResponse.send (/usr/src/app/node_modules/express/lib/response.js:174:12)
+    at ServerResponse.json (/usr/src/app/node_modules/express/lib/response.js:278:15)
+    at putValidAccountWallet (file:///usr/src/app/src/controller/MsparkController:186:34)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-04-17T09:24:36.940Z [ERROR]: uncaughtException: logger is not a function
+TypeError: logger is not a function
+    at getMsparkPrimary (file:///usr/src/app/src/controller/MsparkController:197:5)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-04-17T09:27:08.761Z [ERROR]: uncaughtException: logger is not a function
+TypeError: logger is not a function
+    at getMsparkPrimary (file:///usr/src/app/src/controller/MsparkController:197:5)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)

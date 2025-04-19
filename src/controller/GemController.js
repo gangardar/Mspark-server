@@ -58,6 +58,10 @@ export const getNotDeletedGems = async (req, res) => {
       .skip(skip)
       .limit(limit)
       .populate("merchantId verifierId")
+      .populate({
+        path: "deliveries",
+        options: { sort: { createdAt: -1 } } // Sort deliveries by createdAt in descending order
+      })
       .sort("name");
     if (!gems || (typeof gems === "object" && Object.keys(gems).length === 0)) {
       return res

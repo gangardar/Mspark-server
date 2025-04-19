@@ -2,42 +2,55 @@ import mongoose from "mongoose";
 
 const deliverySchema = new mongoose.Schema(
   {
-    gemIds: [
+    gems: [
       {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Gems",
         required: true,
       },
-    ], // Array of gem IDs in this delivery
+    ], 
     type: {
       type: String,
       enum: ["verification", "sale", "return"],
       required: true,
     },
-    fromUserId: {
+    fromType: { 
+      type: String, 
+      enum: ["Users", "Mspark"], 
+      required: true 
+    },
+    from: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "Users",
       required: true,
-    }, // Merchant/Mspark/Bidder
-    toUserId: {
+      refPath: "fromType",
+    },
+    toType: { 
+      type: String, 
+      enum: ["Users", "Mspark"], 
+      required: true 
+    },
+    to: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "Users",
       required: true,
-    }, // Mspark/Bidder/Merchant
+      refPath: "toType",
+    },
+    trackingUrl : {
+      type: String,
+    },
     deliveryService: {
         type : String,
         required: function() {
-            return this.status !== 'pending'; // Only required for orders
+            return this.status !== 'pending'; // Not required for pending
           }
     },
+    trackingNumber: { type: String, unique: true },
     status: {
       type: String,
-      enum: ["pending", "in_transit", "delivered", "returned"],
+      enum: ["pending", "in_transit", "delivered"],
       default: "pending",
     },
-    trackingNumber: { type: String },
   },
-  { timeStamps: true }
+  { timestamps: true }
 );
 
 export default mongoose.model('Deliveries', deliverySchema)

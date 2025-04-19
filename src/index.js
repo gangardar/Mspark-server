@@ -16,6 +16,10 @@ import { transport } from './services/MailTransport.js'
 import schedule from 'node-schedule'
 import { initAuctionScheduler } from './services/ScheduleCompleteAuction.js'
 import paymentRouter from './routes/payment.js'
+import deliveryDelivery from './routes/delivery.js'
+import { seedPrimaryMspark } from './services/seedData.js'
+import msparkRoute from './routes/mspark.js'
+import { syncLedger } from './services/CoinGateService.js'
 
 env.config();
 
@@ -25,6 +29,9 @@ const app = express();
 mongoose.connect('mongodb://db/mspark')
 .then("DB: Connected Successfully to DB")
 .catch("DB: Cannot establish connection");
+
+//Seed the mspark data
+seedPrimaryMspark();
 
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
@@ -49,6 +56,8 @@ app.use('/api/coingate', coingateRouter)
 app.use('/api/memepool', memepoolRouter)
 app.use('/api/wallet', walletRouter)
 app.use('/api/payments', paymentRouter)
+app.use('/api/deliveries',authMiddleware, deliveryDelivery)
+app.use('/api/mspark', authMiddleware, authorizeRoles("admin"), msparkRoute)
 
 
 app.use((err, req, res, next) => {

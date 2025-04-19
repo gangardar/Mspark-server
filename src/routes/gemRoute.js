@@ -4,6 +4,7 @@ import { assignToMe, createGem, deleteGem, deleteGemImage, getAllGems, getDelete
 import { upload } from '../middleware/uploadImages.js';
 import multer from 'multer';
 import authMiddleware from '../middleware/auth.js';
+import authorizeRoles from '../middleware/authorize.js';
 
 const parseBody = multer();
 const gemRoute = express.Router();
@@ -14,7 +15,7 @@ gemRoute.get("/deleted", getDeletedGems); // Get only deleted gems
 gemRoute.get("/:id", getGemById);
 gemRoute.get("/merchant/:id", getGemByMerchnatId);
 gemRoute.get("/merchant/:id/sold", getSoldGemByMerchnatId);
-gemRoute.get("/assigned/:id", getGemByVerifierId);
+gemRoute.get("/assigned/:id",authorizeRoles('admin'), getGemByVerifierId);
 gemRoute.put("/:id",upload.array("images",10), validateGem, updateGem);
 gemRoute.put("/verify/:id", verifyGem);
 gemRoute.put("/assignToMe/:id", assignToMe);

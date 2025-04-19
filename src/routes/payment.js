@@ -3,6 +3,7 @@ import orderCallBack, {
   getAllPayments,
   getPaymentByMerchant,
   getPaymentsByBidder,
+  getYetToSend,
   reCreateOrder,
 } from "../controller/PaymentController.js";
 import authMiddleware from "../middleware/auth.js";
@@ -11,6 +12,8 @@ import authorizeRoles from "../middleware/authorize.js";
 const paymentRouter = express.Router();
 
 paymentRouter.get("/", getAllPayments);
+
+paymentRouter.get("/toBeSend", getYetToSend);
 
 paymentRouter.get(
   "/bidder/:bidderId",

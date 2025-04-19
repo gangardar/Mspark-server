@@ -8,5 +8,8 @@ const { bitcoin: { addresses } } = mempool({
 
 // Verify a crypto address
 export const verifyAddress = async (address) => {
-      return await axios.get(`https://mempool.space/testnet/api/v1/validate-address/${address}`);
-  };
+  return await axios.get(`https://mempool.emzy.de/testnet/api/v1/validate-address/${address}`, {
+    timeout: 10000, // 10 seconds
+    retry: 3, //retry mechanism
+  });
+};

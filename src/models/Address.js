@@ -30,6 +30,19 @@ const addressSchema = new mongoose.Schema({
         type : mongoose.Schema.Types.ObjectId,
         unique : true,
         ref : 'Users',
+        sparse: true,
+        required: function() {
+            return !this.mspark; // Required if mspark is not set
+          }
+    },
+    mspark: {
+        type : mongoose.Schema.Types.ObjectId,
+        unique : true,
+        ref : 'Users',
+        sparse: true,
+        required: function() {
+            return !this.user; // Required if user is not set
+          }
     }
 });
 
