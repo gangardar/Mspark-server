@@ -1,9 +1,11 @@
 import express from "express";
-import { addMsparkAddress } from "../controller/MsparkController";
-import { syncCoinGateLedgerAndAccount } from "../controller/MsparkController";
-import { getMsparkPrimary } from "../controller/MsparkController";
-import { putValidAccountWallet } from "../controller/MsparkController";
-import { updateMsparkAddress } from "../controller/MsparkController";
+import {
+  addMsparkAddress,
+  getMsparkPrimary,
+  putValidAccountWallet,
+  syncCoinGateLedgerAndAccount,
+  updateMsparkAddress,
+} from "../controller/MsparkController.js";
 
 const msparkRoute = express.Router();
 
