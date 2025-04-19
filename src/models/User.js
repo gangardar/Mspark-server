@@ -55,7 +55,7 @@ const userSchema = new mongoose.Schema({
     ref: 'Wallets'
   },
   isDeleted: { type: Boolean, default: false },
-});
+},{timestamps : true});
 
 userSchema.methods.generateAuthToken = function () {
   const token = jwt.sign(

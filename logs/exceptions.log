@@ -156,3 +156,41 @@ TypeError: logger is not a function
 TypeError: logger is not a function
     at getMsparkPrimary (file:///usr/src/app/src/controller/MsparkController:197:5)
     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-04-19T15:15:28.219Z [ERROR]: uncaughtException: Connection operation buffering timed out after 10000ms
+MongooseError: Connection operation buffering timed out after 10000ms
+    at NativeConnection._waitForConnect (/usr/src/app/node_modules/mongoose/lib/connection.js:865:13)
+    at async NativeConnection.startSession (/usr/src/app/node_modules/mongoose/lib/connection.js:688:3)
+    at async seedPrimaryMspark (file:///usr/src/app/src/services/seedData.js:6:19)
+2025-04-19T15:18:17.933Z [ERROR]: uncaughtException: MONGODBPASS is not defined
+ReferenceError: MONGODBPASS is not defined
+    at file:///usr/src/app/src/index.js:29:51
+    at ModuleJob.run (node:internal/modules/esm/module_job:271:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:578:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:116:5)
+2025-04-19T15:20:12.182Z [ERROR]: uncaughtException: MONGODBPASS is not defined
+ReferenceError: MONGODBPASS is not defined
+    at file:///usr/src/app/src/index.js:29:51
+    at ModuleJob.run (node:internal/modules/esm/module_job:271:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:578:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:116:5)
+2025-04-19T15:46:41.411Z [ERROR]: uncaughtException: Connection operation buffering timed out after 10000ms
+MongooseError: Connection operation buffering timed out after 10000ms
+    at NativeConnection._waitForConnect (/usr/src/app/node_modules/mongoose/lib/connection.js:865:13)
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:555:9)
+    at process.processTimers (node:internal/timers:529:7)
+    at async NativeConnection.startSession (/usr/src/app/node_modules/mongoose/lib/connection.js:688:3)
+    at async seedPrimaryMspark (file:///usr/src/app/src/services/seedData.js:6:19)
+2025-04-19T15:46:41.415Z [ERROR]: uncaughtException: Connection operation buffering timed out after 10000ms
+MongooseError: Connection operation buffering timed out after 10000ms
+    at NativeConnection._waitForConnect (/usr/src/app/node_modules/mongoose/lib/connection.js:865:13)
+    at async NativeConnection.startSession (/usr/src/app/node_modules/mongoose/lib/connection.js:688:3)
+    at async seedFirstAdmin (file:///usr/src/app/src/services/seedData.js:53:19)
+2025-04-19T15:53:37.472Z [ERROR]: uncaughtException: User is not defined
+ReferenceError: User is not defined
+    at seedFirstAdmin (file:///usr/src/app/src/services/seedData.js:58:27)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-04-19T16:07:08.674Z [ERROR]: uncaughtException: bcrypt is not defined
+ReferenceError: bcrypt is not defined
+    at seedFirstAdmin (file:///usr/src/app/src/services/seedData.js:80:32)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)

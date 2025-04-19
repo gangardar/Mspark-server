@@ -35,6 +35,13 @@ const walletSchema = new mongoose.Schema({
     type: String,
     require: true
   },
+  totalAmount: {
+    type: String,
+    validate: {
+      validator: (v) => /^\d+(\.\d{1,8})?$/.test(v),
+      message: "Max 8 decimal places"
+    }
+  },
   coinGateId: {
     type: Number,
     require: true

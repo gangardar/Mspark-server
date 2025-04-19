@@ -1480,3 +1480,56 @@ TypeError: logger is not a function
 2025-04-19T07:05:33.992Z [INFO]: Primary MSPark already exists
 2025-04-19T07:09:02.357Z [INFO]: Primary MSPark already exists
 2025-04-19T08:16:59.294Z [INFO]: Primary MSPark already exists
+2025-04-19T09:23:00.286Z [INFO]: Primary MSPark already exists
+2025-04-19T10:15:17.486Z [INFO]: Primary MSPark already exists
+2025-04-19T10:22:20.657Z [INFO]: Primary MSPark already exists
+2025-04-19T11:44:25.796Z [INFO]: Primary MSPark already exists
+2025-04-19T11:46:07.112Z [INFO]: Primary MSPark already exists
+2025-04-19T11:47:55.946Z [INFO]: Primary MSPark already exists
+2025-04-19T11:48:50.011Z [INFO]: Primary MSPark already exists
+2025-04-19T11:50:45.540Z [INFO]: Primary MSPark already exists
+2025-04-19T12:15:11.477Z [INFO]: Primary MSPark already exists
+2025-04-19T12:16:03.044Z [INFO]: Primary MSPark already exists
+2025-04-19T12:21:26.266Z [INFO]: Primary MSPark already exists
+2025-04-19T12:39:12.526Z [INFO]: Primary MSPark already exists
+2025-04-19T15:15:28.219Z [ERROR]: uncaughtException: Connection operation buffering timed out after 10000ms
+MongooseError: Connection operation buffering timed out after 10000ms
+    at NativeConnection._waitForConnect (/usr/src/app/node_modules/mongoose/lib/connection.js:865:13)
+    at async NativeConnection.startSession (/usr/src/app/node_modules/mongoose/lib/connection.js:688:3)
+    at async seedPrimaryMspark (file:///usr/src/app/src/services/seedData.js:6:19)
+2025-04-19T15:18:17.933Z [ERROR]: uncaughtException: MONGODBPASS is not defined
+ReferenceError: MONGODBPASS is not defined
+    at file:///usr/src/app/src/index.js:29:51
+    at ModuleJob.run (node:internal/modules/esm/module_job:271:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:578:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:116:5)
+2025-04-19T15:20:12.182Z [ERROR]: uncaughtException: MONGODBPASS is not defined
+ReferenceError: MONGODBPASS is not defined
+    at file:///usr/src/app/src/index.js:29:51
+    at ModuleJob.run (node:internal/modules/esm/module_job:271:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:578:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:116:5)
+2025-04-19T15:21:54.203Z [INFO]: Primary MSPark created successfully
+2025-04-19T15:46:41.411Z [ERROR]: uncaughtException: Connection operation buffering timed out after 10000ms
+MongooseError: Connection operation buffering timed out after 10000ms
+    at NativeConnection._waitForConnect (/usr/src/app/node_modules/mongoose/lib/connection.js:865:13)
+    at runNextTicks (node:internal/process/task_queues:65:5)
+    at listOnTimeout (node:internal/timers:555:9)
+    at process.processTimers (node:internal/timers:529:7)
+    at async NativeConnection.startSession (/usr/src/app/node_modules/mongoose/lib/connection.js:688:3)
+    at async seedPrimaryMspark (file:///usr/src/app/src/services/seedData.js:6:19)
+2025-04-19T15:46:41.415Z [ERROR]: uncaughtException: Connection operation buffering timed out after 10000ms
+MongooseError: Connection operation buffering timed out after 10000ms
+    at NativeConnection._waitForConnect (/usr/src/app/node_modules/mongoose/lib/connection.js:865:13)
+    at async NativeConnection.startSession (/usr/src/app/node_modules/mongoose/lib/connection.js:688:3)
+    at async seedFirstAdmin (file:///usr/src/app/src/services/seedData.js:53:19)
+2025-04-19T15:53:37.343Z [INFO]: DB: MongoDB connected
+2025-04-19T15:55:07.064Z [INFO]: DB: MongoDB connected
+2025-04-19T15:55:18.723Z [INFO]: Admin created successfully
+2025-04-19T15:55:22.853Z [INFO]: Primary MSPark already exists
+2025-04-19T15:56:05.957Z [INFO]: Ledger synchronized successfully
+2025-04-19T16:07:02.095Z [INFO]: DB: MongoDB connected
+2025-04-19T16:07:08.668Z [ERROR]: Failed to seed Admin: bcrypt is not defined
+2025-04-19T16:08:48.768Z [INFO]: DB: MongoDB connected
+2025-04-19T16:08:55.625Z [INFO]: Primary MSPark already exists
+2025-04-19T16:08:58.785Z [INFO]: Admin created successfully

@@ -206,6 +206,7 @@ export const syncLedger = async () => {
 const rateCache = new Map();
 
 export const getExchangeRate = async (from, to) => {
+  console.log(rateCache);
   const cacheKey = `${from}_${to}`;
   const now = Date.now();
   const oneHour = 60 * 60 * 1000; // 1 hour in milliseconds

@@ -102,14 +102,17 @@ export const getUserWithPagination = async (page, limit) => {
   }
 };
 
-export const getNotDeletedUserWithPagination = async (page, limit) => {
+export const getNotDeletedUserWithPagination = async (page, limit, role) => {
   try {
     const skip = (page - 1) * limit;
-    const users = await User.find({ isDeleted: false })
+    const query = {isDeleted : false}
+    if(role) query.role = role;
+    const users = await User.find(query)
+      .populate("address wallet")
       .sort("name")
       .skip(skip)
       .limit(limit);
-    const total = await User.countDocuments({ isDeleted: false }); //Get total count of users
+    const total = await User.countDocuments(query); //Get total count of users
     return {
       users,
       total,
@@ -133,8 +136,6 @@ export const getNotDeletedUserWithPaginationWithRole = async (
       .skip(skip)
       .limit(limit);
     const total = await User.countDocuments({ isDeleted: false, role });
-    console.log(users);
-
     return {
       users,
       total,
