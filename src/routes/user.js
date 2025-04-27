@@ -4,10 +4,13 @@ import bcrypt from "bcrypt";
 import {
   addAddress,
   createUser,
+  deleteUser,
+  getAllUsers,
   getMe,
   getNotDeletedUserWithPagination,
   getNotDeletedUserWithPaginationWithRole,
   getUserById,
+  restoreUser,
   softDeleteUser,
   updateUser,
 } from "../controller/userController.js";
@@ -36,6 +39,48 @@ userRouter.get("/", async (req, res) => {
     const {role} = req.query;
 
     const { users, total } = await getNotDeletedUserWithPagination(page, limit, role);
+
+    if (!users || users.length === 0) {
+      return res.status(200).json({
+        success: true,
+        message: "No users found",
+        data: [],
+        meta: { pagination: { total: 0, page, limit } },
+      });
+    }
+
+    res.status(200).json({
+      success: true,
+      message: "Users retrieved successfully",
+      data: users,
+      meta: {
+        pagination: {
+          total,
+          page,
+          limit,
+          totalPages: Math.ceil(total / limit),
+          hasNextPage: page < Math.ceil(total / limit),
+          hasPrevPage: page > 1,
+        },
+      },
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({
+      success: false,
+      message: "Server error while fetching users",
+      error: err.message,
+    });
+  }
+});
+
+userRouter.get("/all", async (req, res) => {
+  try {
+    const page = parseInt(req.query.page) || 1;
+    const limit = parseInt(req.query.limit) || 10;
+    const {role} = req.query;
+
+    const { users, total } = await getAllUsers(page, limit, role);
 
     if (!users || users.length === 0) {
       return res.status(200).json({
@@ -251,7 +296,7 @@ userRouter.get("/me", authMiddleware, async (req, res) => {
 });
 
 // Soft delete a user
-userRouter.delete("/:id", async (req, res) => {
+userRouter.delete("/:id/softDelete", async (req, res) => {
   try {
     const userObj = await softDeleteUser(req.params.id);
 
@@ -266,6 +311,58 @@ userRouter.delete("/:id", async (req, res) => {
     res.status(200).json({
       success: true,
       message: "User deleted successfully",
+      data: userObj,
+    });
+  } catch (err) {
+    res.status(400).json({
+      success: false,
+      message: "Deletion failed",
+      error: err.message,
+    });
+  }
+});
+
+userRouter.delete("/:id", async (req, res) => {
+  try {
+    const userObj = await deleteUser(req.params.id);
+
+    if (!userObj) {
+      return res.status(404).json({
+        success: false,
+        message: "User not found!",
+        data: null,
+      });
+    }
+
+    res.status(200).json({
+      success: true,
+      message: "User permanently deleted successfully",
+      data: userObj,
+    });
+  } catch (err) {
+    res.status(500).json({
+      success: false,
+      message: "Deletion failed",
+      error: err.message,
+    });
+  }
+});
+
+userRouter.put("/:id/restore", async (req, res) => {
+  try {
+    const userObj = await restoreUser(req.params.id);
+
+    if (!userObj) {
+      return res.status(404).json({
+        success: false,
+        message: "User not found",
+        data: null,
+      });
+    }
+
+    res.status(200).json({
+      success: true,
+      message: "User restored successfully",
       data: userObj,
     });
   } catch (err) {

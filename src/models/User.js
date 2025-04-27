@@ -55,6 +55,11 @@ const userSchema = new mongoose.Schema({
     ref: 'Wallets'
   },
   isDeleted: { type: Boolean, default: false },
+  deletedAt: {type: Date, 
+    required: function() {
+      return this.isDeleted; 
+    }
+  }
 },{timestamps : true});
 
 userSchema.methods.generateAuthToken = function () {

@@ -78,19 +78,17 @@ export const addAddress = async (req, res) => {
   }
 };
 
-export const getUser = async () => {
-  try {
-    return await User.find().sort("name");
-  } catch (err) {
-    return new Error(err.message);
-  }
-};
-
-export const getUserWithPagination = async (page, limit) => {
+export const getAllUsers = async (page, limit, role) => {
   try {
     const skip = (page - 1) * limit;
-    const users = await User.find().sort("name").skip(skip).limit(limit);
-    const total = await User.countDocuments(); //Get total count of users
+    const query = {}
+    if(role) query.role = role;
+    const users = await User.find(query)
+      .populate("address wallet")
+      .sort("name")
+      .skip(skip)
+      .limit(limit);
+    const total = await User.countDocuments(query); //Get total count of users
     return {
       users,
       total,
@@ -179,28 +177,37 @@ export const updateUser = async (id, body) => {
 
 export const deleteUser = async (id) => {
   try {
-    return await User.findByIdAndDelete({ _id: id });
+    return await User.findByIdAndDelete(id);
   } catch (e) {
     return new Error(e.message);
   }
 };
 
-//softdelete a gem
+//softdelete a user
 export const softDeleteUser = async (id) => {
   try {
-    const gem = await User.findByIdAndUpdate(
-      req.params.id,
-      { isDeleted: true },
+    const user = await User.findByIdAndUpdate(
+      id,
+      { isDeleted: true, deletedAt : Date.now()},
       { new: true }
     );
-    if (!gem)
-      return res
-        .status(404)
-        .json({ success: false, message: "User not found" });
-    res
-      .status(200)
-      .json({ success: true, message: "User soft deleted", data: gem });
+    return user
   } catch (error) {
-    res.status(500).json({ success: false, message: error.message });
+    throw new Error(error.message)
   }
 };
+
+//softdelete a user
+export const restoreUser = async (id) => {
+  try {
+    const user = await User.findByIdAndUpdate(
+      id,
+      { isDeleted: false},
+      { new: true }
+    );
+    return user
+  } catch (error) {
+    throw new Error(error.message)
+  }
+};
+

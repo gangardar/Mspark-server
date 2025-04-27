@@ -141,6 +141,15 @@ export const createDelivery = async (req, res) => {
       });
     }
 
+    if(!trackingNumber || !trackingUrl){
+      await session.abortTransaction();
+      session.endSession();
+      return res.status(400).json({
+        success : false,
+        message: "Tracking number and tracking url is required!"
+      })
+    }
+
     if (userRole === "admin" && (!type || !to)) {
       await session.abortTransaction();
       session.endSession();

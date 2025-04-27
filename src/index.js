@@ -19,7 +19,6 @@ import paymentRouter from "./routes/payment.js";
 import deliveryDelivery from "./routes/delivery.js";
 import { seedFirstAdmin, seedPrimaryMspark } from "./services/seedData.js";
 import msparkRoute from "./routes/mspark.js";
-import { syncLedger } from "./services/CoinGateService.js";
 import logger from "./config/logger.js";
 
 env.config();
@@ -28,8 +27,7 @@ const port = 3000;
 const app = express();
 try {
   await mongoose.connect(
-    `mongodb+srv://ggdgangardarggd:${process.env.MONGODBPASS}@cluster0.11dvtqe.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`
-  );
+    'mongodb://db/mspark');
   logger.info("DB: MongoDB connected");
 } catch (err) {
   console.log("DB: Connection failed!");

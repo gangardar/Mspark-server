@@ -11,7 +11,6 @@ export const createGem = async (req, res) => {
         .json({ success: false, message: "No files uploaded." });
     }
     const urls = req.files.map((file) => file.path);
-    console.log(urls);
     const gem = new Gem({
       ...req.body,
       merchantId: req.user._id,
@@ -113,7 +112,8 @@ export const getGemByMerchnatId = async (req, res) => {
     }
     const gems = await Gem.find(filter)
       .sort({ createdAt: -1 })
-      .populate("merchantId", "username email");
+      .populate("merchantId", "username email")
+      .populate("deliveries");
       
     if (!gems.length) { 
         return res.status(200).json({ 

@@ -1,12 +1,16 @@
+import fs from "fs";
 import Joi from "joi";
-import fs from 'fs'
 
 const gemSchema = Joi.object({
   name: Joi.string().trim().min(3).max(255).required(),
   type: Joi.string().trim().min(3).max(255).default("unknown"),
   weight: Joi.number().positive().required(),
-  shape: Joi.string().valid("Round", "Oval", "Square", "Pear", "Rough", "Other").optional(),
-  rarity: Joi.string().valid("Common", "Uncommon", "Rare", "Very Rare").optional(),
+  shape: Joi.string()
+    .valid("Round", "Oval", "Square", "Pear", "Rough", "Other")
+    .optional(),
+  rarity: Joi.string()
+    .valid("Common", "Uncommon", "Rare", "Very Rare")
+    .optional(),
   color: Joi.string().required(),
   dimension: Joi.object({
     length: Joi.number().positive().optional(),
@@ -16,13 +20,17 @@ const gemSchema = Joi.object({
   density: Joi.number().positive().optional(),
   refractiveIndex: Joi.number().optional(),
   hardness: Joi.number().optional(),
-  transparency: Joi.string().valid("Opaque", "Translucent", "Transparent").optional(),
+  transparency: Joi.string()
+    .valid("Opaque", "Translucent", "Transparent")
+    .optional(),
   evidentFeatures: Joi.string().optional(),
-  status: Joi.string().valid("Pending", "Verified", "Available", "Sold").default("Pending"),
+  status: Joi.string()
+    .valid("pending", "verified", "available", "sold")
+    .default("pending")
+    .optional(),
   price: Joi.number().positive().optional(),
   merchantId: Joi.string().optional(), // This should be an ObjectId but validated in Mongoose
   verifierId: Joi.string().optional(), // This should be an ObjectId but validated in Mongoose
-
 });
 
 // Middleware function for validation
@@ -30,14 +38,19 @@ export const validateGem = (req, res, next) => {
   const { error } = gemSchema.validate(req.body, { abortEarly: false });
   if (error) {
     console.error(error);
-    if(req.files){
+    if (req.files) {
       req.files.map((file) => {
         if (fs.existsSync(file.path)) {
           fs.unlinkSync(file.path);
-      }
-      })
+        }
+      });
     }
-    return res.status(400).json({ success: false, errors: error.details.map(err => err.message) });
+    return res
+      .status(400)
+      .json({
+        success: false,
+        message: error.details.map((err) => err.message).join("\n"),
+      });
   }
   next();
 };

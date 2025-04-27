@@ -194,3 +194,27 @@ ReferenceError: User is not defined
 ReferenceError: bcrypt is not defined
     at seedFirstAdmin (file:///usr/src/app/src/services/seedData.js:80:32)
     at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-04-24T07:56:07.816Z [ERROR]: uncaughtException: Unable to acquire IX lock on '{8275573245020078317: Collection, 1358044217378996461, mspark.users}' within 5ms. opId: 3263, op: conn159, connId: 159.
+MongoServerError: Unable to acquire IX lock on '{8275573245020078317: Collection, 1358044217378996461, mspark.users}' within 5ms. opId: 3263, op: conn159, connId: 159.
+    at Connection.sendCommand (/usr/src/app/node_modules/mongodb/lib/cmap/connection.js:299:27)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Connection.command (/usr/src/app/node_modules/mongodb/lib/cmap/connection.js:327:26)
+    at async Server.command (/usr/src/app/node_modules/mongodb/lib/sdam/server.js:168:29)
+    at async FindOperation.execute (/usr/src/app/node_modules/mongodb/lib/operations/find.js:36:16)
+    at async tryOperation (/usr/src/app/node_modules/mongodb/lib/operations/execute_operation.js:207:20)
+    at async executeOperation (/usr/src/app/node_modules/mongodb/lib/operations/execute_operation.js:75:16)
+    at async FindCursor._initialize (/usr/src/app/node_modules/mongodb/lib/cursor/find_cursor.js:61:26)
+    at async FindCursor.cursorInit (/usr/src/app/node_modules/mongodb/lib/cursor/abstract_cursor.js:633:27)
+    at async FindCursor.fetchBatch (/usr/src/app/node_modules/mongodb/lib/cursor/abstract_cursor.js:667:13)
+2025-04-24T08:13:55.387Z [ERROR]: uncaughtException: Unable to acquire IX lock on '{7906949634528835903: Collection, 989420606887754047, mspark.msparks}' within 5ms. opId: 21308, op: conn873, connId: 873.
+MongoServerError: Unable to acquire IX lock on '{7906949634528835903: Collection, 989420606887754047, mspark.msparks}' within 5ms. opId: 21308, op: conn873, connId: 873.
+    at Connection.sendCommand (/usr/src/app/node_modules/mongodb/lib/cmap/connection.js:299:27)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Connection.command (/usr/src/app/node_modules/mongodb/lib/cmap/connection.js:327:26)
+    at async Server.command (/usr/src/app/node_modules/mongodb/lib/sdam/server.js:168:29)
+    at async FindOperation.execute (/usr/src/app/node_modules/mongodb/lib/operations/find.js:36:16)
+    at async tryOperation (/usr/src/app/node_modules/mongodb/lib/operations/execute_operation.js:207:20)
+    at async executeOperation (/usr/src/app/node_modules/mongodb/lib/operations/execute_operation.js:75:16)
+    at async FindCursor._initialize (/usr/src/app/node_modules/mongodb/lib/cursor/find_cursor.js:61:26)
+    at async FindCursor.cursorInit (/usr/src/app/node_modules/mongodb/lib/cursor/abstract_cursor.js:633:27)
+    at async FindCursor.fetchBatch (/usr/src/app/node_modules/mongodb/lib/cursor/abstract_cursor.js:667:13)
