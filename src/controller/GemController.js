@@ -77,7 +77,12 @@ export const getNotDeletedGems = async (req, res) => {
 
 export const getDeletedGems = async (req, res) => {
   try {
-    const gems = await Gem.find({ isDeleted: true });
+    const gems = await Gem.find({ isDeleted: true }).populate("merchantId verifierId")
+    .populate({
+      path: "deliveries",
+      options: { sort: { createdAt: -1 } } // Sort deliveries by createdAt in descending order
+    })
+    .sort("name");;
     res
       .status(200)
       .json({ success: true, message: "Retrived Successfully!", data: gems });
@@ -89,7 +94,12 @@ export const getDeletedGems = async (req, res) => {
 // Get a single gem by ID
 export const getGemById = async (req, res) => {
   try {
-    const gem = await Gem.findById(req.params.id).populate("merchantId");
+    const gem = await Gem.findById(req.params.id).populate("merchantId verifierId")
+    .populate({
+      path: "deliveries",
+      options: { sort: { createdAt: -1 } } // Sort deliveries by createdAt in descending order
+    })
+    .sort("name");;
     if (!gem)
       return res.status(404).json({ success: false, message: "Gem not found" });
     res
@@ -112,8 +122,12 @@ export const getGemByMerchnatId = async (req, res) => {
     }
     const gems = await Gem.find(filter)
       .sort({ createdAt: -1 })
-      .populate("merchantId", "username email")
-      .populate("deliveries");
+      .populate("merchantId verifierId")
+      .populate({
+        path: "deliveries",
+        options: { sort: { createdAt: -1 } } // Sort deliveries by createdAt in descending order
+      })
+      .sort("name");
       
     if (!gems.length) { 
         return res.status(200).json({ 
@@ -138,7 +152,12 @@ export const getSoldGemByMerchnatId = async (req, res) => {
       merchantId: req.params.id,
       status: "sold",
       isDeleted: "false",
-    });
+    }).populate("merchantId verifierId")
+    .populate({
+      path: "deliveries",
+      options: { sort: { createdAt: -1 } } // Sort deliveries by createdAt in descending order
+    })
+    .sort("name");
     if (!gem)
       return res.status(404).json({ success: false, message: "Gem not found" });
     res
@@ -159,7 +178,12 @@ export const getGemByVerifierId = async (req, res) => {
     const gem = await Gem.find({
       verifierId: req.params.id,
       isDeleted: "false",
-    }).populate("verifierId merchantId");
+    }).populate("merchantId verifierId")
+    .populate({
+      path: "deliveries",
+      options: { sort: { createdAt: -1 } } // Sort deliveries by createdAt in descending order
+    })
+    .sort("name");
     if (!gem)
       return res.status(404).json({ success: false, message: "Gem not found" });
     res
