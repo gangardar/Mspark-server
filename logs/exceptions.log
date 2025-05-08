@@ -218,3 +218,33 @@ MongoServerError: Unable to acquire IX lock on '{7906949634528835903: Collection
     at async FindCursor._initialize (/usr/src/app/node_modules/mongodb/lib/cursor/find_cursor.js:61:26)
     at async FindCursor.cursorInit (/usr/src/app/node_modules/mongodb/lib/cursor/abstract_cursor.js:633:27)
     at async FindCursor.fetchBatch (/usr/src/app/node_modules/mongodb/lib/cursor/abstract_cursor.js:667:13)
+2025-05-02T17:16:57.809Z [ERROR]: uncaughtException: upload is not a function
+TypeError: upload is not a function
+    at file:///usr/src/app/src/routes/user.js:237:23
+    at ModuleJob.run (node:internal/modules/esm/module_job:274:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:116:5)
+2025-05-02T17:41:47.171Z [ERROR]: uncaughtException: fs is not defined
+ReferenceError: fs is not defined
+    at file:///usr/src/app/src/routes/user.js:266:9
+    at Layer.handle [as handle_request] (/usr/src/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/usr/src/app/node_modules/express/lib/router/route.js:149:13)
+    at done (/usr/src/app/node_modules/multer/lib/make-middleware.js:45:7)
+    at indicateDone (/usr/src/app/node_modules/multer/lib/make-middleware.js:49:68)
+    at /usr/src/app/node_modules/multer/lib/make-middleware.js:155:11
+    at WriteStream.<anonymous> (/usr/src/app/node_modules/multer/storage/disk.js:43:9)
+    at WriteStream.emit (node:events:530:35)
+    at finish (node:internal/streams/writable:955:10)
+    at node:internal/streams/writable:936:13
+2025-05-08T13:06:13.462Z [ERROR]: uncaughtException: Caused by :: Unable to write to collection 'mspark.msparks' due to catalog changes; please retry the operation :: Please retry your operation or multi-document transaction.
+MongoServerError: Caused by :: Unable to write to collection 'mspark.msparks' due to catalog changes; please retry the operation :: Please retry your operation or multi-document transaction.
+    at Connection.sendCommand (/usr/src/app/node_modules/mongodb/lib/cmap/connection.js:299:27)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Connection.command (/usr/src/app/node_modules/mongodb/lib/cmap/connection.js:327:26)
+    at async Server.command (/usr/src/app/node_modules/mongodb/lib/sdam/server.js:168:29)
+    at async InsertOneOperation.executeCommand (/usr/src/app/node_modules/mongodb/lib/operations/command.js:76:16)
+    at async InsertOneOperation.execute (/usr/src/app/node_modules/mongodb/lib/operations/insert.js:37:16)
+    at async InsertOneOperation.execute (/usr/src/app/node_modules/mongodb/lib/operations/insert.js:46:21)
+    at async tryOperation (/usr/src/app/node_modules/mongodb/lib/operations/execute_operation.js:207:20)
+    at async executeOperation (/usr/src/app/node_modules/mongodb/lib/operations/execute_operation.js:75:16)
+    at async Collection.insertOne (/usr/src/app/node_modules/mongodb/lib/collection.js:157:16)

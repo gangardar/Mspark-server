@@ -1,7 +1,7 @@
 import Joi from "joi";
 import express from "express";
 import bcrypt from "bcrypt";
-import { authUser, createUser, getMe } from "../controller/userController.js";
+import { authUser, changePassword, createUser, forgotPassword, getMe, handleForgotPassword } from "../controller/userController.js";
 import authMiddleware from "../middleware/auth.js";
 
 const authRouter = express.Router(); // Initialize the Express router
@@ -98,5 +98,10 @@ authRouter.get("/me", authMiddleware, async (req, res) => {
     return res.status(400).json({ success: false, message: e.message }); // Send error message if something goes wrong
   }
 });
+
+authRouter.post("/forgotPassword", forgotPassword);
+authRouter.put("/forgotPassword", changePassword);
+authRouter.get("/forgotPassword", handleForgotPassword);
+
 
 export default authRouter;

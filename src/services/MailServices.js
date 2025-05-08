@@ -1,6 +1,7 @@
 import {
   auctionCompleteTemplateForBidder,
   auctionCompleteTemplateForMerchant,
+  outBidMailTemplate,
   sendPaymentFailedNotificationTemplate,
   sendPaymentLinkToWinnerTemplate,
   sendPaymentPaidNotificationTemplate,
@@ -30,6 +31,27 @@ export const sendAuctionCompletionEmails = async (auction) => {
     console.log("Auction completion emails sent successfully");
   } catch (error) {
     console.error("Error sending auction emails:", error);
+    throw error;
+  }
+};
+
+export const sendOutBidMail = async (previousBidder, auction, newBid) => {
+  try {
+    if (!previousBidder || !previousBidder.email) {
+      throw new Error("No valid previous bidder found for outbid notification");
+    }
+
+    const outbidTemplate = outBidMailTemplate(auction, newBid);
+    
+    await transport.sendMail({
+      from: '"Auction System" noreply-auto@mspark.com',
+      to: previousBidder.email,
+      ...outbidTemplate,
+    });
+
+    console.log("Outbid notification email sent successfully");
+  } catch (error) {
+    console.error("Error sending outbid email:", error);
     throw error;
   }
 };

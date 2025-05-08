@@ -42,6 +42,9 @@ const paymentTransactionSchema = new mongoose.Schema({
     type: String,
     required: true,
     enum: [
+      'draft',
+      'in_progress',
+      'processing',
       'new', 
       'pending', 
       'confirming', 

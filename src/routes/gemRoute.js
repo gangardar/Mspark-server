@@ -2,11 +2,9 @@ import express from 'express'
 import { validateGem } from '../validator/validateGem.js';
 import { assignToMe, createGem, deleteGem, deleteGemImage, getAllGems, getDeletedGems, getGemById, getGemByMerchnatId, getGemByVerifierId, getNotDeletedGems, getSoldGemByMerchnatId, restoreGem, softDeleteGem, updateGem, verifyGem } from '../controller/GemController.js';
 import { upload } from '../middleware/uploadImages.js';
-import multer from 'multer';
 import authMiddleware from '../middleware/auth.js';
 import authorizeRoles from '../middleware/authorize.js';
 
-const parseBody = multer();
 const gemRoute = express.Router();
 gemRoute.use(authMiddleware)
 gemRoute.post("/",upload.array("images",10) ,validateGem, createGem);

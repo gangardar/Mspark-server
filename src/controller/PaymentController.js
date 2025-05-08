@@ -1,12 +1,13 @@
 import mongoose from "mongoose";
 import Auction from "../models/Auction.js";
 import Payment from "../models/Payment.js";
-import { createOrder } from "../services/CoinGateService.js";
+import { createOrder, createSendRequest } from "../services/CoinGateService.js";
 import {
   informWinnerOnPaymentStatus,
   sendPaymentLinkToWinner,
 } from "../services/MailServices.js";
 import Gem from "../models/Gem.js";
+import User from "../models/User.js";
 
 /**
  * @desc Get all payments with pagination
@@ -79,53 +80,101 @@ export const getAllPayments = async (req, res) => {
  * @route GET /api/payments
  * @access Private/Admin
  */
+// export const getYetToSend = async (req, res) => {
+//   const { page = 1, limit = 10 } = req.query;
+//   const skip = (page - 1) * limit;
+  
+//   try {
+//     const deliveredGems = await Gem.find({
+//       status: "sold",
+//       deliveries: { $exists: true, $not: { $size: 0 } }
+//     }).populate({
+//       path: 'deliveries',
+//       match: { status: "delivered" },
+//       options: { sort: { createdAt: -1 }, limit: 1 }
+//     });
+
+//     // Get full auction objects instead of just IDs
+//     const auctions = await Promise.all(
+//       deliveredGems.map(async (gem) => {
+//         return await Auction.findOne({ 
+//           status: "completed",
+//           gemId: gem._id 
+//         });
+//       })
+//     );
+
+//     // Filter out any null values (where no auction was found)
+//     const validAuctions = auctions.filter(auction => auction !== null);
+
+//     res.json({
+//       data: validAuctions
+//     });
+
+//   } catch (err) {
+//     res.status(400).json({
+//       error: err.message
+//     });
+//   }
+// };
+
 export const getYetToSend = async (req, res) => {
-  const { page = 1, limit = 10 } = req.query;
-  const skip = (page - 1) * limit;
   try {
-    const deliveredGems = await Gem.find({
-      status: "sold",
-      where: {        
-        deliveries: {
-          $elemMatch: {
-            status: "delivered",
-            $position: -1 // last element in array
-          }
-        }
-      }
+    // 1. Find all completed auctions
+    const completedAuctions = await Auction.find({ 
+      status: "completed" 
     });
 
-    console.log("Delivered Gems:", deliveredGems);
+    // 2. Process each auction to check payment status
+    const results = await Promise.all(completedAuctions.map(async (auction) => {
+      // Find bidder's payment (order type)
+      const bidderPayment = await Payment.findOne({
+        auction: auction._id,
+        paymentType: "order",
+        paymentStatus: "paid"
+      });
 
-    const auctionIds = deliveredGems.map(async gem => {
-      return await Auction.findOne({ 
-        status: "completed",
-        where: { gemId: gem._id } 
-      })._id;
-    });
+      if (!bidderPayment) return null; // Skip if no bidder payment
 
-    // console.log(JSON.stringify(auctionIds))
+      // Check if Mspark has sent payment
+      const msparkPayment = await Payment.findOne({
+        auction: auction._id,
+        paymentType: "send",
+        paymentStatus: { $in: ["paid", "confirming", "pending", 'draft', 'in_progress', 'processing'] }
+      });
 
-    const pendingPayments = await Payment.find({
-      where: {
-        auctionId: { $in: auctionIds },
-        $and: [
-          { type: { $ne: "sold" } },
-          { status: { $nin: ["paid", "refunded"] } }
-        ]
-      },
-      order: [['createdAt', 'DESC']], // get most recent first
-      limit: 1 // only consider the most recent payment per auction
-    });
+      if (msparkPayment) return null; // Skip if Mspark already sent
+
+      // Get additional related data
+      const gem = await Gem.findById(auction.gemId);
+      const bidder = await User.findById(auction.highestBidderId);
+
+      return {
+        auction: auction.toObject(),
+        bidderPayment: bidderPayment.toObject(),
+        msparkPayment: null, // Explicitly showing no payment sent
+        gem: gem ? gem.toObject() : null,
+        bidder: bidder ? bidder.toObject() : null,
+        // Add any other relevant fields
+        requiresAction: true,
+        daysSinceBidderPaid: Math.floor((new Date() - bidderPayment.updatedAt) / (1000 * 60 * 60 * 24))
+      };
+    }));
+
+    // Filter out null entries (auctions that don't meet criteria)
+    const pendingPayments = results.filter(item => item !== null);
 
     res.json({
-      data : pendingPayments || []
-    })
+      success: true,
+      count: pendingPayments.length,
+      data: pendingPayments
+    });
 
   } catch (err) {
-    res.status(400).json({
+    res.status(500).json({
+      success: false,
       error: err.message
-    })
+    });
   }
 };
 
@@ -535,6 +584,7 @@ export const orderCallBack = async (req, res) => {
     const updateData = {
       paymentStatus: callbackData.status,
       updatedAt: new Date(),
+      transactionDate: new Date(),
       metadata: {
         ...payment.metadata,
         originalResponse: callbackData, // Update with latest response
@@ -725,6 +775,86 @@ export const reCreateOrder = async (req, res) => {
       success: false,
       error: "Internal server error",
       message: error.message,
+    });
+  }
+};
+
+export const createSend = async (req, res) => {
+  try {
+    const { auctionId, bidderPaymentId } = req.body; // or req.body depending on your API design
+    console.log(auctionId, bidderPaymentId)
+    // 1. Get the auction, merchant, and bidder payment details
+    const auction = await Auction.findById(auctionId);
+    if (!auction) {
+      return res.status(404).json({
+        success: false,
+        error: "Auction not found"
+      });
+    }
+
+    // 2. Verify auction is completed
+    if (auction.status !== "completed") {
+      return res.status(400).json({
+        success: false,
+        error: "Auction is not completed"
+      });
+    }
+
+    // 3. Get the merchant
+    const merchant = await User.findById(auction.merchantId);
+    if (!merchant) {
+      return res.status(404).json({
+        success: false,
+        error: "Merchant not found"
+      });
+    }
+
+    // 4. Find the bidder's payment
+    const bidderPayment = await Payment.findById(bidderPaymentId)
+    
+    if (!bidderPayment) {
+      return res.status(400).json({
+        success: false,
+        error: "Bidder payment not found or not completed"
+      });
+    }
+
+    // 5. Check if Mspark payment already exists
+    const existingMsparkPayment = await Payment.findOne({
+      auction: auction._id,
+      paymentType: "send",
+      paymentStatus: { $in: ["draft", "pending", "paid", "confirming"] }
+    });
+
+    if (existingMsparkPayment) {
+      return res.status(400).json({
+        success: false,
+        error: "Mspark payment already exists for this auction",
+        existingPayment: existingMsparkPayment
+      });
+    }
+
+    // 6. Create the send request
+    const result = await createSendRequest(auction, merchant, bidderPayment);
+
+    // 7. Return success response
+    res.status(201).json({
+      success: true,
+      message: "Send request created successfully",
+      data: {
+        paymentRecord: result.paymentRecord,
+        confirmUrl: result.coinGateResponse.actions?.confirmUrl,
+        requires2FA: result.coinGateResponse.actions?.requires2FA
+      }
+    });
+
+  } catch (error) {
+    console.error("Error in createSend:", error);
+    
+    res.status(500).json({
+      success: false,
+      error: error.message,
+      details: process.env.NODE_ENV === 'development' ? error.stack : undefined
     });
   }
 };

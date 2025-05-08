@@ -6,6 +6,8 @@ import Mspark from "../models/Mspark.js";
 import logger from "../config/logger.js";
 import mongoose from "mongoose";
 import Account from "../models/Account.js";
+import Wallet from "../models/Wallet.js";
+import Payment from "../models/Payment.js";
 
 const coingateApi = new Client(process.env.COINGATE_API_KEY, true);
 coingateApi.getApiKey();
@@ -29,8 +31,6 @@ export const getCurrencyInfoByTitle = async (title) => {
     throw new Error(`Failed to get currency info: ${error.message}`);
   }
 };
-
-// // Create a payment using CoinGate
 // export const createPayment = async (paymentData) => {
 //   try {
 //     const response = await apiClient.post("/orders", {
@@ -77,12 +77,10 @@ export const createWallet = async (beneficiary, user) => {
     town_name: user.address.city,
     post_code: user.address.postalcode,
   };
-  console.log(process.env.COINGATE_API_URL);
   const response = await coingateAxiosInstance.post(
     "/beneficiaries",
     beneficiaryData
   );
-  console.log(response);
   return response;
 };
 
@@ -134,7 +132,7 @@ export const syncLedger = async () => {
   const session = await mongoose.startSession();
   session.startTransaction();
 
-  try { 
+  try {
     // 1. Get primary Mspark with session
     const mspark = await Mspark.findOne({ type: "primary" }).session(session);
     if (!mspark) {
@@ -206,7 +204,6 @@ export const syncLedger = async () => {
 const rateCache = new Map();
 
 export const getExchangeRate = async (from, to) => {
-  console.log(rateCache);
   const cacheKey = `${from}_${to}`;
   const now = Date.now();
   const oneHour = 60 * 60 * 1000; // 1 hour in milliseconds
@@ -222,35 +219,194 @@ export const getExchangeRate = async (from, to) => {
   }
 
   try {
-    const response = await coingateAxiosInstance.get(`/rates/merchant/${from}/${to}`);
+    const response = await coingateAxiosInstance.get(
+      `/rates/merchant/${from}/${to}`
+    );
     const rate = parseFloat(response.data);
-    
+
     // Store in cache with timestamp
     rateCache.set(cacheKey, {
       rate,
-      timestamp: now
+      timestamp: now,
     });
-    
+
     return rate;
   } catch (error) {
-    console.error('Error fetching exchange rate:', error);
+    console.error("Error fetching exchange rate:", error);
     throw new Error(`Failed to get exchange rate: ${error.message}`);
   }
 };
 
-export const convertCurrency = async(amount, from, to) => {
+export const convertCurrency = async (amount, from, to) => {
   try {
     const rate = await getExchangeRate(from, to);
     const convertedAmount = amount * rate;
-    
+
     return {
       amount: convertedAmount,
       rate,
       from,
-      to
+      to,
     };
   } catch (error) {
-    console.error('Error converting currency:', error);
+    console.error("Error converting currency:", error);
     throw new Error(`Currency conversion failed: ${error.message}`);
   }
-}
+};
+
+export const createSendRequest = async (auction, merchant, bidderPayment) => {
+  try {
+    // 1. Get Mspark configuration
+    const mspark = await Mspark.findOne({ type: "primary" });
+    if (!mspark) {
+      throw new Error("Mspark configuration not found");
+    }
+
+    // 2. Get merchant's wallet and account details
+    const merchantWallet = await Wallet.findById(merchant.wallet);
+    if (!merchantWallet) {
+      throw new Error("Merchant wallet not found");
+    }
+
+    const ledgerAccount = await Account.findOne({
+      symbol: merchantWallet.currencySymbol,
+    });
+    if (!ledgerAccount) {
+      throw new Error("Ledger account not found");
+    }
+
+    // 3. Calculate the amount to send (considering fees)
+    const platformFeeAmount = (auction.currentPrice * mspark.platformFee) / 100;
+    const verificationFeeAmount =
+      (auction.currentPrice * mspark.verificationFee) / 100;
+    const amountToSend = (
+      auction.currentPrice -
+      platformFeeAmount -
+      verificationFeeAmount
+    ).toFixed(8);
+
+    const {amount : amountToSendInCoin} = await convertCurrency(
+      amountToSend,
+      "USD",
+      merchantWallet.currencySymbol
+    )
+
+    // 4. Prepare the send request payload
+    const sendRequestData = {
+      ledger_account_id: ledgerAccount.coinGateId,
+      beneficiary_payout_setting_id: merchantWallet.coinGatePayoutId,
+      amount: amountToSendInCoin,
+      amount_currency_id: merchantWallet.coinGateCurrencyId,
+      purpose: `Payment for auction ${auction._id} - ${
+        auction.gem?.name || "Gem"
+      }`,
+      callback_url: `${process.env.BASE_URL}/coin-gate-send/callback`,
+      external_id: `${Date.now()}_${auction._id}`,
+      metadata: {
+        auctionId: auction._id.toString(),
+        merchantId: merchant._id.toString(),
+        bidderId: auction.highestBidderId.toString(),
+        originalPaymentId: bidderPayment._id.toString(),
+        fees: {
+          platformFee: mspark.platformFee,
+          verificationFee: mspark.verificationFee,
+          totalFees: (platformFeeAmount + verificationFeeAmount).toFixed(8),
+        },
+      },
+    };
+
+    // 5. Make the API call to CoinGate
+    const response = await coingateAxiosInstance.post(
+      "/send_requests",
+      sendRequestData
+    );
+
+    // 6. Create a record in our Payments collection
+    // Update the payment record creation part of the previous implementation
+    const paymentRecord = new Payment({
+      amount: amountToSend,
+      price_currency: merchantWallet.currencySymbol,
+      receive_currency: merchantWallet.currencySymbol,
+      description: `Mspark payment for auction ${auction._id}`,
+      paymentType: "send",
+      paymentStatus: "draft", // Initial status from CoinGate response
+      transactionDate: new Date(),
+      merchant: merchant._id.toString(),
+      auction: auction._id,
+      coinGateId: response.data.id,
+      coinGatePaymentLink: response.data.actions_required?.confirm || null,
+      metadata: {
+        sendRequestData,
+        coinGateResponse: {
+          status: response.data.status,
+          purpose: response.data.purpose,
+          externalId: response.data.external_id,
+          ledgerAccount: {
+            id: response.data.ledger_account?.id,
+            balance: response.data.ledger_account?.balance,
+            currency: response.data.ledger_account?.currency,
+          },
+          amountDetails: {
+            inputAmount: response.data.input_amount,
+            inputCurrency: response.data.input_currency,
+            sendingAmount: response.data.sending_amount,
+            sendingCurrency: response.data.sending_currency,
+            balanceDebitAmount: response.data.balance_debit_amount,
+            balanceDebitCurrency: response.data.balance_debit_currency,
+          },
+          rates: {
+            inputToSending: response.data.input_to_sending_rate,
+            sendingToBalance: response.data.sending_to_balance_debit_rate,
+          },
+          beneficiary: {
+            payoutSettingId: response.data.beneficiary_payout_setting?.id,
+            cryptoAddress:
+              response.data.beneficiary_payout_setting?.crypto_address,
+            platform: response.data.beneficiary_payout_setting?.platform,
+          },
+          fees: {
+            serviceFee: response.data.fees?.service_fee,
+            conversionFee: response.data.fees?.conversion_fee,
+            totalFees: (
+              parseFloat(response.data.fees?.service_fee?.amount || 0) +
+              parseFloat(response.data.fees?.conversion_fee?.amount || 0)
+            ).toString(),
+          },
+          actions: {
+            confirmUrl: response.data.actions_required?.confirm,
+            cancelUrl: response.data.actions_required?.cancel,
+            requires2FA: response.data.requires_2fa_confirmation,
+          },
+          timestamps: {
+            createdAt: response.data.created_at,
+            updatedAt: new Date().toISOString(),
+          },
+        },
+        // Keep the original fee calculations for reference
+        internalCalculations: {
+          platformFee: mspark.platformFee,
+          verificationFee: mspark.verificationFee,
+          calculatedAmount: amountToSend,
+          originalBidderPayment: bidderPayment._id,
+        },
+      },
+      // Additional fields for easier querying
+      coinGateStatus: response.data.status,
+      externalId: response.data.external_id,
+      beneficiaryAddress:
+        response.data.beneficiary_payout_setting?.crypto_address,
+      requiresAction: response.data.actions_required?.confirm ? true : false,
+    });
+
+    await paymentRecord.save();
+
+    return {
+      success: true,
+      paymentRecord,
+      coinGateResponse: response.data,
+    };
+  } catch (error) {
+    console.error("Error creating send request:", error);
+    throw new Error(`Failed to create send request: ${error.message}`);
+  }
+};

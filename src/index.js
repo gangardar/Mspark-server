@@ -20,32 +20,70 @@ import deliveryDelivery from "./routes/delivery.js";
 import { seedFirstAdmin, seedPrimaryMspark } from "./services/seedData.js";
 import msparkRoute from "./routes/mspark.js";
 import logger from "./config/logger.js";
+import http from "http";
+import { Server } from "socket.io";
+import dashboardRoutes from "./routes/dashboardRoutes.js";
+import Payment from "./models/Payment.js";
 
 env.config();
 
 const port = 3000;
 const app = express();
+const server = http.createServer(app);
+const io = new Server(server, {
+  cors: {
+    origin: "*",
+    methods: ["GET", "POST"]
+  }
+});
 try {
-  await mongoose.connect(
-    'mongodb://db/mspark');
+  await mongoose.connect("mongodb://db/mspark");
   logger.info("DB: MongoDB connected");
 } catch (err) {
   console.log("DB: Connection failed!");
   logger.info(err.message, err);
 }
 
-//Seed the mspark data
-seedPrimaryMspark();
 
-// Seed the admin
+//Seeders --- Start ---
+
+seedPrimaryMspark();
 seedFirstAdmin();
+
+//Seeder --- End ---
+
+io.on("connection", (socket) => {
+  console.log("a user connected");
+
+  // Join auction room
+  socket.on('joinAuction', (auctionId) => {
+    socket.join(auctionId);
+    console.log(`Socket ${socket.id} joined auction ${auctionId}`);
+  });
+
+  // Leave auction room
+  socket.on('leaveAuction', (auctionId) => {
+    socket.leave(auctionId);
+    console.log(`Socket ${socket.id} left auction ${auctionId}`);
+  });
+
+  socket.on('disconnect', () => {
+    console.log('Client disconnected:', socket.id);
+  });
+});
+
+// Making io accessible in routes
+app.set('io',io);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 // initAuctionScheduler()
 
 // Enable CORS for all routes
-app.use(cors());
+app.use(cors({
+  origin:'*'
+}));
+app.options('*', cors()); // Enable preflight for all routes
 
 // Open for public
 app.use("/storage/public", express.static("storage/public"));
@@ -65,6 +103,25 @@ app.use("/api/wallet", walletRouter);
 app.use("/api/payments", paymentRouter);
 app.use("/api/deliveries", authMiddleware, deliveryDelivery);
 app.use("/api/mspark", authMiddleware, authorizeRoles("admin"), msparkRoute);
+app.use("/api/admin/dashboard", authMiddleware, authorizeRoles("admin"), dashboardRoutes);
+
+app.post('/coin-gate-send/callback', async (req, res) => {
+  const { id, status, external_id } = req.body;
+  
+  await Payment.updateOne(
+    { coinGateId: id },
+    { 
+      $set: { 
+        coinGateStatus: status,
+        paymentStatus: status,
+        "metadata.coinGateResponse.status": status
+      }
+    }
+  );
+  
+  res.status(200).end();
+});
+
 
 app.use((err, req, res, next) => {
   const statusCode = err.status || 500;
@@ -99,7 +156,7 @@ app.get("/test-nodeMailer", async (req, res) => {
   }
 });
 
-app.listen(port, "0.0.0.0", () =>
+server.listen(port, "0.0.0.0", () =>
   console.log(`Server is listening at ${port}`)
 );
 

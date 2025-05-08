@@ -36,7 +36,7 @@ export const createAuction = async (req, res, next) => {
     // Check if gem is already in an active auction
     const existingAuction = await Auction.findOne({
       gemId,
-      status: { $in: ['active'] },
+      status: { $in: ['active', 'completed'] },
       isDeleted: false
     });
 
@@ -60,12 +60,13 @@ export const createAuction = async (req, res, next) => {
       merchantId: req.user._id,
     });
 
-    await auction.save();
+    const response = await auction.save();
+    rescheduleAuctionJob(response)
 
     res.status(201).json({
       success: true,
       message: "Auction created successfully",
-      data: auction,
+      data: response,
     });
   } catch (err) {
     next(err);
@@ -185,6 +186,7 @@ export const getAuctionByFilters = async (req, res, next) => {
     const auctions = await Auction.find(filters)
       .populate("gemId", "name images price type")
       .populate("merchantId", "username")
+      .populate('bids')
       .sort(sort)
       .skip(skip)
       .limit(limit);

@@ -27,11 +27,9 @@ export const createBeneficiary = async (req, res) => {
         throw new BadRequestError("User with this wallet already exists!");
       }
   
-      const user = await User.findOne({ _id: _id, isDeleted: false }).populate("address");
+      const user = await User.findOne({ _id: _id, isDeleted: false }).populate("address wallet");
       if (!user && user.role === "admin") throw new NotFoundError("User doesn't exists!");
-      console.log("it passed population")
-      
-      if (!user.address) {
+      if (!user?.address) {
         throw new BadRequestError("User address information is required");
       }
 
@@ -51,7 +49,7 @@ export const createBeneficiary = async (req, res) => {
         country: alpha3Country || "MMR",
       };
   
-      const response = await createWallet(beneficiary);
+      const response = await createWallet(beneficiary, user);
       
       // Create wallet record in database
       const wallet = await Wallet.create({

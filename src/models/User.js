@@ -62,11 +62,11 @@ const userSchema = new mongoose.Schema({
   }
 },{timestamps : true});
 
-userSchema.methods.generateAuthToken = function () {
+userSchema.methods.generateAuthToken = function (expiration = '7d') {
   const token = jwt.sign(
-    { _id: this._id, username: this.username, role: this.role },
+    { _id: this._id, username: this.username, role: this.role, profile : this?.profile},
     process.env.JWT_SECRET_KEY,
-    { expiresIn: "7d" }
+    { expiresIn: expiration }
   );
   return token;
 };

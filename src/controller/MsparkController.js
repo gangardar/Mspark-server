@@ -264,3 +264,70 @@ export const putValidAccountWallet = async (req, res) => {
     });
   }
 };
+
+/**
+ * @desc    Update platformFee and verificationFee for an Mspark account
+ * @route   PUT /api/mspark/:id/fees
+ * @access  Private/Admin
+ */
+export const updateMsparkFees = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { platformFee, verificationFee } = req.body;
+
+    // Validate input
+    if (!platformFee && !verificationFee) {
+      return res.status(400).json({
+        success: false,
+        message: "Please provide either platformFee or verificationFee to update",
+      });
+    }
+
+    // Validate fee format (simple validation - you might want more robust validation)
+    if (platformFee && isNaN(parseFloat(platformFee))) {
+      return res.status(400).json({
+        success: false,
+        message: "platformFee must be a valid number",
+      });
+    }
+
+    if (verificationFee && isNaN(parseFloat(verificationFee))) {
+      return res.status(400).json({
+        success: false,
+        message: "verificationFee must be a valid number",
+      });
+    }
+
+    // Prepare update object
+    const updateFields = {};
+    if (platformFee) updateFields.platformFee = platformFee;
+    if (verificationFee) updateFields.verificationFee = verificationFee;
+
+    // Find and update the Mspark account
+    const updatedMspark = await Mspark.findByIdAndUpdate(
+      id,
+      { $set: updateFields },
+      { new: true, runValidators: true }
+    );
+
+    if (!updatedMspark) {
+      return res.status(404).json({
+        success: false,
+        message: "Mspark account not found",
+      });
+    }
+
+    res.status(200).json({
+      success: true,
+      message: "Fees updated successfully",
+      data: updatedMspark,
+    });
+  } catch (error) {
+    console.error("Error updating Mspark fees:", error);
+    res.status(500).json({
+      success: false,
+      message: "Internal server error",
+      error: error.message,
+    });
+  }
+};

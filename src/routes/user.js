@@ -1,6 +1,7 @@
 import Joi from "joi";
 import express from "express";
 import bcrypt from "bcrypt";
+import fs from "fs";
 import {
   addAddress,
   createUser,
@@ -12,11 +13,14 @@ import {
   getUserById,
   restoreUser,
   softDeleteUser,
+  updateAddress,
   updateUser,
 } from "../controller/userController.js";
 import authMiddleware from "../middleware/auth.js";
 import { registerSchema } from "./auth.js";
 import authorizeRoles from "../middleware/authorize.js";
+import { upload } from "../middleware/uploadImages.js";
+import User from "../models/User.js";
 
 const userRouter = express.Router();
 
@@ -36,9 +40,13 @@ userRouter.get("/", async (req, res) => {
   try {
     const page = parseInt(req.query.page) || 1;
     const limit = parseInt(req.query.limit) || 10;
-    const {role} = req.query;
+    const { role } = req.query;
 
-    const { users, total } = await getNotDeletedUserWithPagination(page, limit, role);
+    const { users, total } = await getNotDeletedUserWithPagination(
+      page,
+      limit,
+      role
+    );
 
     if (!users || users.length === 0) {
       return res.status(200).json({
@@ -78,7 +86,7 @@ userRouter.get("/all", async (req, res) => {
   try {
     const page = parseInt(req.query.page) || 1;
     const limit = parseInt(req.query.limit) || 10;
-    const {role} = req.query;
+    const { role } = req.query;
 
     const { users, total } = await getAllUsers(page, limit, role);
 
@@ -230,29 +238,40 @@ userRouter.post("/register", async (req, res) => {
 });
 
 //Add User Address
-userRouter.post('/address',authMiddleware, authorizeRoles("merchant","bidder"), addAddress)
+userRouter.post(
+  "/address",
+  authMiddleware,
+  authorizeRoles("merchant", "bidder"),
+  addAddress
+);
+
+userRouter.put(
+  "/address/:id",
+  authMiddleware,
+  authorizeRoles("merchant", "bidder"),
+  updateAddress
+);
 
 // Update a user by ID
-userRouter.put("/:id", async (req, res) => {
+userRouter.put("/:id", upload.single("profile", 1), async (req, res) => {
   try {
-    const { error } = userSchema.validate(req.body);
-    if (error) {
-      return res.status(400).json({
-        success: false,
-        message: "Validation error",
-        error: error.details[0].message,
-      });
-    }
-
-    const userObj = await updateUser(req.params.id, req.body);
-
-    if (!userObj) {
+    const userId = req.params.id;
+    const user = await User.findById(userId);
+    if (!user) {
       return res.status(404).json({
         success: false,
         message: "User not found",
         data: null,
       });
     }
+    if (user?.profile && req.file) {
+      if (fs.existsSync(user.profile)) {
+        fs.unlinkSync(user.profile);
+      }
+    }
+    user.fullName = req?.body?.fullName;
+    user.profile = req?.file?.path;
+    const userObj = await user.save();
 
     res.status(200).json({
       success: true,
@@ -260,6 +279,11 @@ userRouter.put("/:id", async (req, res) => {
       data: userObj,
     });
   } catch (err) {
+    if (req.file) {
+      if (fs.existsSync(req.file.path)) {
+        fs.unlinkSync(req.file.path);
+      }
+    }
     res.status(400).json({
       success: false,
       message: "Update failed",

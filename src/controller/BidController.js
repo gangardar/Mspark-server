@@ -2,6 +2,7 @@ import mongoose from "mongoose";
 import Auction from "../models/Auction.js";
 import Bid from "../models/Bid.js";
 import { NotFoundError } from "../utils/errors.js";
+import User from "../models/User.js";
 
 
 export const placeBid = async (req, res, next) => {
@@ -9,6 +10,12 @@ export const placeBid = async (req, res, next) => {
     const { bidAmount } = req.body;
     const auctionId = req.params.id;
     const userId = req.user._id;
+
+    const userData = await User.findById(userId);
+    if(!userData?.address){
+      return res.status(404).json({ success : false, message: 'Please update your profile with a valid address to bid' });
+
+    }
 
     // Validate auction exists and is active
     const auction = await Auction.findOne({
@@ -25,12 +32,12 @@ export const placeBid = async (req, res, next) => {
     if (new Date() > new Date(auction.endTime)) {
       auction.status = 'completed';
       await auction.save();
-      return res.status(400).json({ error: 'Auction has ended' });
+      return res.status(400).json({ success : false, message: 'Auction has ended' });
     }
 
     // Check if user is the merchant (can't bid on own auction)
     if (auction.merchantId.equals(userId)) {
-      return res.status(403).json({ error: 'Cannot bid on your own auction' });
+      return res.status(403).json({ success: false, message: 'Cannot bid on your own auction' });
     }
 
     // Create new bid
@@ -41,6 +48,16 @@ export const placeBid = async (req, res, next) => {
     });
 
     await bid.save();
+
+    // Emit real-time update
+    const io = req.app.get('io');
+    const populatedBid = await bid.populate('user', 'username');
+    
+    io.to(req.params.id).emit('newBid', {
+      bid: populatedBid,
+      currentPrice: auction.currentPrice,
+      highestBidder: req.user.username 
+    });
 
     // The pre-save hook already updated the auction
     // But we can populate and return the updated auction

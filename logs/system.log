@@ -1634,3 +1634,547 @@ MongooseError: Connection operation buffering timed out after 10000ms
 2025-04-29T17:17:21.250Z [INFO]: DB: MongoDB connected
 2025-04-29T17:17:21.453Z [INFO]: Admin account already exists
 2025-04-29T17:17:21.454Z [INFO]: Primary MSPark already exists
+2025-04-30T17:53:31.142Z [INFO]: DB: MongoDB connected
+2025-04-30T17:53:31.327Z [INFO]: Primary MSPark already exists
+2025-04-30T17:53:31.340Z [INFO]: Admin account already exists
+2025-04-30T19:15:18.665Z [INFO]: DB: MongoDB connected
+2025-04-30T19:15:18.835Z [INFO]: Primary MSPark already exists
+2025-04-30T19:15:18.850Z [INFO]: Admin account already exists
+2025-04-30T19:16:18.352Z [INFO]: DB: MongoDB connected
+2025-04-30T19:16:18.541Z [INFO]: Primary MSPark already exists
+2025-04-30T19:16:18.562Z [INFO]: Admin account already exists
+2025-04-30T19:18:28.951Z [INFO]: DB: MongoDB connected
+2025-04-30T19:18:29.131Z [INFO]: Admin account already exists
+2025-04-30T19:18:29.150Z [INFO]: Primary MSPark already exists
+2025-04-30T19:21:33.823Z [INFO]: DB: MongoDB connected
+2025-04-30T19:21:33.992Z [INFO]: Admin account already exists
+2025-04-30T19:21:34.005Z [INFO]: Primary MSPark already exists
+2025-04-30T19:32:07.006Z [INFO]: DB: MongoDB connected
+2025-04-30T19:32:07.210Z [INFO]: Admin account already exists
+2025-04-30T19:32:07.225Z [INFO]: Primary MSPark already exists
+2025-04-30T19:37:25.095Z [INFO]: DB: MongoDB connected
+2025-04-30T19:37:25.253Z [INFO]: Admin account already exists
+2025-04-30T19:37:25.269Z [INFO]: Primary MSPark already exists
+2025-04-30T20:11:46.189Z [DEBUG]: Scheduled auction 6812840164deb78d3286bd03 to complete at Mon Jun 30 2025 11:15:00 GMT+0000 (Coordinated Universal Time)
+2025-05-01T07:29:06.728Z [INFO]: DB: MongoDB connected
+2025-05-01T07:29:06.886Z [INFO]: Primary MSPark already exists
+2025-05-01T07:29:06.893Z [INFO]: Admin account already exists
+2025-05-01T08:40:47.058Z [INFO]: DB: MongoDB connected
+2025-05-01T08:40:47.235Z [INFO]: Primary MSPark already exists
+2025-05-01T08:40:47.236Z [INFO]: Admin account already exists
+2025-05-01T12:41:59.191Z [INFO]: DB: MongoDB connected
+2025-05-01T12:41:59.375Z [INFO]: Admin account already exists
+2025-05-01T12:41:59.379Z [INFO]: Primary MSPark already exists
+2025-05-01T17:00:24.138Z [DEBUG]: Scheduled auction 6812840164deb78d3286bd03 to complete at Tue Jul 01 2025 12:15:00 GMT+0000 (Coordinated Universal Time)
+2025-05-01T18:21:57.003Z [INFO]: DB: MongoDB connected
+2025-05-01T18:21:57.167Z [INFO]: Admin account already exists
+2025-05-01T18:21:57.180Z [INFO]: Primary MSPark already exists
+2025-05-02T07:27:58.151Z [INFO]: DB: MongoDB connected
+2025-05-02T07:27:58.313Z [INFO]: Primary MSPark already exists
+2025-05-02T07:27:58.314Z [INFO]: Admin account already exists
+2025-05-02T09:21:29.226Z [INFO]: DB: MongoDB connected
+2025-05-02T09:21:29.411Z [INFO]: Primary MSPark already exists
+2025-05-02T09:21:29.414Z [INFO]: Admin account already exists
+2025-05-02T09:34:27.334Z [INFO]: DB: MongoDB connected
+2025-05-02T09:34:27.475Z [INFO]: Primary MSPark already exists
+2025-05-02T09:34:27.477Z [INFO]: Admin account already exists
+2025-05-02T09:53:33.871Z [INFO]: DB: MongoDB connected
+2025-05-02T09:53:34.057Z [INFO]: Primary MSPark already exists
+2025-05-02T09:53:34.059Z [INFO]: Admin account already exists
+2025-05-02T09:56:07.058Z [INFO]: DB: MongoDB connected
+2025-05-02T09:56:07.204Z [INFO]: Admin account already exists
+2025-05-02T09:56:07.219Z [INFO]: Primary MSPark already exists
+2025-05-02T09:58:37.333Z [INFO]: DB: MongoDB connected
+2025-05-02T09:58:37.480Z [INFO]: Primary MSPark already exists
+2025-05-02T09:58:37.493Z [INFO]: Admin account already exists
+2025-05-02T09:59:27.622Z [INFO]: DB: MongoDB connected
+2025-05-02T09:59:27.817Z [INFO]: Primary MSPark already exists
+2025-05-02T09:59:27.819Z [INFO]: Admin account already exists
+2025-05-02T10:04:46.787Z [INFO]: DB: MongoDB connected
+2025-05-02T10:04:46.947Z [INFO]: Admin account already exists
+2025-05-02T10:04:46.949Z [INFO]: Primary MSPark already exists
+2025-05-02T10:11:57.060Z [INFO]: DB: MongoDB connected
+2025-05-02T10:11:57.197Z [INFO]: Primary MSPark already exists
+2025-05-02T10:11:57.212Z [INFO]: Admin account already exists
+2025-05-02T10:14:39.407Z [INFO]: DB: MongoDB connected
+2025-05-02T10:14:39.620Z [INFO]: Admin account already exists
+2025-05-02T10:14:39.634Z [INFO]: Primary MSPark already exists
+2025-05-02T10:17:05.380Z [INFO]: DB: MongoDB connected
+2025-05-02T10:17:05.511Z [INFO]: Primary MSPark already exists
+2025-05-02T10:17:05.527Z [INFO]: Admin account already exists
+2025-05-02T10:19:27.329Z [INFO]: DB: MongoDB connected
+2025-05-02T10:19:27.475Z [INFO]: Admin account already exists
+2025-05-02T10:19:27.486Z [INFO]: Primary MSPark already exists
+2025-05-02T10:22:45.723Z [INFO]: DB: MongoDB connected
+2025-05-02T10:22:45.884Z [INFO]: Admin account already exists
+2025-05-02T10:22:45.896Z [INFO]: Primary MSPark already exists
+2025-05-02T10:26:54.105Z [INFO]: DB: MongoDB connected
+2025-05-02T10:26:54.275Z [INFO]: Primary MSPark already exists
+2025-05-02T10:26:54.292Z [INFO]: Admin account already exists
+2025-05-02T11:13:33.062Z [ERROR]: Email sending failed: Cannot create property 'Symbol(level)' on string 'Password reset email sent to gangardar@protonmail.com'
+2025-05-02T11:21:03.239Z [INFO]: DB: MongoDB connected
+2025-05-02T11:21:03.393Z [INFO]: Primary MSPark already exists
+2025-05-02T11:21:03.407Z [INFO]: Admin account already exists
+2025-05-02T11:22:05.779Z [INFO]: DB: MongoDB connected
+2025-05-02T11:22:05.930Z [INFO]: Primary MSPark already exists
+2025-05-02T11:22:05.932Z [INFO]: Admin account already exists
+2025-05-02T11:24:47.885Z [INFO]: DB: MongoDB connected
+2025-05-02T11:24:48.011Z [INFO]: Primary MSPark already exists
+2025-05-02T11:24:48.012Z [INFO]: Admin account already exists
+2025-05-02T11:25:56.686Z [INFO]: DB: MongoDB connected
+2025-05-02T11:25:56.817Z [INFO]: Primary MSPark already exists
+2025-05-02T11:25:56.818Z [INFO]: Admin account already exists
+2025-05-02T11:27:00.719Z [INFO]: DB: MongoDB connected
+2025-05-02T11:27:00.857Z [INFO]: Admin account already exists
+2025-05-02T11:27:00.868Z [INFO]: Primary MSPark already exists
+2025-05-02T11:30:44.683Z [INFO]: DB: MongoDB connected
+2025-05-02T11:30:44.804Z [INFO]: Admin account already exists
+2025-05-02T11:30:44.814Z [INFO]: Primary MSPark already exists
+2025-05-02T11:31:30.485Z [INFO]: DB: MongoDB connected
+2025-05-02T11:31:30.615Z [INFO]: Admin account already exists
+2025-05-02T11:31:30.623Z [INFO]: Primary MSPark already exists
+2025-05-02T11:33:12.163Z [INFO]: DB: MongoDB connected
+2025-05-02T11:33:12.282Z [INFO]: Primary MSPark already exists
+2025-05-02T11:33:12.283Z [INFO]: Admin account already exists
+2025-05-02T11:37:28.740Z [INFO]: DB: MongoDB connected
+2025-05-02T11:37:28.864Z [INFO]: Admin account already exists
+2025-05-02T11:37:28.880Z [INFO]: Primary MSPark already exists
+2025-05-02T11:42:39.642Z [INFO]: DB: MongoDB connected
+2025-05-02T11:42:39.767Z [INFO]: Admin account already exists
+2025-05-02T11:42:39.776Z [INFO]: Primary MSPark already exists
+2025-05-02T11:46:20.304Z [INFO]: DB: MongoDB connected
+2025-05-02T11:46:20.434Z [INFO]: Admin account already exists
+2025-05-02T11:46:20.449Z [INFO]: Primary MSPark already exists
+2025-05-02T12:06:32.440Z [INFO]: DB: MongoDB connected
+2025-05-02T12:06:32.567Z [INFO]: Admin account already exists
+2025-05-02T12:06:32.580Z [INFO]: Primary MSPark already exists
+2025-05-02T12:07:37.706Z [INFO]: DB: MongoDB connected
+2025-05-02T12:07:37.836Z [INFO]: Primary MSPark already exists
+2025-05-02T12:07:37.838Z [INFO]: Admin account already exists
+2025-05-02T12:15:12.468Z [INFO]: DB: MongoDB connected
+2025-05-02T12:15:12.597Z [INFO]: Admin account already exists
+2025-05-02T12:15:12.612Z [INFO]: Primary MSPark already exists
+2025-05-02T12:20:30.525Z [INFO]: DB: MongoDB connected
+2025-05-02T12:20:30.662Z [INFO]: Admin account already exists
+2025-05-02T12:20:30.674Z [INFO]: Primary MSPark already exists
+2025-05-02T13:37:45.278Z [INFO]: DB: MongoDB connected
+2025-05-02T13:37:45.455Z [INFO]: Admin account already exists
+2025-05-02T13:37:45.478Z [INFO]: Primary MSPark already exists
+2025-05-02T13:40:24.741Z [INFO]: DB: MongoDB connected
+2025-05-02T13:40:24.921Z [INFO]: Primary MSPark already exists
+2025-05-02T13:40:24.924Z [INFO]: Admin account already exists
+2025-05-02T14:31:40.374Z [INFO]: DB: MongoDB connected
+2025-05-02T14:31:40.579Z [INFO]: Primary MSPark already exists
+2025-05-02T14:31:40.593Z [INFO]: Admin account already exists
+2025-05-02T14:43:03.542Z [INFO]: DB: MongoDB connected
+2025-05-02T14:43:03.727Z [INFO]: Admin account already exists
+2025-05-02T14:43:03.739Z [INFO]: Primary MSPark already exists
+2025-05-02T14:45:49.219Z [INFO]: DB: MongoDB connected
+2025-05-02T14:45:49.366Z [INFO]: Primary MSPark already exists
+2025-05-02T14:45:49.368Z [INFO]: Admin account already exists
+2025-05-02T14:55:59.682Z [INFO]: DB: MongoDB connected
+2025-05-02T14:55:59.816Z [INFO]: Admin account already exists
+2025-05-02T14:55:59.832Z [INFO]: Primary MSPark already exists
+2025-05-02T16:50:58.633Z [INFO]: DB: MongoDB connected
+2025-05-02T16:50:58.797Z [INFO]: Admin account already exists
+2025-05-02T16:50:58.814Z [INFO]: Primary MSPark already exists
+2025-05-02T16:53:02.243Z [INFO]: DB: MongoDB connected
+2025-05-02T16:53:02.413Z [INFO]: Admin account already exists
+2025-05-02T16:53:02.425Z [INFO]: Primary MSPark already exists
+2025-05-02T17:16:57.809Z [ERROR]: uncaughtException: upload is not a function
+TypeError: upload is not a function
+    at file:///usr/src/app/src/routes/user.js:237:23
+    at ModuleJob.run (node:internal/modules/esm/module_job:274:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:644:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:116:5)
+2025-05-02T17:19:21.981Z [INFO]: DB: MongoDB connected
+2025-05-02T17:19:22.152Z [INFO]: Primary MSPark already exists
+2025-05-02T17:19:22.154Z [INFO]: Admin account already exists
+2025-05-02T17:21:30.754Z [INFO]: DB: MongoDB connected
+2025-05-02T17:21:30.924Z [INFO]: Admin account already exists
+2025-05-02T17:21:30.944Z [INFO]: Primary MSPark already exists
+2025-05-02T17:24:09.398Z [INFO]: DB: MongoDB connected
+2025-05-02T17:24:09.564Z [INFO]: Admin account already exists
+2025-05-02T17:24:09.577Z [INFO]: Primary MSPark already exists
+2025-05-02T17:26:09.321Z [INFO]: DB: MongoDB connected
+2025-05-02T17:26:09.498Z [INFO]: Admin account already exists
+2025-05-02T17:26:09.510Z [INFO]: Primary MSPark already exists
+2025-05-02T17:29:01.977Z [INFO]: DB: MongoDB connected
+2025-05-02T17:29:02.122Z [INFO]: Primary MSPark already exists
+2025-05-02T17:29:02.129Z [INFO]: Admin account already exists
+2025-05-02T17:31:03.720Z [INFO]: DB: MongoDB connected
+2025-05-02T17:31:03.867Z [INFO]: Primary MSPark already exists
+2025-05-02T17:31:03.887Z [INFO]: Admin account already exists
+2025-05-02T17:37:08.217Z [INFO]: DB: MongoDB connected
+2025-05-02T17:37:08.421Z [INFO]: Admin account already exists
+2025-05-02T17:37:08.434Z [INFO]: Primary MSPark already exists
+2025-05-02T17:41:23.028Z [INFO]: DB: MongoDB connected
+2025-05-02T17:41:23.192Z [INFO]: Admin account already exists
+2025-05-02T17:41:23.212Z [INFO]: Primary MSPark already exists
+2025-05-02T17:41:47.171Z [ERROR]: uncaughtException: fs is not defined
+ReferenceError: fs is not defined
+    at file:///usr/src/app/src/routes/user.js:266:9
+    at Layer.handle [as handle_request] (/usr/src/app/node_modules/express/lib/router/layer.js:95:5)
+    at next (/usr/src/app/node_modules/express/lib/router/route.js:149:13)
+    at done (/usr/src/app/node_modules/multer/lib/make-middleware.js:45:7)
+    at indicateDone (/usr/src/app/node_modules/multer/lib/make-middleware.js:49:68)
+    at /usr/src/app/node_modules/multer/lib/make-middleware.js:155:11
+    at WriteStream.<anonymous> (/usr/src/app/node_modules/multer/storage/disk.js:43:9)
+    at WriteStream.emit (node:events:530:35)
+    at finish (node:internal/streams/writable:955:10)
+    at node:internal/streams/writable:936:13
+2025-05-02T17:43:39.009Z [INFO]: DB: MongoDB connected
+2025-05-02T17:43:39.166Z [INFO]: Primary MSPark already exists
+2025-05-02T17:43:39.171Z [INFO]: Admin account already exists
+2025-05-02T17:45:31.205Z [INFO]: DB: MongoDB connected
+2025-05-02T17:45:31.357Z [INFO]: Admin account already exists
+2025-05-02T17:45:31.369Z [INFO]: Primary MSPark already exists
+2025-05-02T17:47:32.888Z [INFO]: DB: MongoDB connected
+2025-05-02T17:47:33.067Z [INFO]: Primary MSPark already exists
+2025-05-02T17:47:33.088Z [INFO]: Admin account already exists
+2025-05-02T17:49:11.290Z [INFO]: DB: MongoDB connected
+2025-05-02T17:49:11.456Z [INFO]: Admin account already exists
+2025-05-02T17:49:11.467Z [INFO]: Primary MSPark already exists
+2025-05-02T18:11:13.795Z [INFO]: DB: MongoDB connected
+2025-05-02T18:11:13.955Z [INFO]: Primary MSPark already exists
+2025-05-02T18:11:13.956Z [INFO]: Admin account already exists
+2025-05-02T18:13:37.985Z [INFO]: DB: MongoDB connected
+2025-05-02T18:13:38.150Z [INFO]: Admin account already exists
+2025-05-02T18:13:38.159Z [INFO]: Primary MSPark already exists
+2025-05-02T18:49:28.115Z [INFO]: DB: MongoDB connected
+2025-05-02T18:49:28.299Z [INFO]: Primary MSPark already exists
+2025-05-02T18:49:28.319Z [INFO]: Admin account already exists
+2025-05-03T04:16:40.284Z [INFO]: DB: MongoDB connected
+2025-05-03T04:16:40.456Z [INFO]: Admin account already exists
+2025-05-03T04:16:40.475Z [INFO]: Primary MSPark already exists
+2025-05-03T04:17:53.077Z [INFO]: DB: MongoDB connected
+2025-05-03T04:17:53.286Z [INFO]: Primary MSPark already exists
+2025-05-03T04:17:53.290Z [INFO]: Admin account already exists
+2025-05-03T04:39:55.469Z [INFO]: DB: MongoDB connected
+2025-05-03T04:39:55.631Z [INFO]: Admin account already exists
+2025-05-03T04:39:55.657Z [INFO]: Primary MSPark already exists
+2025-05-03T04:44:36.744Z [INFO]: DB: MongoDB connected
+2025-05-03T04:44:36.892Z [INFO]: Primary MSPark already exists
+2025-05-03T04:44:36.894Z [INFO]: Admin account already exists
+2025-05-03T05:35:45.884Z [INFO]: DB: MongoDB connected
+2025-05-03T05:35:46.071Z [INFO]: Admin account already exists
+2025-05-03T05:35:46.076Z [INFO]: Primary MSPark already exists
+2025-05-03T05:42:43.991Z [ERROR]: Email sending failed: Cannot create property 'Symbol(level)' on string 'Password reset email sent to gangardar@protonmail.com'
+2025-05-03T05:42:56.298Z [ERROR]: Email sending failed: Cannot create property 'Symbol(level)' on string 'Password reset email sent to gangardar@protonmail.com'
+2025-05-03T05:45:12.702Z [INFO]: DB: MongoDB connected
+2025-05-03T05:45:12.861Z [INFO]: Primary MSPark already exists
+2025-05-03T05:45:12.864Z [INFO]: Admin account already exists
+2025-05-03T05:47:04.692Z [INFO]: DB: MongoDB connected
+2025-05-03T05:47:04.862Z [INFO]: Admin account already exists
+2025-05-03T05:47:04.881Z [INFO]: Primary MSPark already exists
+2025-05-03T05:47:32.003Z [ERROR]: Email sending failed: Cannot create property 'Symbol(level)' on string 'Password reset email sent to gangardar@protonmail.com'
+2025-05-03T05:49:45.637Z [INFO]: DB: MongoDB connected
+2025-05-03T05:49:45.801Z [INFO]: Admin account already exists
+2025-05-03T05:49:45.803Z [INFO]: Primary MSPark already exists
+2025-05-03T05:50:07.400Z [INFO]: Password reset email sent to gangardar@protonmail.com
+2025-05-03T05:53:05.645Z [INFO]: DB: MongoDB connected
+2025-05-03T05:53:05.789Z [INFO]: Primary MSPark already exists
+2025-05-03T05:53:05.819Z [INFO]: Admin account already exists
+2025-05-03T05:54:20.388Z [INFO]: DB: MongoDB connected
+2025-05-03T05:54:20.558Z [INFO]: Admin account already exists
+2025-05-03T05:54:20.570Z [INFO]: Primary MSPark already exists
+2025-05-03T06:11:01.172Z [INFO]: DB: MongoDB connected
+2025-05-03T06:11:01.355Z [INFO]: Primary MSPark already exists
+2025-05-03T06:11:01.365Z [INFO]: Admin account already exists
+2025-05-03T06:19:20.077Z [DEBUG]: Scheduled auction 6812840164deb78d3286bd03 to complete at Sat May 03 2025 07:15:00 GMT+0000 (Coordinated Universal Time)
+2025-05-03T07:20:19.049Z [DEBUG]: Scheduled auction 6812840164deb78d3286bd03 to complete at Sat May 03 2025 07:25:00 GMT+0000 (Coordinated Universal Time)
+2025-05-03T07:23:28.283Z [INFO]: Ledger synchronized successfully
+2025-05-03T07:25:00.012Z [WARN]: Retrying auction 6812840164deb78d3286bd03 (attempt 3)
+2025-05-03T07:25:15.026Z [ERROR]: Failed to complete auction 6812840164deb78d3286bd03: 6812840164deb78d3286bd03 is already completed
+2025-05-03T08:23:11.676Z [INFO]: DB: MongoDB connected
+2025-05-03T08:23:11.832Z [INFO]: Admin account already exists
+2025-05-03T08:23:11.838Z [INFO]: Primary MSPark already exists
+2025-05-06T06:31:05.349Z [INFO]: DB: MongoDB connected
+2025-05-06T06:31:05.560Z [INFO]: Primary MSPark already exists
+2025-05-06T06:31:05.561Z [INFO]: Admin account already exists
+2025-05-06T06:37:40.113Z [INFO]: DB: MongoDB connected
+2025-05-06T06:37:40.303Z [INFO]: Primary MSPark already exists
+2025-05-06T06:37:40.305Z [INFO]: Admin account already exists
+2025-05-06T06:40:34.371Z [INFO]: DB: MongoDB connected
+2025-05-06T06:40:34.552Z [INFO]: Admin account already exists
+2025-05-06T06:40:34.575Z [INFO]: Primary MSPark already exists
+2025-05-06T06:43:22.281Z [INFO]: DB: MongoDB connected
+2025-05-06T06:43:22.457Z [INFO]: Admin account already exists
+2025-05-06T06:43:22.473Z [INFO]: Primary MSPark already exists
+2025-05-06T06:44:20.925Z [INFO]: DB: MongoDB connected
+2025-05-06T06:44:21.086Z [INFO]: Primary MSPark already exists
+2025-05-06T06:44:21.088Z [INFO]: Admin account already exists
+2025-05-06T06:47:23.508Z [INFO]: DB: MongoDB connected
+2025-05-06T06:47:23.677Z [INFO]: Primary MSPark already exists
+2025-05-06T06:47:23.706Z [INFO]: Admin account already exists
+2025-05-06T07:33:32.771Z [DEBUG]: Scheduled auction 6819bb4c87521e3cfce2c1d3 to complete at Wed May 07 2025 17:30:00 GMT+0000 (Coordinated Universal Time)
+2025-05-06T07:33:53.176Z [DEBUG]: Scheduled auction 6819bb4c87521e3cfce2c1d3 to complete at Wed May 07 2025 17:30:00 GMT+0000 (Coordinated Universal Time)
+2025-05-06T07:34:25.421Z [DEBUG]: Scheduled auction 6819bb4c87521e3cfce2c1d3 to complete at Mon Jun 30 2025 07:25:00 GMT+0000 (Coordinated Universal Time)
+2025-05-06T07:49:07.687Z [INFO]: DB: MongoDB connected
+2025-05-06T07:49:07.875Z [INFO]: Admin account already exists
+2025-05-06T07:49:07.882Z [INFO]: Primary MSPark already exists
+2025-05-06T07:51:26.157Z [INFO]: DB: MongoDB connected
+2025-05-06T07:51:26.383Z [INFO]: Admin account already exists
+2025-05-06T07:51:26.408Z [INFO]: Primary MSPark already exists
+2025-05-06T09:09:08.841Z [INFO]: DB: MongoDB connected
+2025-05-06T09:09:09.010Z [INFO]: Primary MSPark already exists
+2025-05-06T09:09:09.012Z [INFO]: Admin account already exists
+2025-05-06T09:15:12.908Z [INFO]: DB: MongoDB connected
+2025-05-06T09:15:13.091Z [INFO]: Primary MSPark already exists
+2025-05-06T09:15:13.131Z [INFO]: Admin account already exists
+2025-05-06T09:20:27.043Z [INFO]: DB: MongoDB connected
+2025-05-06T09:20:27.216Z [INFO]: Primary MSPark already exists
+2025-05-06T09:20:27.238Z [INFO]: Admin account already exists
+2025-05-06T10:12:56.516Z [INFO]: DB: MongoDB connected
+2025-05-06T10:12:56.693Z [INFO]: Primary MSPark already exists
+2025-05-06T10:12:56.712Z [INFO]: Admin account already exists
+2025-05-06T11:05:19.359Z [INFO]: DB: MongoDB connected
+2025-05-06T11:05:19.548Z [INFO]: Primary MSPark already exists
+2025-05-06T11:05:19.559Z [INFO]: Admin account already exists
+2025-05-06T15:02:46.160Z [INFO]: DB: MongoDB connected
+2025-05-06T15:02:46.330Z [INFO]: Admin account already exists
+2025-05-06T15:02:46.333Z [INFO]: Primary MSPark already exists
+2025-05-06T15:18:46.518Z [INFO]: DB: MongoDB connected
+2025-05-06T15:18:46.711Z [INFO]: Primary MSPark already exists
+2025-05-06T15:18:46.727Z [INFO]: Admin account already exists
+2025-05-06T15:21:24.229Z [INFO]: DB: MongoDB connected
+2025-05-06T15:21:24.412Z [INFO]: Admin account already exists
+2025-05-06T15:21:24.428Z [INFO]: Primary MSPark already exists
+2025-05-06T15:24:45.418Z [INFO]: DB: MongoDB connected
+2025-05-06T15:24:45.577Z [INFO]: Primary MSPark already exists
+2025-05-06T15:24:45.602Z [INFO]: Admin account already exists
+2025-05-06T15:26:43.409Z [INFO]: DB: MongoDB connected
+2025-05-06T15:26:43.577Z [INFO]: Primary MSPark already exists
+2025-05-06T15:26:43.598Z [INFO]: Admin account already exists
+2025-05-06T15:28:46.561Z [INFO]: DB: MongoDB connected
+2025-05-06T15:28:46.734Z [INFO]: Primary MSPark already exists
+2025-05-06T15:28:46.759Z [INFO]: Admin account already exists
+2025-05-06T16:06:41.586Z [INFO]: DB: MongoDB connected
+2025-05-06T16:06:42.007Z [INFO]: Primary MSPark already exists
+2025-05-06T16:06:42.010Z [INFO]: Admin account already exists
+2025-05-06T16:11:12.757Z [INFO]: DB: MongoDB connected
+2025-05-06T16:11:12.932Z [INFO]: Primary MSPark already exists
+2025-05-06T16:11:12.935Z [INFO]: Admin account already exists
+2025-05-06T16:13:23.425Z [INFO]: DB: MongoDB connected
+2025-05-06T16:13:23.579Z [INFO]: Admin account already exists
+2025-05-06T16:13:23.593Z [INFO]: Primary MSPark already exists
+2025-05-06T16:21:44.519Z [INFO]: DB: MongoDB connected
+2025-05-06T16:21:44.668Z [INFO]: Primary MSPark already exists
+2025-05-06T16:21:44.681Z [INFO]: Admin account already exists
+2025-05-06T16:30:25.327Z [INFO]: DB: MongoDB connected
+2025-05-06T16:30:25.476Z [INFO]: Admin account already exists
+2025-05-06T16:30:25.489Z [INFO]: Primary MSPark already exists
+2025-05-07T14:04:46.104Z [INFO]: DB: MongoDB connected
+2025-05-07T14:04:46.263Z [INFO]: Primary MSPark already exists
+2025-05-07T14:04:46.277Z [INFO]: Admin account already exists
+2025-05-07T15:01:23.456Z [INFO]: DB: MongoDB connected
+2025-05-07T15:01:23.613Z [INFO]: Admin account already exists
+2025-05-07T15:01:23.615Z [INFO]: Primary MSPark already exists
+2025-05-07T15:04:09.664Z [INFO]: DB: MongoDB connected
+2025-05-07T15:04:09.813Z [INFO]: Primary MSPark already exists
+2025-05-07T15:04:09.815Z [INFO]: Admin account already exists
+2025-05-07T15:07:55.780Z [INFO]: DB: MongoDB connected
+2025-05-07T15:07:55.937Z [INFO]: Admin account already exists
+2025-05-07T15:07:55.949Z [INFO]: Primary MSPark already exists
+2025-05-07T15:09:27.787Z [INFO]: DB: MongoDB connected
+2025-05-07T15:09:27.949Z [INFO]: Primary MSPark already exists
+2025-05-07T15:09:27.951Z [INFO]: Admin account already exists
+2025-05-07T15:10:42.380Z [INFO]: DB: MongoDB connected
+2025-05-07T15:10:42.539Z [INFO]: Admin account already exists
+2025-05-07T15:10:42.552Z [INFO]: Primary MSPark already exists
+2025-05-07T15:12:04.087Z [INFO]: DB: MongoDB connected
+2025-05-07T15:12:04.230Z [INFO]: Primary MSPark already exists
+2025-05-07T15:12:04.253Z [INFO]: Admin account already exists
+2025-05-07T15:14:26.024Z [INFO]: DB: MongoDB connected
+2025-05-07T15:14:26.197Z [INFO]: Admin account already exists
+2025-05-07T15:14:26.207Z [INFO]: Primary MSPark already exists
+2025-05-07T15:22:03.516Z [INFO]: DB: MongoDB connected
+2025-05-07T15:22:03.655Z [INFO]: Admin account already exists
+2025-05-07T15:22:03.669Z [INFO]: Primary MSPark already exists
+2025-05-07T15:23:52.949Z [INFO]: DB: MongoDB connected
+2025-05-07T15:23:53.107Z [INFO]: Admin account already exists
+2025-05-07T15:23:53.121Z [INFO]: Primary MSPark already exists
+2025-05-07T15:30:43.424Z [INFO]: DB: MongoDB connected
+2025-05-07T15:30:43.574Z [INFO]: Primary MSPark already exists
+2025-05-07T15:30:43.576Z [INFO]: Admin account already exists
+2025-05-07T15:31:55.062Z [INFO]: DB: MongoDB connected
+2025-05-07T15:31:55.210Z [INFO]: Admin account already exists
+2025-05-07T15:31:55.224Z [INFO]: Primary MSPark already exists
+2025-05-07T16:01:45.310Z [INFO]: DB: MongoDB connected
+2025-05-07T16:01:45.471Z [INFO]: Primary MSPark already exists
+2025-05-07T16:01:45.485Z [INFO]: Admin account already exists
+2025-05-07T16:03:27.702Z [INFO]: DB: MongoDB connected
+2025-05-07T16:03:27.836Z [INFO]: Primary MSPark already exists
+2025-05-07T16:03:27.851Z [INFO]: Admin account already exists
+2025-05-07T16:22:52.935Z [INFO]: DB: MongoDB connected
+2025-05-07T16:22:53.134Z [INFO]: Primary MSPark already exists
+2025-05-07T16:22:53.143Z [INFO]: Admin account already exists
+2025-05-07T16:26:48.754Z [INFO]: DB: MongoDB connected
+2025-05-07T16:26:48.943Z [INFO]: Primary MSPark already exists
+2025-05-07T16:26:48.955Z [INFO]: Admin account already exists
+2025-05-07T16:35:54.087Z [INFO]: DB: MongoDB connected
+2025-05-07T16:35:54.278Z [INFO]: Primary MSPark already exists
+2025-05-07T16:35:54.295Z [INFO]: Admin account already exists
+2025-05-07T17:10:31.571Z [INFO]: DB: MongoDB connected
+2025-05-07T17:10:31.746Z [INFO]: Primary MSPark already exists
+2025-05-07T17:10:31.760Z [INFO]: Admin account already exists
+2025-05-07T17:15:03.419Z [INFO]: DB: MongoDB connected
+2025-05-07T17:15:03.601Z [INFO]: Admin account already exists
+2025-05-07T17:15:03.619Z [INFO]: Primary MSPark already exists
+2025-05-07T17:18:39.552Z [INFO]: DB: MongoDB connected
+2025-05-07T17:18:39.753Z [INFO]: Primary MSPark already exists
+2025-05-07T17:18:39.756Z [INFO]: Admin account already exists
+2025-05-07T17:21:13.384Z [INFO]: DB: MongoDB connected
+2025-05-07T17:21:13.551Z [INFO]: Admin account already exists
+2025-05-07T17:21:13.563Z [INFO]: Primary MSPark already exists
+2025-05-07T17:23:19.909Z [INFO]: DB: MongoDB connected
+2025-05-07T17:23:20.144Z [INFO]: Admin account already exists
+2025-05-07T17:23:20.164Z [INFO]: Primary MSPark already exists
+2025-05-07T17:25:07.989Z [INFO]: DB: MongoDB connected
+2025-05-07T17:25:08.177Z [INFO]: Admin account already exists
+2025-05-07T17:25:08.192Z [INFO]: Primary MSPark already exists
+2025-05-07T17:27:51.628Z [INFO]: DB: MongoDB connected
+2025-05-07T17:27:51.795Z [INFO]: Primary MSPark already exists
+2025-05-07T17:27:51.796Z [INFO]: Admin account already exists
+2025-05-07T17:29:02.926Z [INFO]: DB: MongoDB connected
+2025-05-07T17:29:03.110Z [INFO]: Admin account already exists
+2025-05-07T17:29:03.123Z [INFO]: Primary MSPark already exists
+2025-05-07T17:45:37.411Z [INFO]: DB: MongoDB connected
+2025-05-07T17:45:37.614Z [INFO]: Admin account already exists
+2025-05-07T17:45:37.632Z [INFO]: Primary MSPark already exists
+2025-05-07T17:50:26.412Z [INFO]: DB: MongoDB connected
+2025-05-07T17:50:26.604Z [INFO]: Admin account already exists
+2025-05-07T17:50:26.620Z [INFO]: Primary MSPark already exists
+2025-05-07T17:52:29.828Z [INFO]: DB: MongoDB connected
+2025-05-07T17:52:29.980Z [INFO]: Admin account already exists
+2025-05-07T17:52:29.994Z [INFO]: Primary MSPark already exists
+2025-05-07T17:55:19.711Z [INFO]: DB: MongoDB connected
+2025-05-07T17:55:19.856Z [INFO]: Admin account already exists
+2025-05-07T17:55:19.868Z [INFO]: Primary MSPark already exists
+2025-05-07T17:56:59.910Z [INFO]: DB: MongoDB connected
+2025-05-07T17:57:00.051Z [INFO]: Admin account already exists
+2025-05-07T17:57:00.066Z [INFO]: Primary MSPark already exists
+2025-05-07T17:59:09.570Z [INFO]: DB: MongoDB connected
+2025-05-07T17:59:09.726Z [INFO]: Admin account already exists
+2025-05-07T17:59:09.738Z [INFO]: Primary MSPark already exists
+2025-05-07T18:01:47.319Z [INFO]: DB: MongoDB connected
+2025-05-07T18:01:47.470Z [INFO]: Primary MSPark already exists
+2025-05-07T18:01:47.471Z [INFO]: Admin account already exists
+2025-05-07T18:04:10.402Z [INFO]: DB: MongoDB connected
+2025-05-07T18:04:10.553Z [INFO]: Admin account already exists
+2025-05-07T18:04:10.566Z [INFO]: Primary MSPark already exists
+2025-05-07T18:09:32.782Z [INFO]: DB: MongoDB connected
+2025-05-07T18:09:32.939Z [INFO]: Primary MSPark already exists
+2025-05-07T18:09:32.941Z [INFO]: Admin account already exists
+2025-05-07T18:12:05.092Z [INFO]: DB: MongoDB connected
+2025-05-07T18:12:05.230Z [INFO]: Primary MSPark already exists
+2025-05-07T18:12:05.232Z [INFO]: Admin account already exists
+2025-05-07T18:16:11.218Z [INFO]: DB: MongoDB connected
+2025-05-07T18:16:11.365Z [INFO]: Primary MSPark already exists
+2025-05-07T18:16:11.367Z [INFO]: Admin account already exists
+2025-05-07T18:19:57.391Z [INFO]: DB: MongoDB connected
+2025-05-07T18:19:57.548Z [INFO]: Admin account already exists
+2025-05-07T18:19:57.560Z [INFO]: Primary MSPark already exists
+2025-05-07T18:23:58.621Z [INFO]: DB: MongoDB connected
+2025-05-07T18:23:58.767Z [INFO]: Admin account already exists
+2025-05-07T18:23:58.787Z [INFO]: Primary MSPark already exists
+2025-05-07T18:27:29.239Z [INFO]: DB: MongoDB connected
+2025-05-07T18:27:29.398Z [INFO]: Admin account already exists
+2025-05-07T18:27:29.410Z [INFO]: Primary MSPark already exists
+2025-05-07T18:32:12.563Z [INFO]: DB: MongoDB connected
+2025-05-07T18:32:12.736Z [INFO]: Admin account already exists
+2025-05-07T18:32:12.754Z [INFO]: Primary MSPark already exists
+2025-05-07T18:32:39.223Z [INFO]: Ledger synchronized successfully
+2025-05-08T07:22:21.603Z [INFO]: DB: MongoDB connected
+2025-05-08T07:22:21.854Z [INFO]: Primary MSPark already exists
+2025-05-08T07:22:21.860Z [INFO]: Admin account already exists
+2025-05-08T07:24:37.635Z [INFO]: DB: MongoDB connected
+2025-05-08T07:24:37.838Z [INFO]: Primary MSPark already exists
+2025-05-08T07:24:37.840Z [INFO]: Admin account already exists
+2025-05-08T08:14:24.178Z [INFO]: DB: MongoDB connected
+2025-05-08T08:14:24.375Z [INFO]: Primary MSPark already exists
+2025-05-08T08:14:24.379Z [INFO]: Admin account already exists
+2025-05-08T08:46:28.300Z [INFO]: DB: MongoDB connected
+2025-05-08T08:46:28.458Z [INFO]: Admin account already exists
+2025-05-08T08:46:28.467Z [INFO]: Primary MSPark already exists
+2025-05-08T09:38:02.544Z [INFO]: DB: MongoDB connected
+2025-05-08T09:38:02.742Z [INFO]: Primary MSPark already exists
+2025-05-08T09:38:02.755Z [INFO]: Admin account already exists
+2025-05-08T09:39:11.667Z [INFO]: DB: MongoDB connected
+2025-05-08T09:39:11.858Z [INFO]: Admin account already exists
+2025-05-08T09:39:11.876Z [INFO]: Primary MSPark already exists
+2025-05-08T09:43:01.743Z [INFO]: DB: MongoDB connected
+2025-05-08T09:43:01.927Z [INFO]: Admin account already exists
+2025-05-08T09:43:01.939Z [INFO]: Primary MSPark already exists
+2025-05-08T09:50:03.024Z [INFO]: DB: MongoDB connected
+2025-05-08T09:50:03.282Z [INFO]: Primary MSPark already exists
+2025-05-08T09:50:03.285Z [INFO]: Admin account already exists
+2025-05-08T13:06:12.923Z [INFO]: DB: MongoDB connected
+2025-05-08T13:06:13.458Z [ERROR]: Failed to seed primary MSPark: Caused by :: Unable to write to collection 'mspark.msparks' due to catalog changes; please retry the operation :: Please retry your operation or multi-document transaction.
+2025-05-08T13:08:13.620Z [INFO]: DB: MongoDB connected
+2025-05-08T13:08:13.799Z [INFO]: Primary MSPark created successfully
+2025-05-08T13:08:13.866Z [INFO]: Admin created successfully
+2025-05-08T13:13:35.099Z [INFO]: DB: MongoDB connected
+2025-05-08T13:13:35.398Z [INFO]: Primary MSPark already exists
+2025-05-08T13:13:35.435Z [INFO]: Admin account already exists
+2025-05-08T13:20:39.418Z [INFO]: DB: MongoDB connected
+2025-05-08T13:20:39.580Z [INFO]: Admin account already exists
+2025-05-08T13:20:39.587Z [INFO]: Primary MSPark already exists
+2025-05-08T13:35:19.589Z [INFO]: DB: MongoDB connected
+2025-05-08T13:35:19.737Z [INFO]: Admin account already exists
+2025-05-08T13:35:19.754Z [INFO]: Primary MSPark already exists
+2025-05-08T13:41:51.176Z [INFO]: DB: MongoDB connected
+2025-05-08T13:41:51.281Z [INFO]: Admin account already exists
+2025-05-08T13:41:51.283Z [INFO]: Primary MSPark already exists
+2025-05-08T13:55:22.658Z [INFO]: DB: MongoDB connected
+2025-05-08T13:55:22.889Z [INFO]: Admin account already exists
+2025-05-08T13:55:22.912Z [INFO]: Primary MSPark already exists
+2025-05-08T14:06:24.321Z [INFO]: DB: MongoDB connected
+2025-05-08T14:06:24.427Z [INFO]: Admin account already exists
+2025-05-08T14:06:24.438Z [INFO]: Primary MSPark already exists
+2025-05-08T14:10:55.460Z [INFO]: DB: MongoDB connected
+2025-05-08T14:10:55.548Z [INFO]: Admin account already exists
+2025-05-08T14:10:55.556Z [INFO]: Primary MSPark already exists
+2025-05-08T14:20:06.047Z [INFO]: DB: MongoDB connected
+2025-05-08T14:20:06.156Z [INFO]: Admin account already exists
+2025-05-08T14:20:06.157Z [INFO]: Primary MSPark already exists
+2025-05-08T14:39:42.151Z [INFO]: DB: MongoDB connected
+2025-05-08T14:39:42.290Z [INFO]: Admin account already exists
+2025-05-08T14:39:42.352Z [INFO]: Primary MSPark already exists
+2025-05-08T14:46:39.260Z [INFO]: DB: MongoDB connected
+2025-05-08T14:46:39.376Z [INFO]: Admin account already exists
+2025-05-08T14:46:39.385Z [INFO]: Primary MSPark already exists
+2025-05-08T14:52:29.795Z [INFO]: DB: MongoDB connected
+2025-05-08T14:52:29.920Z [INFO]: Admin account already exists
+2025-05-08T14:52:29.932Z [INFO]: Primary MSPark already exists
+2025-05-08T14:54:39.669Z [INFO]: DB: MongoDB connected
+2025-05-08T14:54:39.802Z [INFO]: Primary MSPark already exists
+2025-05-08T14:54:39.822Z [INFO]: Admin account already exists
+2025-05-08T15:05:32.622Z [INFO]: DB: MongoDB connected
+2025-05-08T15:05:32.853Z [INFO]: Admin account already exists
+2025-05-08T15:05:32.855Z [INFO]: Primary MSPark already exists
+2025-05-08T15:26:14.801Z [INFO]: DB: MongoDB connected
+2025-05-08T15:26:14.964Z [INFO]: Admin account already exists
+2025-05-08T15:26:14.965Z [INFO]: Primary MSPark already exists
+2025-05-08T15:29:05.707Z [INFO]: DB: MongoDB connected
+2025-05-08T15:29:05.863Z [INFO]: Admin account already exists
+2025-05-08T15:29:05.872Z [INFO]: Primary MSPark already exists
+2025-05-08T15:38:24.695Z [INFO]: DB: MongoDB connected
+2025-05-08T15:38:24.837Z [INFO]: Primary MSPark already exists
+2025-05-08T15:38:24.838Z [INFO]: Admin account already exists
+2025-05-08T16:00:17.686Z [INFO]: DB: MongoDB connected
+2025-05-08T16:00:17.834Z [INFO]: Primary MSPark already exists
+2025-05-08T16:00:17.835Z [INFO]: Admin account already exists
+2025-05-08T16:33:36.612Z [INFO]: DB: MongoDB connected
+2025-05-08T16:33:36.833Z [INFO]: Primary MSPark already exists
+2025-05-08T16:33:36.835Z [INFO]: Admin account already exists
+2025-05-08T18:08:16.473Z [INFO]: DB: MongoDB connected
+2025-05-08T18:08:16.652Z [INFO]: Admin account already exists
+2025-05-08T18:08:16.653Z [INFO]: Primary MSPark already exists
+2025-05-08T18:22:33.794Z [INFO]: DB: MongoDB connected
+2025-05-08T18:22:33.916Z [INFO]: Admin account already exists
+2025-05-08T18:22:33.925Z [INFO]: Primary MSPark already exists
+2025-05-08T18:25:58.533Z [INFO]: Password reset email sent to johndoe@example.com
+2025-05-08T18:52:40.890Z [INFO]: DB: MongoDB connected
+2025-05-08T18:52:41.010Z [INFO]: Primary MSPark already exists
+2025-05-08T18:52:41.031Z [INFO]: Admin account already exists

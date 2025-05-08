@@ -1,6 +1,6 @@
 import path from "path";
 import Gem from "../models/Gem.js";
-import fs from "fs";
+import fs, { stat } from "fs";
 
 // Create a new gem
 export const createGem = async (req, res) => {
@@ -21,6 +21,13 @@ export const createGem = async (req, res) => {
       .status(201)
       .json({ success: true, message: "Gem Added Successfully", data: gem });
   } catch (error) {
+    if (req.files) {
+          req.files.map((file) => {
+            if (fs.existsSync(file.path)) {
+              fs.unlinkSync(file.path);
+            }
+          });
+        }
     res.status(400).json({ success: false, message: error.message });
   }
 };
@@ -52,8 +59,11 @@ export const getNotDeletedGems = async (req, res) => {
   try {
     const page = parseInt(req.query.page) || 1;
     const limit = parseInt(req.query.limit) || 10;
+    const status = req.query.status;
     const skip = (page - 1) * limit;
-    const gems = await Gem.find({ isDeleted: false })
+    const filter = {isDeleted : false}
+    if(status && status !== "all") filter.status = status;
+    const gems = await Gem.find(filter)
       .skip(skip)
       .limit(limit)
       .populate("merchantId verifierId")
@@ -230,6 +240,13 @@ export const updateGem = async (req, res) => {
       .status(200)
       .json({ success: true, message: "Updated Successfully!", data: gem });
   } catch (error) {
+    if (req.files) {
+          req.files.map((file) => {
+            if (fs.existsSync(file.path)) {
+              fs.unlinkSync(file.path);
+            }
+          });
+        }
     res.status(400).json({ success: false, message: error.message });
   }
 };

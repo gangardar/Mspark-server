@@ -1,0 +1,18 @@
+config:
+  target: "ws://localhost:3000"
+  engine: socketio               # ✅ Needed to enable Socket.IO
+  phases:
+    - duration: 60       # Total duration
+      arrivalRate: 10    # 10 users per second
+      rampTo: 100        # Gradually increase to 100/sec
+      name: "Ramp to 100 users"
+  socketio:
+    transports: ["websocket"]
+
+scenarios:
+  - name: Join and stay
+    flow:
+      - emit:
+          channel: "joinAuction"
+          data: "auction123"
+      - think: 60 

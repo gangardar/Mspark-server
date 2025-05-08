@@ -1,0 +1,7 @@
+{
+    "yaml.schemas": {
+        "https://www.artillery.io/schema.json": [
+            "file:///c%3A/Users/ggd/Documents/Personal%20Drive/Web%20Development/Web%20Applications/Mspark/Mspark_backend/src/test/load%20testing/auctionLoadTest.yml"
+        ]
+    }
+}

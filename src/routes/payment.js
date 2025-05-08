@@ -1,5 +1,6 @@
 import express from "express";
 import orderCallBack, {
+  createSend,
   getAllPayments,
   getPaymentByMerchant,
   getPaymentsByBidder,
@@ -31,6 +32,9 @@ paymentRouter.get(
 
 paymentRouter.post("/callback", orderCallBack);
 
+
 paymentRouter.post("/handleExpiredPayment", reCreateOrder);
+
+paymentRouter.post("/sendPayment", createSend);
 
 export default paymentRouter;
